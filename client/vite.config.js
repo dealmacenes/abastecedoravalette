@@ -7,16 +7,5 @@ export default defineConfig({
   server: {
     host: true,
     port: 1990,
-    proxy: {
-      "/api": {
-        target: "https://dealmacenes-backend.vercel.app", // Puerto donde corre tu backend local
-        changeOrigin: true,
-        secure: false,
-      },
-    },
   },
-  build: {
-    outDir: "dist",
-  },
-  base: "/",
 });
