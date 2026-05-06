@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { 
   X, Menu, MapPin, Store, Target, Eye, 
-  Handshake, ChevronRight, Instagram, Facebook, Check 
+  Handshake, ChevronRight, Check 
 } from 'lucide-react';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
 
 export default function App() {
   const [isTopBarVisible, setIsTopBarVisible] = useState(true);
@@ -449,10 +450,10 @@ export default function App() {
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E3343A] transition-colors">
-                  <Instagram size={18} />
+                  <FaInstagram size={18} />
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E3343A] transition-colors">
-                  <Facebook size={18} />
+                  <FaFacebookF size={18} />
                 </a>
               </div>
             </div>
