@@ -18,7 +18,7 @@ export default function App() {
   );
 
   return (
-    <div className="font-sans text-[#222222] bg-[#F8F9FA] overflow-x-hidden min-h-screen font-montserrat scrollbar-none">
+    <div className="font-sans text-[#222222] bg-[#F8F9FA] overflow-x-hidden min-h-screen hide-scrollbar">
       {/* Estilos globales inyectados para tipografía y animaciones personalizadas */}
       <style>{`
         @keyframes marquee {
@@ -33,7 +33,7 @@ export default function App() {
 
       {/* Top Announcement Bar */}
       {isTopBarVisible && (
-        <div className="bg-[#E3343A] text-white text-sm font-semibold py-2 px-4 flex justify-between items-center relative overflow-hidden h-10 z-50">
+        <div className="bg-black text-white text-sm font-semibold py-2 px-4 flex justify-between items-center relative overflow-hidden h-10 z-50">
           <div className="w-full overflow-hidden absolute left-0 flex items-center h-full">
             <div className="animate-marquee whitespace-nowrap">
               Sucursales en Luis Guillon y Morón - Servicio de Envios - Somos Productores
@@ -41,7 +41,7 @@ export default function App() {
           </div>
           <button 
             onClick={() => setIsTopBarVisible(false)} 
-            className="absolute right-4 text-white hover:text-gray-200 z-10 bg-[#E3343A] px-2"
+            className="absolute right-2 text-white z-10 bg-white/50 p-[4px] rounded-full"
           >
             <X size={18} />
           </button>
@@ -54,18 +54,7 @@ export default function App() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center gap-3">
-              <div className="text-[#E3343A] flex -space-x-1">
-                {/* SVG Logo Placeholder similar al diseño */}
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 10a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-6z"></path>
-                  <path d="M7 10h10"></path>
-                  <path d="M12 10v6"></path>
-                </svg>
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-[#2B3175] font-bold text-sm tracking-widest">ABASTECEDORA</span>
-                <span className="text-[#2B3175] font-black text-2xl tracking-tight">VALETTE</span>
-              </div>
+              <img src="iconAndText.jpg" className="h-10 w-fit object-cover"/>
             </div>
 
             {/* Desktop Nav */}
@@ -97,7 +86,7 @@ export default function App() {
       {/* Sidebar (Off-canvas) */}
       {/* Overlay */}
       <div 
-        className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsSidebarOpen(false)}
       />
       
@@ -239,15 +228,11 @@ export default function App() {
             <div className="h-48 bg-gray-200 relative">
               <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mapa Luis Guillon" className="w-full h-full object-cover opacity-80" />
               <div className="absolute inset-0 bg-[#2B3175]/20"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#E3343A] text-white p-3 rounded-full shadow-lg animate-bounce">
-                <MapPin size={28} />
-              </div>
             </div>
             <div className="p-8">
               <div className="uppercase tracking-widest text-xs font-bold text-[#E3343A] mb-2">Sucursal Principal</div>
               <h3 className="text-2xl font-bold text-[#2B3175] mb-3">Luis Guillón</h3>
               <p className="text-gray-600 flex items-start gap-3 mb-2">
-                <MapPin className="mt-1 flex-shrink-0 text-[#E3343A]" size={18} />
                 <span><strong>Av. Luciano Valette 1686</strong><br /> A 4 cuadras de camino de cintura</span>
               </p>
               <div className="mt-6">
@@ -268,9 +253,6 @@ export default function App() {
             <div className="h-48 bg-gray-200 relative">
               <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mapa Moreno" className="w-full h-full object-cover opacity-80" />
               <div className="absolute inset-0 bg-[#2B3175]/20"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#E3343A] text-white p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.2s' }}>
-                <MapPin size={28} />
-              </div>
             </div>
             <div className="p-8">
               <div className="uppercase tracking-widest text-xs font-bold text-[#E3343A] mb-2">Punto de Venta</div>
