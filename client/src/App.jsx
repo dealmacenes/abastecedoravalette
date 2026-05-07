@@ -158,7 +158,7 @@ export default function App() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-[#2B3175] text-white pb-20 pt-28 lg:pt-40 lg:pb-32 overflow-hidden">
+      <section className="relative bg-[#2B3175] text-white pb-0 pt-28 lg:pt-40 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
