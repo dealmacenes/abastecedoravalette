@@ -158,7 +158,7 @@ export default function App() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-[#2B3175] text-white pb-0 pt-28 lg:pt-40 overflow-hidden">
+      <section className="relative bg-[#2B3175] text-white pb-20 pt-28 lg:pt-40 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -208,7 +208,7 @@ export default function App() {
         </div>
         
         {/* Wave Divider */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <div className="absolute -bottom-[1px] left-0 w-full overflow-hidden leading-none">
           <svg className="relative block w-full h-[50px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C80.29,114.93,198.81,81.42,321.39,56.44Z" fill="#F8F9FA"></path>
           </svg>
@@ -225,27 +225,17 @@ export default function App() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Card Luis Guillon */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
-            <div className="h-48 bg-gray-200 relative">
-              <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mapa Luis Guillon" className="w-full h-full object-cover opacity-80" />
-              <div className="absolute inset-0 bg-[#2B3175]/20"></div>
-            </div>
-            <div className="p-8">
-              <div className="uppercase tracking-widest text-xs font-bold text-[#E3343A] mb-2">Sucursal Principal</div>
-              <h3 className="text-2xl font-bold text-[#2B3175] mb-3">Luis Guillón</h3>
-              <p className="text-gray-600 flex items-start gap-3 mb-2">
-                <span><strong>Av. Luciano Valette 1686</strong><br /> A 4 cuadras de camino de cintura</span>
-              </p>
-              <div className="mt-6">
-                <a 
-                  href="https://wa.me/541128353615" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
-                >
-                  <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
-                </a>
-              </div>
-            </div>
+            <div className="h-48 relative overflow-hidden">
+  <iframe
+    src="https://www.google.com/maps?q=Av.+Luciano+Valette+1686,+Luis+Guillón,+Buenos+Aires&output=embed"
+    className="w-full h-full border-0 grayscale-[0.1]"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    allowFullScreen
+  ></iframe>
+
+  <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
+</div>g
           </div>
 
           {/* Card Moreno */}
@@ -255,7 +245,6 @@ export default function App() {
               <div className="absolute inset-0 bg-[#2B3175]/20"></div>
             </div>
             <div className="p-8">
-              <div className="uppercase tracking-widest text-xs font-bold text-[#E3343A] mb-2">Punto de Venta</div>
               <h3 className="text-2xl font-bold text-[#2B3175] mb-3">Moreno</h3>
               <p className="text-gray-600 flex items-start gap-3 mb-2">
                 <MapPin className="mt-1 flex-shrink-0 text-[#E3343A]" size={18} />
@@ -314,11 +303,11 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
             {/* Imagen */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-full min-h-[400px]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-full min-h-[200px]">
               <img 
-                src="https://images.unsplash.com/photo-1587293852726-0d628a661f73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="logistica.jpg" 
                 alt="Logística y Producción Abastecedora Valette" 
-                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-fit object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B3175] via-transparent to-transparent opacity-80"></div>
               <div className="absolute bottom-0 left-0 p-8">
