@@ -299,18 +299,20 @@ export default function App() {
           {/* Card Luis Guillon */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
             <div className="h-48 relative overflow-hidden">
-                <iframe
-                    src="https://www.google.com/maps?q=Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed"
-                        className="w-full h-full border-0 saturate-[0.8] contrast-110"
-                            loading="lazy"
-                                allowFullScreen
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                      ></iframe>
+              <iframe
+                src="https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed"
+                className="w-full h-full border-0 saturate-[0.8] contrast-110"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
 
-                                        <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
-                                        </div>
+              <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
+            </div>
             <div className="p-8">
-              <h3 className="text-2xl font-bold text-[#2B3175] mb-3">Luis Guillon</h3>
+              <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
+                Luis Guillon
+              </h3>
               <p className="text-gray-600 flex items-start gap-3 mb-2">
                 <MapPin
                   className="mt-1 flex-shrink-0 text-[#E3343A]"
@@ -335,16 +337,15 @@ export default function App() {
           </div>
           <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
             <div className="h-48 relative overflow-hidden">
-                <iframe
-                    src="https://www.google.com/maps?q=Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed"
-                        className="w-full h-full border-0 saturate-[0.8] contrast-110"
-                            loading="lazy"
-                                allowFullScreen
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                      ></iframe>
-
-                                        <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
-                                        </div>
+              <iframe
+                src="https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed"
+                className="w-full h-full border-0 saturate-[0.8] contrast-110"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
+            </div>
             <div className="p-8">
               <h3 className="text-2xl font-bold text-[#2B3175] mb-3">Moreno</h3>
               <p className="text-gray-600 flex items-start gap-3 mb-2">
@@ -367,7 +368,8 @@ export default function App() {
                   <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
                 </a>
               </div>
-            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </div>
+            </div>
+          </div>
         </div>
       </section>
 
