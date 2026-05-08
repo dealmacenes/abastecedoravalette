@@ -11,7 +11,14 @@ import {
   ChevronRight,
   Check,
 } from "lucide-react";
-import { FaInstagram, FaFacebookF } from "react-icons/fa6";
+import {
+    FaInstagram,
+      FaFacebookF,
+        FaWarehouse,
+          FaShieldAlt,
+            FaBoxes,
+              FaTruckMoving,
+              } from "react-icons/fa";
 
 export default function App() {
   const [isTopBarVisible, setIsTopBarVisible] = useState(true);
@@ -67,7 +74,7 @@ export default function App() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center gap-3">
-              <img src="iconAndText.jpg" className="h-10 w-fit object-cover" />
+              <img src="iconAndText.png" className="h-20 w-fit object-cover" />
             </div>
 
             {/* Desktop Nav */}
@@ -509,202 +516,212 @@ export default function App() {
       </section>
 
       {/* Por que elegirnos / Diferenciales */}
-      <section className="py-16 bg-gray-50 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src="https://api.iconify.design/lucide:piggy-bank.svg?color=%23E3343A"
-                alt="Cerdo"
-                className="w-16 h-16 mx-auto mb-4"
-              />
-              <h4 className="font-bold text-[#2B3175] mb-2">Criadero Propio</h4>
-              <p className="text-xs text-gray-500">
-                Control total de calidad en nuestra línea de cerdos.
-              </p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src="https://api.iconify.design/lucide:beef.svg?color=%23E3343A"
-                alt="Vaca"
-                className="w-16 h-16 mx-auto mb-4"
-              />
-              <h4 className="font-bold text-[#2B3175] mb-2">
-                Hacienda Directa
-              </h4>
-              <p className="text-xs text-gray-500">
-                Compramos sin intermediarios para asegurar el mejor precio.
-              </p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src="https://api.iconify.design/lucide:drumstick.svg?color=%23E3343A"
-                alt="Pollo"
-                className="w-16 h-16 mx-auto mb-4"
-              />
-              <h4 className="font-bold text-[#2B3175] mb-2">Variedad Total</h4>
-              <p className="text-xs text-gray-500">
-                Cortes vacunos, cerdos y pollos frescos todos los días.
-              </p>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src="https://api.iconify.design/lucide:truck.svg?color=%23E3343A"
-                alt="Camión"
-                className="w-16 h-16 mx-auto mb-4"
-              />
-              <h4 className="font-bold text-[#2B3175] mb-2">Mayor y Menor</h4>
-              <p className="text-xs text-gray-500">
-                Abastecemos al público general y a grandes comercios.
-              </p>
-            </div>
-          </div>
+      {/* Por que elegirnos / Diferenciales */}
+<section className="py-16 bg-gray-50 border-t border-gray-200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
+          <FaWarehouse className="text-[#E3343A] text-3xl" />
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-[#222222] text-white pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Logo & Info */}
-            <div className="col-span-1">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="text-[#E3343A] flex -space-x-1">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M3 10a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5v-6z"></path>
-                    <path d="M7 10h10"></path>
-                    <path d="M12 10v6"></path>
-                  </svg>
-                </div>
-                <div className="flex flex-col leading-tight">
-                  <span className="text-white font-bold text-xs tracking-widest">
-                    ABASTECEDORA
-                  </span>
-                  <span className="text-white font-black text-xl tracking-tight">
-                    VALETTE
-                  </span>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm mb-6">
-                Una experiencia de compra directa; sin intermediarios. Somos
-                productores y tu mejor opción en carnes.
-              </p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E3343A] transition-colors"
-                >
-                  <FaInstagram size={18} />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#E3343A] transition-colors"
-                >
-                  <FaFacebookF size={18} />
-                </a>
-              </div>
-            </div>
+        <h4 className="font-bold text-[#2B3175] mb-2">
+          Criadero Propio
+        </h4>
 
-            {/* Enlaces Rápidos */}
-            <div>
-              <h4 className="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
-                Navegación
-              </h4>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#sucursales"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                  >
-                    <ChevronRight size={14} className="text-[#E3343A]" />{" "}
-                    Sucursales
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#mayoristas"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                  >
-                    <ChevronRight size={14} className="text-[#E3343A]" /> Venta
-                    Mayorista
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#nosotros"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                  >
-                    <ChevronRight size={14} className="text-[#E3343A]" />{" "}
-                    Quiénes Somos
-                  </a>
-                </li>
-              </ul>
-            </div>
+        <p className="text-xs text-gray-500">
+          Control total de calidad en nuestra línea de cerdos.
+        </p>
+      </div>
 
-            {/* Contacto Rápido */}
-            <div>
-              <h4 className="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
-                Contacto Directo
-              </h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <MapPin
-                    className="text-[#E3343A] mt-1 flex-shrink-0"
-                    size={18}
-                  />
-                  <div>
-                    <strong className="block text-sm">Luis Guillón</strong>
-                    <span className="text-gray-400 text-sm">
-                      Av. Luciano Valette 1686
-                    </span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <MapPin
-                    className="text-[#E3343A] mt-1 flex-shrink-0"
-                    size={18}
-                  />
-                  <div>
-                    <strong className="block text-sm">Moreno</strong>
-                    <span className="text-gray-400 text-sm">
-                      Av. Libertador 3910
-                    </span>
-                  </div>
-                </li>
-                <li className="flex items-center gap-3 pt-2">
-                  <WhatsAppIcon className="text-[#E3343A] w-6 h-6" />
-                  <a
-                    href="https://wa.me/541128353615"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-[#25D366] font-bold transition-colors"
-                  >
-                    +54 11 2835 3615
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-xs text-center md:text-left">
-              &copy; 2024 Abastecedora Valette. Todos los derechos reservados.
-            </p>
-            <div className="text-gray-500 text-xs flex gap-4">
-              <span>Desarrollo de calidad mayorista.</span>
-            </div>
-          </div>
+      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
+          <FaShieldAlt className="text-[#E3343A] text-3xl" />
         </div>
-      </footer>
+
+        <h4 className="font-bold text-[#2B3175] mb-2">
+          Hacienda Directa
+        </h4>
+
+        <p className="text-xs text-gray-500">
+          Compramos sin intermediarios para asegurar el mejor precio.
+        </p>
+      </div>
+
+      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
+          <FaBoxes className="text-[#E3343A] text-3xl" />
+        </div>
+
+        <h4 className="font-bold text-[#2B3175] mb-2">
+          Variedad Total
+        </h4>
+
+        <p className="text-xs text-gray-500">
+          Cortes vacunos, cerdos y pollos frescos todos los días.
+        </p>
+      </div>
+
+      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
+          <FaTruckMoving className="text-[#E3343A] text-3xl" />
+        </div>
+
+        <h4 className="font-bold text-[#2B3175] mb-2">
+          Mayor y Menor
+        </h4>
+
+        <p className="text-xs text-gray-500">
+          Abastecemos al público general y a grandes comercios.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{/* Footer */}
+<footer className="bg-white text-neutral-900 pt-16 pb-8 border-t border-neutral-200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid md:grid-cols-3 gap-12 mb-12">
+      {/* Logo & Info */}
+      <div className="col-span-1">
+        <img
+          src="iconAndText.png"
+          className="h-20 w-fit object-cover mb-4"
+        />
+
+        <p className="text-neutral-600 text-sm mb-6">
+          Una experiencia de compra directa; sin intermediarios. Somos
+          productores y tu mejor opción en carnes.
+        </p>
+
+        <div className="flex space-x-4">
+          <a
+            href="#"
+            className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#E3343A] hover:text-white transition-colors"
+          >
+            <FaInstagram size={18} />
+          </a>
+
+          <a
+            href="#"
+            className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#E3343A] hover:text-white transition-colors"
+          >
+            <FaFacebookF size={18} />
+          </a>
+        </div>
+      </div>
+
+      {/* Enlaces Rápidos */}
+      <div>
+        <h4 className="text-lg font-bold mb-6 border-b border-neutral-300 pb-2">
+          Navegación
+        </h4>
+
+        <ul className="space-y-3">
+          <li>
+            <a
+              href="#sucursales"
+              className="text-neutral-600 hover:text-[#E3343A] transition-colors flex items-center gap-2"
+            >
+              <ChevronRight size={14} className="text-[#E3343A]" />
+              Sucursales
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#mayoristas"
+              className="text-neutral-600 hover:text-[#E3343A] transition-colors flex items-center gap-2"
+            >
+              <ChevronRight size={14} className="text-[#E3343A]" />
+              Venta Mayorista
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#nosotros"
+              className="text-neutral-600 hover:text-[#E3343A] transition-colors flex items-center gap-2"
+            >
+              <ChevronRight size={14} className="text-[#E3343A]" />
+              Quiénes Somos
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contacto Rápido */}
+      <div>
+        <h4 className="text-lg font-bold mb-6 border-b border-neutral-300 pb-2">
+          Contacto Directo
+        </h4>
+
+        <ul className="space-y-4">
+          <li className="flex items-start gap-3">
+            <MapPin
+              className="text-[#E3343A] mt-1 flex-shrink-0"
+              size={18}
+            />
+
+            <div>
+              <strong className="block text-sm text-neutral-900">
+                Luis Guillón
+              </strong>
+
+              <span className="text-neutral-600 text-sm">
+                Av. Luciano Valette 1686
+              </span>
+            </div>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <MapPin
+              className="text-[#E3343A] mt-1 flex-shrink-0"
+              size={18}
+            />
+
+            <div>
+              <strong className="block text-sm text-neutral-900">
+                Moreno
+              </strong>
+
+              <span className="text-neutral-600 text-sm">
+                Av. Libertador 3910
+              </span>
+            </div>
+          </li>
+
+          <li className="flex items-center gap-3 pt-2">
+            <WhatsAppIcon className="text-[#25D366] w-6 h-6" />
+
+            <a
+              href="https://wa.me/541128353615"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-900 hover:text-[#25D366] font-bold transition-colors"
+            >
+              +54 11 2835 3615
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="border-t border-neutral-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p className="text-neutral-500 text-xs text-center md:text-left">
+        &copy; {new Date().getFullYear()} Abastecedora Valette. Todos los
+        derechos reservados.
+      </p>
+
+      <div className="text-neutral-500 text-xs flex gap-4">
+        <span>Desarrollo de calidad mayorista.</span>
+      </div>
+    </div>
+  </div>
+</footer>
     </div>
   );
-}
+} 
