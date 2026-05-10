@@ -165,15 +165,12 @@ function CutCard({ item }) {
         <img
           src={item.img}
           alt={item.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-scale-down group-hover:scale-105 transition-transform duration-300"
           onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80"; }}
         />
       </div>
       <p className="font-bold text-[13px] text-[#1a2340]">{item.name}</p>
       <p className="text-[11px] text-gray-500 mb-2">{item.desc}</p>
-      <button className="w-7 h-7 bg-[#C0392B] rounded-full flex items-center justify-center text-white hover:bg-[#a93226] transition-colors">
-        <FaChevronRight size={10} />
-      </button>
     </div>
   );
 }
@@ -203,7 +200,7 @@ function MeatSection({ icon, title, subtitle, items }) {
         <div className="w-full flex-shrink-0">
           <div className= "flex gap-2 items-center w-full">
           <div className="text-[#C0392B] mb-2">{icon}</div>
-          <h3 className="font-black text-sm sm:text-xl text-[#1a2340] uppercase leading-tight mb-2 whitespace-pre-line">{title}</h3>
+          <h3 className="font-black text-[#1a2340] uppercase">{title}</h3>
           </div>
           <p className="text-[10px] sm:text-[11px] text-gray-500 mb-4 leading-relaxed">{subtitle}</p>
         </div>
