@@ -11,7 +11,7 @@ const cuts = {
   {
     name: "Bifé Angosto",
     desc: "Ideal para parrilla",
-    img: "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80"
+    img: "work14.jpg"
   },
   {
     name: "Asado",
