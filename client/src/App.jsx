@@ -201,12 +201,11 @@ function MeatSection({ icon, title, subtitle, items }) {
 
         {/* Left info panel */}
         <div className="w-[108px] sm:w-[145px] flex-shrink-0">
+          <div className= "flex gap-2 items cender">
           <div className="text-[#C0392B] mb-2">{icon}</div>
           <h3 className="font-black text-sm sm:text-xl text-[#1a2340] uppercase leading-tight mb-2 whitespace-pre-line">{title}</h3>
+          </div>
           <p className="text-[10px] sm:text-[11px] text-gray-500 mb-4 leading-relaxed">{subtitle}</p>
-          <button className="flex items-center gap-1 border border-[#1a2340] text-[#1a2340] text-[10px] font-semibold px-2 py-1.5 rounded-lg hover:bg-[#1a2340] hover:text-white transition-colors">
-            VER TODOS <FaChevronRight size={8} />
-          </button>
         </div>
 
         {/* Carousel */}
