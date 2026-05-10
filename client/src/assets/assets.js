@@ -22,28 +22,35 @@ import img21 from "work21.jpg";
 import img22 from "work22.jpg";
 import img23 from "work23.jpg";
 
+
 export const carnes = [
-  { id: 1, name: "Bifes de cerdo", image: img1 },
-  { id: 2, name: "Bondiola", image: img2 },
-  { id: 3, name: "Picaña", image: img3 },
-  { id: 4, name: "Bife Angosto", image: img4 },
-  { id: 5, name: "Colita de Cuadril", image: img5 },
-  { id: 6, name: "Pechito de Cerdo", image: img6 },
-  { id: 7, name: "Roast Beef", image: img7 },
-  { id: 8, name: "Lomo", image: img8 },
-  { id: 9, name: "Tapa de Asado", image: img9 },
-  { id: 10, name: "Nalga", image: img10 },
-  { id: 11, name: "Asado", image: img11 },
-  { id: 12, name: "Vacío", image: img12 },
-  { id: 13, name: "Carne Picada", image: img13 },
-  { id: 14, name: "Bola de Lomo", image: img14 },
-  { id: 15, name: "Tapa de Nalga", image: img15 },
-  { id: 16, name: "Pollo fresco", image: img16 },
-  { id: 17, name: "Pata y Muslo", image: img17 },
-  { id: 18, name: "Supremas", image: img18 },
-  { id: 19, name: "Chorizos", image: img19 },
-  { id: 20, name: "Salchicha Parrillera", image: img20 },
-  { id: 21, name: "Pernil", image: img21 },
-  {id: 22, name: "Cerdo", image: img22},
-  {id:23, name: "Cordero", image: img23},
+  { tipo: "cerdo", name: "Bifes de cerdo", image: img1 },
+  { tipo: "cerdo", name: "Bondiola", image: img2 },
+
+  { tipo: "vacuna", name: "Picaña", image: img3 },
+  { tipo: "vacuna", name: "Bife Angosto", image: img4 },
+  { tipo: "vacuna", name: "Colita de Cuadril", image: img5 },
+
+  { tipo: "cerdo", name: "Pechito de Cerdo", image: img6 },
+
+  { tipo: "vacuna", name: "Roast Beef", image: img7 },
+  { tipo: "vacuna", name: "Lomo", image: img8 },
+  { tipo: "vacuna", name: "Tapa de Asado", image: img9 },
+  { tipo: "vacuna", name: "Nalga", image: img10 },
+  { tipo: "vacuna", name: "Asado", image: img11 },
+  { tipo: "vacuna", name: "Vacío", image: img12 },
+  { tipo: "vacuna", name: "Carne Picada", image: img13 },
+  { tipo: "vacuna", name: "Bola de Lomo", image: img14 },
+  { tipo: "vacuna", name: "Tapa de Nalga", image: img15 },
+
+  { tipo: "pollo", name: "Pollo fresco", image: img16 },
+  { tipo: "pollo", name: "Pata y Muslo", image: img17 },
+  { tipo: "pollo", name: "Supremas", image: img18 },
+
+  { tipo: "cerdo", name: "Chorizos", image: img19 },
+  { tipo: "cerdo", name: "Salchicha Parrillera", image: img20 },
+  { tipo: "cerdo", name: "Pernil", image: img21 },
+  { tipo: "cerdo", name: "Cerdo", image: img22 },
+
+  { tipo: "cordero", name: "Cordero", image: img23 },
 ];
