@@ -1,727 +1,388 @@
-//client/src/App.jsx
-import React, { useState } from "react";
-import {
-  X,
-  Menu,
-  MapPin,
-  Store,
-  Target,
-  Eye,
-  Handshake,
-  ChevronRight,
-  Check,
-} from "lucide-react";
-import {
-    FaInstagram,
-      FaFacebookF,
-        FaWarehouse,
-          FaShieldAlt,
-            FaBoxes,
-              FaTruckMoving,
-              } from "react-icons/fa";
+import { useState } from "react";
+import { FaWhatsapp, FaInstagram, FaFacebookF, FaShieldAlt, FaTruck, FaHandshake, FaHome, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { GiCow, GiPig, GiChicken } from "react-icons/gi";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
-export default function App() {
-  const [isTopBarVisible, setIsTopBarVisible] = useState(true);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+// ─── DATA ────────────────────────────────────────────────────────────────────
 
-  // Icono SVG personalizado de WhatsApp para mantener el estilo original
-  const WhatsAppIcon = ({ className = "w-6 h-6" }) => (
-    <svg
-      className={className}
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-    </svg>
+const cuts = {
+  vacuna: [
+    { name: "Bifé de Chorizo", desc: "Ideal para parrilla", img: "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80" },
+    { name: "Asado", desc: "Clásico argentino", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80" },
+    { name: "Nalga", desc: "Tierna y sabrosa", img: "https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=300&q=80" },
+    { name: "Vacío", desc: "Jugoso y sabroso", img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300&q=80" },
+    { name: "Tapa de Asado", desc: "Clásico y tradicional", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80" },
+  ],
+  cerdo: [
+    { name: "Bondiola", desc: "Jugosa y sabrosa", img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=300&q=80" },
+    { name: "Costeleta", desc: "Ideal para la parrilla", img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=300&q=80" },
+    { name: "Matambrito", desc: "Tierno y jugoso", img: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=300&q=80" },
+    { name: "Panceta", desc: "Para mil recetas", img: "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=300&q=80" },
+    { name: "Carré", desc: "Tierno y magro", img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80" },
+  ],
+  pollo: [
+    { name: "Pechuga", desc: "Magra y saludable", img: "https://images.unsplash.com/photo-1604503468506-a8da13d11d36?w=300&q=80" },
+    { name: "Muslo", desc: "Jugoso y sabroso", img: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=300&q=80" },
+    { name: "Alitas", desc: "Perfectas para compartir", img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=300&q=80" },
+    { name: "Suprema", desc: "Sin piel", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&q=80" },
+    { name: "Pollo Entero", desc: "Fresco y natural", img: "https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=300&q=80" },
+  ],
+};
+
+const features = [
+  { icon: <FaHome size={32} />, title: "PRODUCCIÓN PROPIA", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
+  { icon: <FaShieldAlt size={32} />, title: "CALIDAD GARANTIZADA", desc: "Selección y controles en cada etapa para asegurar lo mejor." },
+  { icon: <FaTruck size={32} />, title: "ENVÍOS Y SUCURSALES", desc: "Llegamos a tus clientes con rapidez y en frío." },
+  { icon: <FaHandshake size={32} />, title: "ATENCIÓN PERSONALIZADA", desc: "Te asesoramos para que siempre tengas lo que necesitás." },
+];
+
+// ─── SUBCOMPONENTS ────────────────────────────────────────────────────────────
+
+function Logo({ small = false }) {
+  return (
+    <div className={`flex items-center gap-2 ${small ? "" : ""}`}>
+      <div className="relative">
+        <svg width={small ? 38 : 44} height={small ? 38 : 44} viewBox="0 0 44 44" fill="none">
+          <path d="M22 4 C10 4 4 12 4 20 C4 30 12 38 22 40 C32 38 40 30 40 20 C40 12 34 4 22 4Z" fill="#C0392B" opacity="0.15" />
+          <path d="M8 18 Q14 10 22 12 Q30 10 36 18 Q30 16 22 18 Q14 16 8 18Z" fill="#C0392B" />
+          <path d="M10 22 Q16 28 22 26 Q28 28 34 22" stroke="#C0392B" strokeWidth="2" fill="none" />
+          <circle cx="16" cy="14" r="2" fill="#C0392B" />
+          <circle cx="28" cy="14" r="2" fill="#C0392B" />
+        </svg>
+      </div>
+      <div>
+        <p className={`font-light tracking-widest uppercase ${small ? "text-[9px]" : "text-[10px]"} text-[#C0392B]`}>ABASTECEDORA</p>
+        <p className={`font-black uppercase leading-none ${small ? "text-lg" : "text-xl"} text-[#1a2340]`}>VALETTE</p>
+      </div>
+    </div>
   );
+}
+
+function CutCard({ item }) {
+  return (
+    <div className="flex-shrink-0 w-[150px] sm:w-[170px] group cursor-pointer">
+      <div className="relative overflow-hidden rounded-xl bg-gray-100 aspect-square mb-2">
+        <img
+          src={item.img}
+          alt={item.name}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80"; }}
+        />
+      </div>
+      <p className="font-bold text-[13px] text-[#1a2340]">{item.name}</p>
+      <p className="text-[11px] text-gray-500 mb-2">{item.desc}</p>
+      <button className="w-7 h-7 bg-[#C0392B] rounded-full flex items-center justify-center text-white hover:bg-[#a93226] transition-colors">
+        <FaChevronRight size={10} />
+      </button>
+    </div>
+  );
+}
+
+function MeatSection({ icon, title, subtitle, items }) {
+  const [start, setStart] = useState(0);
+  const visible = 5;
+
+  const prev = () => setStart((s) => Math.max(0, s - 1));
+  const next = () => setStart((s) => Math.min(items.length - visible, s + 1));
 
   return (
-    <div className="font-sans text-[#222222] bg-[#F8F9FA] overflow-x-hidden min-h-screen hide-scrollbar">
-      {/* Estilos globales inyectados para tipografía y animaciones personalizadas */}
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-        .animate-marquee { animation: marquee 25s linear infinite; }
-        .bg-pattern {
-          background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-      `}</style>
-
-      {/* Top Announcement Bar */}
-      {isTopBarVisible && (
-        <div className="bg-black text-white text-sm font-semibold py-2 px-4 flex justify-between items-center relative overflow-hidden h-10 z-50">
-          <div className="w-full overflow-hidden absolute left-0 flex items-center h-full">
-            <div className="animate-marquee whitespace-nowrap">
-              Sucursales en Luis Guillon y Morón - Servicio de Envios - Somos
-              Productores
-            </div>
-          </div>
-          <button
-            onClick={() => setIsTopBarVisible(false)}
-            className="absolute right-2 text-white z-10 bg-white/50 p-[4px] rounded-full"
-          >
-            <X size={18} />
-          </button>
-        </div>
-      )}
-
-      {/* Header / Navbar */}
-      <header className="bg-white shadow-md sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center gap-3">
-              <img src="iconAndText.png" className="h-20 w-fit object-cover" />
-            </div>
-
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex space-x-8 items-center">
-              <a
-                href="#sucursales"
-                className="text-gray-600 hover:text-[#E3343A] font-medium transition-colors"
-              >
-                Sucursales
-              </a>
-              <a
-                href="#mayoristas"
-                className="text-gray-600 hover:text-[#E3343A] font-medium transition-colors"
-              >
-                Mayoristas
-              </a>
-              <a
-                href="#nosotros"
-                className="text-gray-600 hover:text-[#E3343A] font-medium transition-colors"
-              >
-                Nosotros
-              </a>
-              <button
-                onClick={() => setIsSidebarOpen(true)}
-                className="bg-[#2B3175] text-white px-5 py-2.5 rounded-full font-bold hover:bg-opacity-90 transition-all flex items-center gap-2 shadow-md"
-              >
-                <WhatsAppIcon className="w-5 h-5" /> Contacto
-              </button>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsSidebarOpen(true)}
-                className="text-[#2B3175] hover:text-[#E3343A] focus:outline-none p-2"
-              >
-                <Menu size={28} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Sidebar (Off-canvas) */}
-      {/* Overlay */}
-      <div
-        className={`fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-        onClick={() => setIsSidebarOpen(false)}
-      />
-
-      {/* Sidebar Content */}
-      <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
-      >
-        <div className="p-6 border-b border-gray-100 flex justify-between items-center">
-          <h3 className="text-[#2B3175] font-bold text-xl">Contacto</h3>
-          <button
-            onClick={() => setIsSidebarOpen(false)}
-            className="text-gray-400 hover:text-[#E3343A]"
-          >
-            <X size={24} />
+    <div className="border border-gray-200 rounded-2xl p-4 sm:p-6 mb-6">
+      <div className="flex gap-4 sm:gap-6">
+        {/* Left info */}
+        <div className="w-[120px] sm:w-[150px] flex-shrink-0">
+          <div className="text-[#C0392B] mb-2">{icon}</div>
+          <h3 className="font-black text-lg sm:text-xl text-[#1a2340] uppercase leading-tight mb-2">{title}</h3>
+          <p className="text-[11px] text-gray-500 mb-4 leading-relaxed">{subtitle}</p>
+          <button className="flex items-center gap-1 border border-[#1a2340] text-[#1a2340] text-[11px] font-semibold px-3 py-1.5 rounded-lg hover:bg-[#1a2340] hover:text-white transition-colors">
+            VER TODOS <FaChevronRight size={8} />
           </button>
         </div>
 
-        <div className="p-6 flex-grow overflow-y-auto no-scrollbar space-y-8">
-          <p className="text-gray-600 text-sm mb-6">
-            Comunicate directamente con nuestras sucursales para atención
-            personalizada, pedidos o consultas mayoristas.
-          </p>
-
-          {/* Contacto Luis Guillon */}
-          <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-[#2B3175] text-white flex items-center justify-center">
-                <MapPin size={20} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[#2B3175]">
-                  Sucursal Luis Guillón
-                </h4>
-                <p className="text-xs text-gray-500">
-                  Av. Luciano Valette 1686
-                </p>
-              </div>
-            </div>
-            <a
-              href="https://wa.me/541128353615"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full mt-2 bg-[#25D366] hover:bg-[#128C7E] text-white py-2.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors"
+        {/* Cards + arrow */}
+        <div className="flex-1 relative flex items-center">
+          <div className="overflow-hidden w-full">
+            <div
+              className="flex gap-3 transition-transform duration-300"
+              style={{ transform: `translateX(-${start * (150 + 12)}px)` }}
             >
-              <WhatsAppIcon className="w-5 h-5" /> +54 11 2835 3615
-            </a>
-          </div>
-
-          {/* Contacto Morón */}
-          <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-[#E3343A] text-white flex items-center justify-center">
-                <MapPin size={20} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[#2B3175]">Sucursal Morón</h4>
-                <p className="text-xs text-gray-500">Atención personalizada</p>
-              </div>
+              {items.map((item, i) => <CutCard key={i} item={item} />)}
             </div>
-            <a
-              href="https://wa.me/541128353615"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full mt-2 bg-[#25D366] hover:bg-[#128C7E] text-white py-2.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors"
+          </div>
+          {start < items.length - visible && (
+            <button
+              onClick={next}
+              className="absolute -right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white border border-gray-200 rounded-full shadow flex items-center justify-center text-[#1a2340] hover:bg-gray-50 z-10"
             >
-              <WhatsAppIcon className="w-5 h-5" /> +54 11 2835 3615
-            </a>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-gray-100">
-            <h4 className="font-bold text-[#2B3175] mb-4">¿Qué ofrecemos?</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-center gap-2">
-                <Check size={16} className="text-[#E3343A]" /> Cortes Vacunos,
-                Cerdo y Pollo
-              </li>
-              <li className="flex items-center gap-2">
-                <Check size={16} className="text-[#E3343A]" /> Venta por Mayor y
-                Menor
-              </li>
-              <li className="flex items-center gap-2">
-                <Check size={16} className="text-[#E3343A]" /> Precios de
-                Productor Directo
-              </li>
-            </ul>
-          </div>
+              <ChevronRight size={16} />
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative bg-[#2B3175] text-white pb-20 pt-28 lg:pt-40 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="Carnicería moderna"
-            className="w-full h-full object-cover opacity-30 mix-blend-multiply"
+      {/* Dots */}
+      <div className="flex gap-1.5 mt-4 ml-[136px] sm:ml-[162px]">
+        {Array.from({ length: Math.ceil(items.length / visible) }).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setStart(i * visible)}
+            className={`w-2 h-2 rounded-full transition-colors ${Math.floor(start / visible) === i ? "bg-[#C0392B]" : "bg-gray-300"}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2B3175] via-[#2B3175]/90 to-transparent"></div>
-          <div className="absolute inset-0 bg-pattern opacity-10"></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── MAIN APP ─────────────────────────────────────────────────────────────────
+
+export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("vacuna");
+
+  const tabs = [
+    { key: "vacuna", label: "VACUNA", icon: <GiCow size={18} /> },
+    { key: "cerdo", label: "CERDO", icon: <GiPig size={18} /> },
+    { key: "pollo", label: "POLLO", icon: <GiChicken size={18} /> },
+  ];
+
+  const sections = {
+    vacuna: {
+      icon: <GiCow size={40} />,
+      title: "CARNE\nVACUNA",
+      subtitle: "Los mejores cortes para asado, milanesas y cocina diaria.",
+    },
+    cerdo: {
+      icon: <GiPig size={40} />,
+      title: "CARNE\nDE CERDO",
+      subtitle: "Cortes frescos y de excelente calidad, todos los días.",
+    },
+    pollo: {
+      icon: <GiChicken size={40} />,
+      title: "POLLO\nFRESCO",
+      subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
+    },
+  };
+
+  return (
+    <div className="font-sans text-[#1a2340] bg-white">
+
+      {/* ── NAVBAR ── */}
+      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+          <Logo />
+          <div className="flex items-center gap-3">
+            <a
+              href="https://wa.me/541128353615"
+              className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
+            >
+              <FaWhatsapp size={16} /> Contacto
+            </a>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="w-9 h-9 flex items-center justify-center text-[#1a2340] hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              {menuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
+            </button>
+          </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center">
-          <div className="md:w-3/5">
-            <div className="inline-block bg-[#E3343A] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide shadow-lg">
-              Calidad desde el origen
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
-              ABASTECEDORA <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
-                VALETTE
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl font-medium mb-8 border-l-4 border-[#E3343A] pl-4 text-gray-100 max-w-2xl">
-              Una experiencia de compra directa;{" "}
-              <br className="hidden md:block" />
-              <span className="font-bold text-white">sin intermediarios.</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#sucursales"
-                className="bg-white text-[#2B3175] px-8 py-4 rounded-full font-bold text-center hover:bg-gray-100 hover:scale-105 transition-all shadow-xl"
-              >
-                Ver Sucursales
-              </a>
-              <a
-                href="#mayoristas"
-                className="bg-[#E3343A] text-white px-8 py-4 rounded-full font-bold text-center hover:bg-[#c92a30] hover:scale-105 transition-all shadow-xl flex items-center justify-center gap-2"
-              >
-                <Store size={20} /> Soy Comercio
-              </a>
-            </div>
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold text-[#1a2340]">
+            {["Sucursales", "Venta Mayorista", "Quiénes Somos"].map((item) => (
+              <a key={item} href="#" className="hover:text-[#C0392B] transition-colors py-1">{item}</a>
+            ))}
+          </div>
+        )}
+      </nav>
 
-            {/* Features tags */}
-            <div className="mt-10 flex flex-wrap gap-3">
-              <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 border border-white/20">
-                Criadero propio
-              </span>
-              <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 border border-white/20">
-                Hacienda directa
-              </span>
-              <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 border border-white/20">
-                Mayorista y Minorista
-              </span>
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden bg-[#1a2340] min-h-[380px] sm:min-h-[420px]">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1558030006-450675393462?w=1200&q=80"
+            alt="Carne de calidad"
+            className="w-full h-full object-cover opacity-40"
+            style={{ objectPosition: "center right" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2340] via-[#1a2340]/80 to-transparent" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-3">CARNE DE CALIDAD</p>
+            <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
+              VARIEDAD PARA<br />TODOS LOS DÍAS
+            </h1>
+            <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8">
+              Ofrecemos una amplia selección de cortes frescos y de calidad para tu mesa, con el respaldo de nuestra producción.
+            </p>
+
+            {/* 3 pillars */}
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { icon: <FaShieldAlt size={18} />, title: "Calidad garantizada", desc: "Selección y control en cada proceso." },
+                { icon: <MdOutlineShoppingCart size={18} />, title: "Siempre frescas", desc: "Reposición diaria en todas las sucursales." },
+                { icon: <MdOutlineShoppingCart size={18} />, title: "Mayor y menor", desc: "Ventas por unidad o por volumen." },
+              ].map((p, i) => (
+                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-xl p-3">
+                  <div className="text-[#C0392B] mb-1">{p.icon}</div>
+                  <p className="text-white text-[11px] font-bold leading-tight mb-1">{p.title}</p>
+                  <p className="text-gray-400 text-[10px] leading-tight">{p.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Wave Divider */}
-        <div className="absolute -bottom-[1px] left-0 w-full overflow-hidden leading-none">
-          <svg
-            className="relative block w-full h-[50px] md:h-[100px]"
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C80.29,114.93,198.81,81.42,321.39,56.44Z"
-              fill="#F8F9FA"
-            ></path>
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z" fill="white" />
           </svg>
         </div>
       </section>
 
-      {/* Nuestras Sucursales (Mapas) */}
-      <section
-        id="sucursales"
-        className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20"
-      >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-black text-[#2B3175] mb-4">
-            Nuestras Sucursales
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Visitanos y viví una experiencia de compra directa, con la mejor
-            atención y los cortes más frescos de la zona.
-          </p>
+      {/* Heart divider */}
+      <div className="flex justify-center -mt-4 relative z-10">
+        <div className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center">
+          <svg width="16" height="14" viewBox="0 0 16 14" fill="#C0392B">
+            <path d="M8 13s-7-4.5-7-8.5A4 4 0 0 1 8 2.5 4 4 0 0 1 15 4.5C15 8.5 8 13 8 13Z" />
+          </svg>
+        </div>
+      </div>
+
+      {/* ── CORTES SECTION ── */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12">
+        <div className="text-center mb-8">
+          <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-1">NUESTROS CORTES</p>
+          <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl">Elegí lo que necesitás</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Card Luis Guillon */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
-            <div className="h-48 relative overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed"
-                className="w-full h-full border-0 saturate-[0.8] contrast-110"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-
-              <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
-                Luis Guillon
-              </h3>
-              <p className="text-gray-600 flex items-start gap-3 mb-2">
-                <MapPin
-                  className="mt-1 flex-shrink-0 text-[#E3343A]"
-                  size={18}
-                />
-                <span>
-                  <strong>Av. Luciano Valette 1696</strong>
-                  <br /> A 4 cuadras de camino de cintura
-                </span>
-              </p>
-              <div className="mt-6">
-                <a
-                  href="https://wa.me/541128353615"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
-                >
-                  <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
-            <div className="h-48 relative overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed"
-                className="w-full h-full border-0 saturate-[0.8] contrast-110"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold text-[#2B3175] mb-3">Moreno</h3>
-              <p className="text-gray-600 flex items-start gap-3 mb-2">
-                <MapPin
-                  className="mt-1 flex-shrink-0 text-[#E3343A]"
-                  size={18}
-                />
-                <span>
-                  <strong>Av. Del Libertador 4200</strong>
-                  <br /> Mercado Modelo Moreno
-                </span>
-              </p>
-              <div className="mt-6">
-                <a
-                  href="https://wa.me/541128353615"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
-                >
-                  <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mayoristas CTA (Destacado) */}
-      <section
-        id="mayoristas"
-        className="bg-[#2B3175] py-20 relative overflow-hidden"
-      >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#E3343A] rounded-full mix-blend-multiply filter blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full mix-blend-overlay filter blur-3xl opacity-10 transform -translate-x-1/2 translate-y-1/2"></div>
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center">
-          <Store className="w-16 h-16 text-[#E3343A] mb-6" />
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-            ¿Querés abrir tu comercio?
-          </h2>
-          <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-medium">
-            Te acompañamos en el crecimiento de tu negocio. Al ser productores
-            directos y contar con criadero propio, te garantizamos frescura
-            continua, abastecimiento seguro y los precios más competitivos del
-            mercado en vacuno, cerdo y pollo.
-          </p>
-
-          <div className="bg-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md border border-white/20 inline-block">
-            <p className="text-white mb-6 font-bold text-lg">
-              Si tenés una carnicería, restaurante o supermercado, hablemos:
-            </p>
-            <a
-              href="https://wa.me/541128353615"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-[#E3343A] text-white text-lg md:text-xl font-bold px-8 py-4 rounded-full hover:bg-[#c92a30] hover:scale-105 transition-all shadow-[0_0_20px_rgba(227,52,58,0.5)]"
+        {/* Tabs */}
+        <div className="flex gap-2 sm:gap-3 mb-8 justify-center">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl font-bold text-sm transition-all ${
+                activeTab === tab.key
+                  ? "bg-[#C0392B] text-white shadow-md"
+                  : "border-2 border-gray-200 text-[#1a2340] hover:border-[#C0392B]"
+              }`}
             >
-              Atención personalizada mayoristas
-              <WhatsAppIcon className="w-6 h-6" />
-            </a>
-          </div>
+              {tab.icon} {tab.label}
+            </button>
+          ))}
         </div>
+
+        {/* All three sections always shown (like the design) */}
+        {Object.entries(sections).map(([key, sec]) => (
+          <MeatSection
+            key={key}
+            icon={sec.icon}
+            title={sec.title}
+            subtitle={sec.subtitle}
+            items={cuts[key]}
+          />
+        ))}
       </section>
 
-      {/* Identidad de Marca (Misión, Visión, Valores) */}
-      <section id="nosotros" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-[#2B3175] mb-4">
-              Nuestra Identidad
-            </h2>
-            <div className="w-24 h-1 bg-[#E3343A] mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Imagen */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-full min-h-[200px]">
-              <img
-                src="logistica.jpg"
-                alt="Logística y Producción Abastecedora Valette"
-                className="absolute inset-0 w-full h-fit object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B3175] via-transparent to-transparent opacity-80"></div>
-              <div className="absolute bottom-0 left-0 p-8">
-                <div className="bg-[#E3343A] text-white text-sm font-bold px-4 py-2 rounded-lg inline-block mb-3">
-                  Productores Directos
-                </div>
-                <h3 className="text-3xl font-bold text-white leading-tight">
-                  Del campo a<br />
-                  tu mostrador.
-                </h3>
-              </div>
+      {/* ── WHOLESALE BANNER ── */}
+      <section className="bg-[#8B0000] py-10 sm:py-12 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-5">
+            <div className="w-16 h-16 rounded-full border-2 border-white/40 flex items-center justify-center flex-shrink-0">
+              <FaHandshake size={32} className="text-white" />
             </div>
-
-            {/* Textos */}
-            <div className="space-y-8">
-              {/* Misión */}
-              <div className="flex gap-5">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-12 h-12 rounded-full bg-[#2B3175]/10 flex items-center justify-center text-[#2B3175] border border-[#2B3175]/20">
-                    <Target size={24} />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#2B3175] mb-2">
-                    Nuestra Misión
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-justify">
-                    Acercarte carne de calidad de forma directa, simple y
-                    conveniente. Como productores, trabajamos sin intermediarios
-                    para ofrecerte mejores precios, buena atención y una
-                    experiencia de compra clara, tanto si venís por tu compra
-                    diaria como si abastecés tu negocio.
-                  </p>
-                </div>
-              </div>
-
-              {/* Visión */}
-              <div className="flex gap-5">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-12 h-12 rounded-full bg-[#E3343A]/10 flex items-center justify-center text-[#E3343A] border border-[#E3343A]/20">
-                    <Eye size={24} />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#2B3175] mb-2">
-                    Nuestra Visión
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-justify">
-                    Seguir creciendo y consolidarnos como un referente en el
-                    rubro, combinando nuestra experiencia como productores con
-                    herramientas tecnológicas que nos permitan estar más cerca
-                    de cada cliente y responder mejor a sus necesidades.
-                  </p>
-                </div>
-              </div>
-
-              {/* Valores */}
-              <div className="flex gap-5">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-[#222222] border border-gray-200">
-                    <Handshake size={24} />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#2B3175] mb-2">
-                    Nuestros Valores
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-justify">
-                    Nos guiamos por el compromiso, la responsabilidad y el
-                    respeto en cada venta. Apostamos a una atención cercana y
-                    personalizada, especialmente con nuestros clientes
-                    mayoristas, construyendo relaciones de confianza a largo
-                    plazo.
-                  </p>
-                </div>
-              </div>
+            <div className="text-white">
+              <p className="text-xs font-bold uppercase tracking-widest text-red-300 mb-1">VENTA MAYORISTA</p>
+              <h3 className="font-black text-2xl sm:text-3xl leading-tight mb-1">¿Tenés un comercio o<br />sos distribuidor?</h3>
+              <p className="text-sm text-red-200 max-w-sm">
+                Accedé a precios especiales por volumen y sumate a nuestra red de clientes mayoristas en todo el país.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Por que elegirnos / Diferenciales */}
-      {/* Por que elegirnos / Diferenciales */}
-<section className="py-16 bg-gray-50 border-t border-gray-200">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-
-      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
-          <FaWarehouse className="text-[#E3343A] text-3xl" />
-        </div>
-
-        <h4 className="font-bold text-[#2B3175] mb-2">
-          Criadero Propio
-        </h4>
-
-        <p className="text-xs text-gray-500">
-          Control total de calidad en nuestra línea de cerdos.
-        </p>
-      </div>
-
-      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
-          <FaShieldAlt className="text-[#E3343A] text-3xl" />
-        </div>
-
-        <h4 className="font-bold text-[#2B3175] mb-2">
-          Hacienda Directa
-        </h4>
-
-        <p className="text-xs text-gray-500">
-          Compramos sin intermediarios para asegurar el mejor precio.
-        </p>
-      </div>
-
-      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
-          <FaBoxes className="text-[#E3343A] text-3xl" />
-        </div>
-
-        <h4 className="font-bold text-[#2B3175] mb-2">
-          Variedad Total
-        </h4>
-
-        <p className="text-xs text-gray-500">
-          Cortes vacunos, cerdos y pollos frescos todos los días.
-        </p>
-      </div>
-
-      <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center">
-          <FaTruckMoving className="text-[#E3343A] text-3xl" />
-        </div>
-
-        <h4 className="font-bold text-[#2B3175] mb-2">
-          Mayor y Menor
-        </h4>
-
-        <p className="text-xs text-gray-500">
-          Abastecemos al público general y a grandes comercios.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-{/* Footer */}
-<footer className="bg-white text-neutral-900 pt-16 pb-8 border-t border-neutral-200">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid md:grid-cols-3 gap-12 mb-12">
-      {/* Logo & Info */}
-      <div className="col-span-1">
-        <img
-          src="iconAndText.png"
-          className="h-20 w-fit object-cover mb-4"
-        />
-
-        <p className="text-neutral-600 text-sm mb-6">
-          Una experiencia de compra directa; sin intermediarios. Somos
-          productores y tu mejor opción en carnes.
-        </p>
-
-        <div className="flex space-x-4">
           <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#E3343A] hover:text-white transition-colors"
+            href="https://wa.me/541128353615"
+            className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3 rounded-xl hover:bg-red-50 transition-colors whitespace-nowrap"
           >
-            <FaInstagram size={18} />
-          </a>
-
-          <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-[#E3343A] hover:text-white transition-colors"
-          >
-            <FaFacebookF size={18} />
+            CONTACTANOS <FaWhatsapp size={16} />
           </a>
         </div>
-      </div>
+      </section>
 
-      {/* Enlaces Rápidos */}
-      <div>
-        <h4 className="text-lg font-bold mb-6 border-b border-neutral-300 pb-2">
-          Navegación
-        </h4>
-
-        <ul className="space-y-3">
-          <li>
-            <a
-              href="#sucursales"
-              className="text-neutral-600 hover:text-[#E3343A] transition-colors flex items-center gap-2"
-            >
-              <ChevronRight size={14} className="text-[#E3343A]" />
-              Sucursales
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#mayoristas"
-              className="text-neutral-600 hover:text-[#E3343A] transition-colors flex items-center gap-2"
-            >
-              <ChevronRight size={14} className="text-[#E3343A]" />
-              Venta Mayorista
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#nosotros"
-              className="text-neutral-600 hover:text-[#E3343A] transition-colors flex items-center gap-2"
-            >
-              <ChevronRight size={14} className="text-[#E3343A]" />
-              Quiénes Somos
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      {/* Contacto Rápido */}
-      <div>
-        <h4 className="text-lg font-bold mb-6 border-b border-neutral-300 pb-2">
-          Contacto Directo
-        </h4>
-
-        <ul className="space-y-4">
-          <li className="flex items-start gap-3">
-            <MapPin
-              className="text-[#E3343A] mt-1 flex-shrink-0"
-              size={18}
-            />
-
-            <div>
-              <strong className="block text-sm text-neutral-900">
-                Luis Guillón
-              </strong>
-
-              <span className="text-neutral-600 text-sm">
-                Av. Luciano Valette 1686
-              </span>
+      {/* ── FEATURES ── */}
+      <section className="bg-white py-12 px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
+          {features.map((f, i) => (
+            <div key={i} className="flex flex-col items-center gap-3">
+              <div className="text-[#C0392B]">{f.icon}</div>
+              <p className="font-black text-[11px] sm:text-xs tracking-wide text-[#1a2340]">{f.title}</p>
+              <p className="text-[11px] text-gray-500 leading-relaxed">{f.desc}</p>
             </div>
-          </li>
+          ))}
+        </div>
+      </section>
 
-          <li className="flex items-start gap-3">
-            <MapPin
-              className="text-[#E3343A] mt-1 flex-shrink-0"
-              size={18}
-            />
-
-            <div>
-              <strong className="block text-sm text-neutral-900">
-                Moreno
-              </strong>
-
-              <span className="text-neutral-600 text-sm">
-                Av. Libertador 3910
-              </span>
+      {/* ── FOOTER ── */}
+      <footer className="bg-[#1a2340] text-white pt-10 pb-6 px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
+          {/* Brand */}
+          <div>
+            <Logo small />
+            <div className="flex gap-3 mt-4">
+              <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
+                <FaInstagram size={14} />
+              </a>
+              <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
+                <FaFacebookF size={14} />
+              </a>
             </div>
-          </li>
+          </div>
 
-          <li className="flex items-center gap-3 pt-2">
-            <WhatsAppIcon className="text-[#25D366] w-6 h-6" />
+          {/* Nav */}
+          <div>
+            <p className="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">NAVEGACIÓN</p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              {["Sucursales", "Venta Mayorista", "Quiénes Somos"].map((item) => (
+                <li key={item}><a href="#" className="hover:text-white transition-colors">• {item}</a></li>
+              ))}
+            </ul>
+          </div>
 
-            <a
-              href="https://wa.me/541128353615"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-900 hover:text-[#25D366] font-bold transition-colors"
-            >
-              +54 11 2835 3615
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+          {/* Contact */}
+          <div>
+            <p className="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">CONTACTO</p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="flex items-center gap-2"><FaPhoneAlt size={11} className="text-[#C0392B]" /> +54 11 2835 3615</li>
+              <li className="flex items-start gap-2"><FaEnvelope size={11} className="text-[#C0392B] mt-0.5" /> <span className="break-all">ventas@abastecedoravalette.com.ar</span></li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-4">Seguinos en nuestras redes</p>
+          </div>
 
-    <div className="border-t border-neutral-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p className="text-neutral-500 text-xs text-center md:text-left">
-        &copy; {new Date().getFullYear()} Abastecedora Valette. Todos los
-        derechos reservados.
-      </p>
+          {/* Branches */}
+          <div>
+            <p className="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">SUCURSALES</p>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li className="flex items-start gap-2">
+                <FaMapMarkerAlt size={12} className="text-[#C0392B] mt-0.5 flex-shrink-0" />
+                <div><p className="font-semibold text-gray-200">Luis Guillón</p><p>Av. Luciano Valette 1686</p></div>
+              </li>
+              <li className="flex items-start gap-2">
+                <FaMapMarkerAlt size={12} className="text-[#C0392B] mt-0.5 flex-shrink-0" />
+                <div><p className="font-semibold text-gray-200">Moreno</p><p>Av. Libertador 3910</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      <div className="text-neutral-500 text-xs flex gap-4">
-        <span>Desarrollo de calidad mayorista.</span>
-      </div>
-    </div>
-  </div>
-</footer>
+        <p className="text-center text-xs text-gray-500 mt-6">
+          © 2025 Abastecedora Valette. Todos los derechos reservados.
+        </p>
+      </footer>
     </div>
   );
-} 
+}
