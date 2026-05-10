@@ -404,7 +404,7 @@ export default function App() {
         <footer className="bg-[#1a2340] text-white pt-10 pb-6 px-4 mt-auto">
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
             <div>
-              <div className="w-fit overflow-hidden px-2 py-1 rounded-md">
+              <div className="w-fit overflow-hidden px-2 py-1 rounded-md bg-white">
               <img src="iconAndText.png" className="h-20 bg-white rounded-8 w-fit" />
               </div>
               <div className="flex gap-3 mt-4">
