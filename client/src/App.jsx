@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { FaWhatsapp, FaInstagram, FaFacebookF, FaShieldAlt, FaTruck, FaHandshake, FaHome, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { GiCow, GiPig, GiChicken } from "react-icons/gi";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -418,7 +418,7 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
                 >
-                  <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
+                  <FaWhatsApp className="w-5 h-5" /> Contactar Sucursal
                 </a>
               </div>
             </div>
@@ -453,7 +453,7 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
                 >
-                  <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
+                  <FaWhatsApp className="w-5 h-5" /> Contactar Sucursal
                 </a>
               </div>
             </div>
