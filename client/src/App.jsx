@@ -197,7 +197,7 @@ function MeatSection({ icon, title, subtitle, items }) {
 
   return (
     <div className="border border-gray-200 rounded-2xl p-4 sm:p-6 mb-6">
-      <div className="flex gap-3 sm:gap-5">
+      <div className="flex flex-col gap-3 sm:gap-5">
 
         {/* Left info panel */}
         <div className="w-[108px] sm:w-[145px] flex-shrink-0">
