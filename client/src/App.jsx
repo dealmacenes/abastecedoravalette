@@ -320,7 +320,7 @@ export default function App() {
           </div>
 
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-            <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-3">CARNE DE CALIDAD</p>
+            <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-3">UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS</p>
             <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
               VARIEDAD PARA<br />TODOS LOS DÍAS
             </h1>
