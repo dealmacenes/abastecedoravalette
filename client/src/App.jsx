@@ -107,7 +107,7 @@ cerdo: [
     img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80"
   },
 ],
-  ],
+  
   pollo: [
     { name: "Pollo Fresco", desc: "Fresco y natural", img: "https://images.unsplash.com/photo-1604503468506-a8da13d11d36?w=300&q=80" },
     { name: "Pata y muslo", desc: "Rendidor y versátil", img: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=300&q=80" },
