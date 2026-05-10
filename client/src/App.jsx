@@ -279,7 +279,7 @@ export default function App() {
       {/* ── NAVBAR — sticky against viewport ── */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <img src="iconAndText.jpg" className="h-15 w-fit events-pointer-none" />
+          <img src="iconAndText.png" className="h-10 w-fit events-pointer-none" />
           <div className="flex items-center gap-3">
             <a
               href="https://wa.me/541128353615"
@@ -404,7 +404,7 @@ export default function App() {
         <footer className="bg-[#1a2340] text-white pt-10 pb-6 px-4 mt-auto">
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
             <div>
-              <img src="iconAndText.jpg" className="h-15 w-fit" />
+              <img src="iconAndText.png" className="h-15 w-fit" />
               <div className="flex gap-3 mt-4">
                 <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaInstagram size={14} /></a>
                 <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaFacebookF size={14} /></a>
