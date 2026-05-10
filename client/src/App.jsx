@@ -404,7 +404,7 @@ export default function App() {
         <footer className="bg-[#1a2340] text-white pt-10 pb-6 px-4 mt-auto">
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
             <div>
-              <Logo small />
+              <img src="iconAndText.jpg" className="h-15 w-fit" />
               <div className="flex gap-3 mt-4">
                 <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaInstagram size={14} /></a>
                 <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaFacebookF size={14} /></a>
