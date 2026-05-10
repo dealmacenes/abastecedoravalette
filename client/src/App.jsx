@@ -69,27 +69,59 @@ const cuts = {
     img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
   },
 ],
-  cerdo: [
-    { name: "Bondiola", desc: "Jugosa y sabrosa", img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=300&q=80" },
-    { name: "Costeleta", desc: "Ideal para la parrilla", img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=300&q=80" },
-    { name: "Matambrito", desc: "Tierno y jugoso", img: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=300&q=80" },
-    { name: "Panceta", desc: "Para mil recetas", img: "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=300&q=80" },
-    { name: "Carré", desc: "Tierno y magro", img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80" },
+  
+cerdo: [
+  {
+    name: "Bondiola",
+    desc: "Jugosa y llena de sabor",
+    img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=300&q=80"
+  },
+  {
+    name: "Bife de Cerdo",
+    desc: "Tierno y perfecto a la plancha",
+    img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=300&q=80"
+  },
+  {
+    name: "Pechito de Cerdo",
+    desc: "Ideal para parrilla lenta",
+    img: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=300&q=80"
+  },
+  {
+    name: "Chorizos",
+    desc: "Infaltables en cualquier asado",
+    img: "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=300&q=80"
+  },
+  {
+    name: "Salchichas Parrilleras",
+    desc: "Doradas y súper sabrosas",
+    img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80"
+  },
+  {
+    name: "Pernil",
+    desc: "Ideal para reuniones y eventos",
+    img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80"
+  },
+  {
+    name: "Cerdo",
+    desc: "Frescura y calidad todos los días",
+    img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80"
+  },
+],
   ],
   pollo: [
-    { name: "Pechuga", desc: "Magra y saludable", img: "https://images.unsplash.com/photo-1604503468506-a8da13d11d36?w=300&q=80" },
-    { name: "Muslo", desc: "Jugoso y sabroso", img: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=300&q=80" },
-    { name: "Alitas", desc: "Perfectas para compartir", img: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=300&q=80" },
-    { name: "Suprema", desc: "Sin piel", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&q=80" },
+    { name: "Pollo Fresco", desc: "Fresco y natural", img: "https://images.unsplash.com/photo-1604503468506-a8da13d11d36?w=300&q=80" },
+    { name: "Pata y muslo", desc: "Rendidor y versátil", img: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=300&q=80" },
+    { name: "Supremas", desc: "Sin piel", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&q=80" },
     { name: "Pollo Entero", desc: "Fresco y natural", img: "https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=300&q=80" },
   ],
+  
 };
 
 const features = [
-  { icon: <FaHome size={32} />, title: "PRODUCCIÓN PROPIA", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
-  { icon: <FaShieldAlt size={32} />, title: "CALIDAD GARANTIZADA", desc: "Selección y controles en cada etapa para asegurar lo mejor." },
-  { icon: <FaTruck size={32} />, title: "ENVÍOS Y SUCURSALES", desc: "Llegamos a tus clientes con rapidez y en frío." },
-  { icon: <FaHandshake size={32} />, title: "ATENCIÓN PERSONALIZADA", desc: "Te asesoramos para que siempre tengas lo que necesitás." },
+  { icon: <FaHome size={32} />, title: "🔹 PRODUCCIÓN PROPIA", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
+  { icon: <FaShieldAlt size={32} />, title: "🔹 CALIDAD GARANTIZADA", desc: "Selección y controles en cada etapa para asegurar lo mejor." },
+  { icon: <FaTruck size={32} />, title: "🔹 ENVÍOS Y SUCURSALES", desc: "Llegamos a tus clientes con rapidez y en frío." },
+  { icon: <FaHandshake size={32} />, title: "🔹 ATENCIÓN PERSONALIZADA", desc: "Te asesoramos, incluyendo a mayoristas y comerciantes." },
 ];
 
 const CARD_W = 152; // px, must match w-[152px] below
