@@ -140,28 +140,11 @@ const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 // ─── SUBCOMPONENTS ────────────────────────────────────────────────────────────
 
-function Logo({ small = false }) {
-  return (
-    <div className="flex items-center gap-2">
-      <svg width={small ? 38 : 44} height={small ? 38 : 44} viewBox="0 0 44 44" fill="none">
-        <path d="M22 4 C10 4 4 12 4 20 C4 30 12 38 22 40 C32 38 40 30 40 20 C40 12 34 4 22 4Z" fill="#C0392B" opacity="0.15" />
-        <path d="M8 18 Q14 10 22 12 Q30 10 36 18 Q30 16 22 18 Q14 16 8 18Z" fill="#C0392B" />
-        <path d="M10 22 Q16 28 22 26 Q28 28 34 22" stroke="#C0392B" strokeWidth="2" fill="none" />
-        <circle cx="16" cy="14" r="2" fill="#C0392B" />
-        <circle cx="28" cy="14" r="2" fill="#C0392B" />
-      </svg>
-      <div>
-        <p className={`font-light tracking-widest uppercase ${small ? "text-[9px]" : "text-[10px]"} text-[#C0392B]`}>ABASTECEDORA</p>
-        <p className={`font-black uppercase leading-none ${small ? "text-lg" : "text-xl"} text-[#1a2340]`}>VALETTE</p>
-      </div>
-    </div>
-  );
-}
 
 function CutCard({ item }) {
   return (
     <div className="flex-shrink-0 w-[152px] group cursor-pointer">
-      <div className="overflow-hidden rounded-xl bg-gray-100 aspect-square mb-2">
+      <div className="overflow-hidden rounded-xl bg-white aspect-square mb-2">
         <img
           src={item.img}
           alt={item.name}
@@ -202,7 +185,7 @@ function MeatSection({ icon, title, subtitle, items }) {
           <div className="text-[#C0392B] mb-2">{icon}</div>
           <h3 className="font-black text-[#1a2340] uppercase">{title}</h3>
           </div>
-          <p className="text-[10px] sm:text-[11px] text-gray-500 mb-4 leading-relaxed">{subtitle}</p>
+          <p className="text-normal text-gray-500 mb-4 leading-relaxed">{subtitle}</p>
         </div>
 
         {/* Carousel */}
@@ -278,16 +261,11 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("vacuna");
 
-  const tabs = [
-    { key: "vacuna", label: "VACUNA", icon: <GiCow size={18} /> },
-    { key: "cerdo", label: "CERDO", icon: <GiPig size={18} /> },
-    { key: "pollo", label: "POLLO", icon: <GiChicken size={18} /> },
-  ];
 
   const sections = {
-    vacuna: { icon: <GiCow size={40} />, title: "CARNE\nVACUNA", subtitle: "Los mejores cortes para asado, milanesas y cocina diaria." },
-    cerdo:  { icon: <GiPig size={40} />, title: "CARNE\nDE CERDO", subtitle: "Cortes frescos y de excelente calidad, todos los días." },
-    pollo:  { icon: <GiChicken size={40} />, title: "POLLO\nFRESCO", subtitle: "Tiernos, saludables y perfectos para todas tus comidas." },
+    vacuna: { icon: <GiCow size={40} />, title: "CARNE VACUNA", subtitle: "Los mejores cortes para asado, milanesas y cocina diaria." },
+    cerdo:  { icon: <GiPig size={40} />, title: "CARNE DE CERDO", subtitle: "Cortes frescos y de excelente calidad, todos los días." },
+    pollo:  { icon: <GiChicken size={40} />, title: "POLLO FRESCO", subtitle: "Tiernos, saludables y perfectos para todas tus comidas." },
   };
 
   return (
@@ -301,7 +279,7 @@ export default function App() {
       {/* ── NAVBAR — sticky against viewport ── */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <Logo />
+          <img src="iconAndText.jpg" className="h-15 w-fit events-pointer-none" />
           <div className="flex items-center gap-3">
             <a
               href="https://wa.me/541128353615"
@@ -373,7 +351,7 @@ export default function App() {
 
         {/* Heart */}
         <div className="flex justify-center -mt-4 relative z-10">
-          <div className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center text-red-500">
+          <div className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center text-red-500">
             <LuBeef />
           </div>
         </div>
