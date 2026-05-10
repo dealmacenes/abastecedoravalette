@@ -200,7 +200,7 @@ function MeatSection({ icon, title, subtitle, items }) {
       <div className="flex flex-col gap-3 sm:gap-5">
 
         {/* Left info panel */}
-        <div className="w-[108px] sm:w-[145px] flex-shrink-0">
+        <div className="w-full flex-shrink-0">
           <div className= "flex gap-2 items-center w-full">
           <div className="text-[#C0392B] mb-2">{icon}</div>
           <h3 className="font-black text-sm sm:text-xl text-[#1a2340] uppercase leading-tight mb-2 whitespace-pre-line">{title}</h3>
