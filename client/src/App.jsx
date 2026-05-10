@@ -8,12 +8,67 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const cuts = {
   vacuna: [
-    { name: "Bifé de Chorizo", desc: "Ideal para parrilla", img: "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80" },
-    { name: "Asado", desc: "Clásico argentino", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80" },
-    { name: "Nalga", desc: "Tierna y sabrosa", img: "https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=300&q=80" },
-    { name: "Vacío", desc: "Jugoso y sabroso", img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300&q=80" },
-    { name: "Tapa de Asado", desc: "Clásico y tradicional", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80" },
-  ],
+  {
+    name: "Bifé Angosto",
+    desc: "Ideal para parrilla",
+    img: "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80"
+  },
+  {
+    name: "Asado",
+    desc: "Clásico argentino",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80"
+  },
+  {
+    name: "Nalga",
+    desc: "Tierna y sabrosa",
+    img: "https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=300&q=80"
+  },
+  {
+    name: "Vacío",
+    desc: "Jugoso y sabroso",
+    img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300&q=80"
+  },
+  {
+    name: "Lomo",
+    desc: "Corte premium y tierno",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+  {
+    name: "Roast Beef",
+    desc: "Ideal para horno y guisos",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+  {
+    name: "Picaña",
+    desc: "Muy jugosa y popular",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+  {
+    name: "Colita de Cuadril",
+    desc: "Magra y muy tierna",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+  {
+    name: "Carne Picada",
+    desc: "Perfecta para comidas caseras",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+  {
+    name: "Bola de Lomo",
+    desc: "Ideal para milanesas",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+  {
+    name: "Tapa de Nalga",
+    desc: "Magra y versátil",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+  {
+    name: "Tapa de Asado",
+    desc: "Clásico y tradicional",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
+  },
+],
   cerdo: [
     { name: "Bondiola", desc: "Jugosa y sabrosa", img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=300&q=80" },
     { name: "Costeleta", desc: "Ideal para la parrilla", img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=300&q=80" },
