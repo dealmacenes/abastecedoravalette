@@ -56,7 +56,7 @@ const cuts = {
     {
       name: "Bola de Lomo",
       desc: "Ideal para milanesas",
-      img: "work14"
+      img: "work14.jpg"
     },
     {
       name: "Tapa de Nalga",
