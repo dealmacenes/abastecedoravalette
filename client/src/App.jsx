@@ -3,6 +3,7 @@ import { FaWhatsapp, FaInstagram, FaFacebookF, FaShieldAlt, FaTruck, FaHandshake
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { GiCow, GiPig, GiChicken } from "react-icons/gi";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import { LuBeef } from "react-icons/lu";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -376,10 +377,8 @@ export default function App() {
 
         {/* Heart */}
         <div className="flex justify-center -mt-4 relative z-10">
-          <div className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center">
-            <svg width="16" height="14" viewBox="0 0 16 14" fill="#C0392B">
-              <path d="M8 13s-7-4.5-7-8.5A4 4 0 0 1 8 2.5 4 4 0 0 1 15 4.5C15 8.5 8 13 8 13Z" />
-            </svg>
+          <div className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center text-red-500">
+            <LuBeef />
           </div>
         </div>
 
