@@ -368,6 +368,99 @@ export default function App() {
           ))}
         </section>
 
+        {/* Nuestras Sucursales (Mapas) */}
+      <section
+        id="sucursales"
+        className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20"
+      >
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-black text-[#2B3175] mb-4">
+            Nuestras Sucursales
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Visitanos y viví una experiencia de compra directa, con la mejor
+            atención y los cortes más frescos de la zona.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Card Luis Guillon */}
+          <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
+            <div className="h-48 relative overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed"
+                className="w-full h-full border-0 saturate-[0.8] contrast-110"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+              
+            </div>
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
+                Luis Guillon
+              </h3>
+              <p className="text-gray-600 flex items-start gap-3 mb-2">
+                <MapPin
+                  className="mt-1 flex-shrink-0 text-[#E3343A]"
+                  size={18}
+                />
+                <span>
+                  <strong>Av. Luciano Valette 1696</strong>
+                  <br /> A 4 cuadras de camino de cintura
+                </span>
+              </p>
+              <div className="mt-6">
+                <a
+                  href="https://wa.me/541128353615"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
+                >
+                  <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
+            <div className="h-48 relative overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed"
+                className="w-full h-full border-0 saturate-[0.8] contrast-110"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
+            </div>
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-[#2B3175] mb-3">Moreno</h3>
+              <p className="text-gray-600 flex items-start gap-3 mb-2">
+                <MapPin
+                  className="mt-1 flex-shrink-0 text-[#E3343A]"
+                  size={18}
+                />
+                <span>
+                  <strong>Av. Del Libertador 4200</strong>
+                  <br /> Mercado Modelo Moreno
+                </span>
+              </p>
+              <div className="mt-6">
+                <a
+                  href="https://wa.me/541128353615"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
+                >
+                  <WhatsAppIcon className="w-5 h-5" /> Contactar Sucursal
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
         {/* WHOLESALE */}
         <section className="bg-[#8B0000] py-10 sm:py-12 px-4">
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
