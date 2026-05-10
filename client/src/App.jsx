@@ -389,22 +389,6 @@ export default function App() {
             <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl">Elegí lo que necesitás</h2>
           </div>
 
-          <div className="flex gap-2 sm:gap-3 mb-8 justify-center">
-            {tabs.map((tab) => (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl font-bold text-sm transition-all ${
-                  activeTab === tab.key
-                    ? "bg-[#C0392B] text-white shadow-md"
-                    : "border-2 border-gray-200 text-[#1a2340] hover:border-[#C0392B]"
-                }`}
-              >
-                {tab.icon} {tab.label}
-              </button>
-            ))}
-          </div>
-
           {Object.entries(sections).map(([key, sec]) => (
             <MeatSection key={key} icon={sec.icon} title={sec.title} subtitle={sec.subtitle} items={cuts[key]} />
           ))}
