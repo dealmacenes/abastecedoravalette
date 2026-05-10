@@ -8,115 +8,124 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const cuts = {
   vacuna: [
-  {
-    name: "Bifé Angosto",
-    desc: "Ideal para parrilla",
-    img: "work14.jpg"
-  },
-  {
-    name: "Asado",
-    desc: "Clásico argentino",
-    img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80"
-  },
-  {
-    name: "Nalga",
-    desc: "Tierna y sabrosa",
-    img: "https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=300&q=80"
-  },
-  {
-    name: "Vacío",
-    desc: "Jugoso y sabroso",
-    img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300&q=80"
-  },
-  {
-    name: "Lomo",
-    desc: "Corte premium y tierno",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-  {
-    name: "Roast Beef",
-    desc: "Ideal para horno y guisos",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-  {
-    name: "Picaña",
-    desc: "Muy jugosa y popular",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-  {
-    name: "Colita de Cuadril",
-    desc: "Magra y muy tierna",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-  {
-    name: "Carne Picada",
-    desc: "Perfecta para comidas caseras",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-  {
-    name: "Bola de Lomo",
-    desc: "Ideal para milanesas",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-  {
-    name: "Tapa de Nalga",
-    desc: "Magra y versátil",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-  {
-    name: "Tapa de Asado",
-    desc: "Clásico y tradicional",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&q=80"
-  },
-],
-  
-cerdo: [
-  {
-    name: "Bondiola",
-    desc: "Jugosa y llena de sabor",
-    img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=300&q=80"
-  },
-  {
-    name: "Bife de Cerdo",
-    desc: "Tierno y perfecto a la plancha",
-    img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=300&q=80"
-  },
-  {
-    name: "Pechito de Cerdo",
-    desc: "Ideal para parrilla lenta",
-    img: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=300&q=80"
-  },
-  {
-    name: "Chorizos",
-    desc: "Infaltables en cualquier asado",
-    img: "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=300&q=80"
-  },
-  {
-    name: "Salchichas Parrilleras",
-    desc: "Doradas y súper sabrosas",
-    img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80"
-  },
-  {
-    name: "Pernil",
-    desc: "Ideal para reuniones y eventos",
-    img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80"
-  },
-  {
-    name: "Cerdo",
-    desc: "Frescura y calidad todos los días",
-    img: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?w=300&q=80"
-  },
-],
-  
-  pollo: [
-    { name: "Pollo Fresco", desc: "Fresco y natural", img: "https://images.unsplash.com/photo-1604503468506-a8da13d11d36?w=300&q=80" },
-    { name: "Pata y muslo", desc: "Rendidor y versátil", img: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=300&q=80" },
-    { name: "Supremas", desc: "Sin piel", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&q=80" },
-    { name: "Pollo Entero", desc: "Fresco y natural", img: "https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=300&q=80" },
+    {
+      name: "Bifé Angosto",
+      desc: "Ideal para parrilla",
+      img: "work14.jpg"
+    },
+    {
+      name: "Asado",
+      desc: "Clásico argentino",
+      img: "work11.jpg"
+    },
+    {
+      name: "Nalga",
+      desc: "Tierna y sabrosa",
+      img: "work10.jpg"
+    },
+    {
+      name: "Vacío",
+      desc: "Jugoso y sabroso",
+      img: "work12.jpg"
+    },
+    {
+      name: "Lomo",
+      desc: "Corte premium y tierno",
+      img: "work8.jpg"
+    },
+    {
+      name: "Roast Beef",
+      desc: "Ideal para horno y guisos",
+      img: "work7.jpg"
+    },
+    {
+      name: "Picaña",
+      desc: "Muy jugosa y popular",
+      img: "work3.jpg"
+    },
+    {
+      name: "Colita de Cuadril",
+      desc: "Magra y muy tierna",
+      img: "work5.jpg"
+    },
+    {
+      name: "Carne Picada",
+      desc: "Perfecta para comidas caseras",
+      img: "work13.jpg"
+    },
+    {
+      name: "Bola de Lomo",
+      desc: "Ideal para milanesas",
+      img: "work14"
+    },
+    {
+      name: "Tapa de Nalga",
+      desc: "Magra y versátil",
+      img: "work15.jpg"
+    },
+    {
+      name: "Tapa de Asado",
+      desc: "Clásico y tradicional",
+      img: "work9.jpg"
+    },
   ],
-  
-};
 
+  cerdo: [
+    {
+      name: "Bondiola",
+      desc: "Jugosa y llena de sabor",
+      img: "work2.jpg"
+    },
+    {
+      name: "Bife de Cerdo",
+      desc: "Tierno y perfecto a la plancha",
+      img: "work1.jpg"
+    },
+    {
+      name: "Pechito de Cerdo",
+      desc: "Ideal para parrilla lenta",
+      img: "work6.jpg"
+    },
+    {
+      name: "Chorizos",
+      desc: "Infaltables en cualquier asado",
+      img: "work19.jpg"
+    },
+    {
+      name: "Salchichas Parrilleras",
+      desc: "Doradas y súper sabrosas",
+      img: "work20.jpg"
+    },
+    {
+      name: "Pernil",
+      desc: "Ideal para reuniones y eventos",
+      img: "work21.jpg"
+    },
+    {
+      name: "Cerdo",
+      desc: "Frescura y calidad todos los días",
+      img: "work22.jpg"
+    },
+  ],
+
+  pollo: [
+    {
+      name: "Pollo Fresco",
+      desc: "Fresco y natural",
+      img: "work16.jpg"
+    },
+    {
+      name: "Pata y muslo",
+      desc: "Rendidor y versátil",
+      img: "work17.jpg"
+    },
+    {
+      name: "Supremas",
+      desc: "Sin piel",
+      img: "work18.jpg"
+    },
+  ],
+};
 const features = [
   { icon: <FaHome size={32} />, title: "🔹 PRODUCCIÓN PROPIA", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
   { icon: <FaShieldAlt size={32} />, title: "🔹 CALIDAD GARANTIZADA", desc: "Selección y controles en cada etapa para asegurar lo mejor." },
