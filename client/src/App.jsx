@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { FaWhatsapp, FaInstagram, FaFacebookF, FaShieldAlt, FaTruck, FaHandshake, FaHome, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaBars, FaTimes, FaChevronRight } from "react-icons/fa";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import { MdOutlineShoppingCart, MdOutlineSevereCold } from "react-icons/md";
 import { GiCow, GiPig, GiChicken } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
@@ -128,7 +128,7 @@ const cuts = {
   ],
 };
 const features = [
-  { icon: <FaHome size={32} />, title: "PRODUCCIÓN PROPIA", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
+  { icon: <FaHome size={32} />, title: "PRODUCCIÓN PROPIA EN CERDOS", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
   { icon: <FaShieldAlt size={32} />, title: "CALIDAD GARANTIZADA", desc: "Selección y controles en cada etapa para asegurar lo mejor." },
   { icon: <FaTruck size={32} />, title: "ENVÍOS Y SUCURSALES", desc: "Llegamos a nuestros clientes con rapidez y en frío." },
   { icon: <FaHandshake size={32} />, title: "ATENCIÓN PERSONALIZADA", desc: "Te asesoramos, incluyendo a mayoristas y comerciantes." },
@@ -330,13 +330,13 @@ export default function App() {
             <div className="grid grid-cols-3 gap-3 max-w-md">
               {[
                 { icon: <FaShieldAlt size={18} />, title: "Calidad garantizada", desc: "Selección y control en cada proceso." },
-                { icon: <MdOutlineShoppingCart size={18} />, title: "Siempre frescas", desc: "Reposición diaria en todas las sucursales." },
-                { icon: <MdOutlineShoppingCart size={18} />, title: "Mayor y menor", desc: "Ventas por unidad o por volumen." },
+                { icon: <MdOutlineSevereCold size={18} />, title: "Siempre frescas", desc: "Reposición diaria en todas las sucursales." },
+                { icon: <MdOutlineShoppingCart size={18} />, title: "Venta por Mayor y menor", desc: "Ventas por unidad o por volumen." },
               ].map((p, i) => (
                 <div key={i} className="bg-white/10 backdrop-blur-sm rounded-xl p-3">
                   <div className="text-[#C0392B] mb-1">{p.icon}</div>
-                  <p className="text-white text-[11px] font-bold leading-tight mb-1">{p.title}</p>
-                  <p className="text-gray-400 text-[10px] leading-tight">{p.desc}</p>
+                  <p className="text-white font-bold leading-tight mb-1">{p.title}</p>
+                  <p className="text-gray-400 text-[11px] leading-tight">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -475,7 +475,7 @@ export default function App() {
               </div>
             </div>
             <a href="https://wa.me/541128353615" className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3 rounded-xl hover:bg-red-50 transition-colors whitespace-nowrap">
-              CONTACTANOS <FaWhatsapp size={16} />
+              ATENCIÓN PERSONALIZADA <FaWhatsapp size={16} />
             </a>
           </div>
         </section>
@@ -498,7 +498,7 @@ export default function App() {
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
             <div>
               <div className="w-fit overflow-hidden px-2 py-1 rounded-md bg-white">
-              <img src="iconAndText.png" className="h-20 bg-white rounded-8 w-fit" />
+              <img src="iconAndText.png" className="h-15 overflow-hidden bg-white rounded-8 w-fit" />
               </div>
               <div className="flex gap-3 mt-4">
                 <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaInstagram size={14} /></a>
