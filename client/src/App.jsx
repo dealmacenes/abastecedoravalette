@@ -296,12 +296,18 @@ export default function App() {
           </div>
         </div>
         {menuOpen && (
-          <div className="bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
-            {["Sucursales", "Venta Mayorista", "Quiénes Somos"].map((item) => (
-              <a key={item} href="#" className="hover:text-[#C0392B] transition-colors py-1">{item}</a>
-            ))}
-          </div>
-        )}
+  <div className="bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
+    {["Nuestras Carnes", "Nuestras Sucursales", "Venta Mayorista", "Calidad de Servicios"].map((item) => (
+      <a
+        key={item}
+        href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
+        className="hover:text-[#C0392B] transition-colors py-1"
+      >
+        {item}
+      </a>
+    ))}
+  </div>
+)}
       </nav>
 
       {/* ── PAGE BODY ── */}
@@ -357,7 +363,7 @@ export default function App() {
         </div>
 
         {/* CORTES */}
-        <section className="max-w-6xl w-full mx-auto px-4 sm:px-6 pt-8 pb-12">
+        <section id="nuestras-carnes" className="max-w-6xl w-full mx-auto px-4 sm:px-6 pt-8 pb-12">
           <div className="text-center mb-8">
             <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-1">NUESTROS CORTES</p>
             <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl">Elegí lo que necesitás</h2>
@@ -370,7 +376,7 @@ export default function App() {
 
         {/* Nuestras Sucursales (Mapas) */}
       <section
-        id="sucursales"
+        id="#nuestras-sucursales"
         className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20"
       >
         <div className="text-center mb-12">
@@ -462,7 +468,7 @@ export default function App() {
       </section>
 
         {/* WHOLESALE */}
-        <section className="bg-[#8B0000] py-10 sm:py-12 px-4">
+        <section id="#venta-mayorista" className="bg-[#8B0000] py-10 sm:py-12 px-4">
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-5">
               <div className="w-16 h-16 rounded-full border-2 border-white/40 flex items-center justify-center flex-shrink-0">
@@ -481,7 +487,7 @@ export default function App() {
         </section>
 
         {/* FEATURES */}
-        <section className="bg-white py-12 px-4">
+        <section id="#calidad-de-nuestros-servicios" className="bg-white py-12 px-4">
           <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
             {features.map((f, i) => (
               <div key={i} className="flex flex-col items-center gap-3">
