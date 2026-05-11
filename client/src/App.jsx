@@ -175,16 +175,16 @@ function CutCard({ item }) {
         <img
           src={item.img}
           alt={item.name}
-          className="w-full h-full object-scale-down group-hover:scale-105 transition-transform duration-300 mx-2 mt-2"
+          className="w-full h-full object-scale-down group-hover:scale-105 transition-transform duration-300 p-2"
           onError={(e) => {
             e.target.src =
               "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80";
           }}
         />
       </div>
-      <div className="flex flex-col w-full bg-neutral-200">
+      <div className="flex flex-col w-full bg-neutral-200 py-2">
         <p className="w-full text-center font-bold text-[13px] text-[#1a2340]">{item.name}</p>
-        <p className="w-full text-center text-[11px] text-gray-500 mb-2">{item.desc}</p>
+        <p className="w-full text-center text-[11px] text-gray-500 -mt-[2px]">{item.desc}</p>
       </div>
     </div>
   );
