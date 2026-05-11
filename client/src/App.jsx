@@ -455,9 +455,9 @@ export default function App() {
               UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS
             </p>
             <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
-              VARIEDAD PARA
+              ABASTECEDORA VALETTE
               <br />
-              TODOS LOS DÍAS
+              SABEMOS DE CARNES
             </h1>
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8">
               Ofrecemos una amplia selección de cortes frescos y de calidad para
