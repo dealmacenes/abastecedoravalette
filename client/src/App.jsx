@@ -128,10 +128,10 @@ const cuts = {
   ],
 };
 const features = [
-  { icon: <FaHome size={32} />, title: "🔹 PRODUCCIÓN PROPIA", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
-  { icon: <FaShieldAlt size={32} />, title: "🔹 CALIDAD GARANTIZADA", desc: "Selección y controles en cada etapa para asegurar lo mejor." },
-  { icon: <FaTruck size={32} />, title: "🔹 ENVÍOS Y SUCURSALES", desc: "Llegamos a tus clientes con rapidez y en frío." },
-  { icon: <FaHandshake size={32} />, title: "🔹 ATENCIÓN PERSONALIZADA", desc: "Te asesoramos, incluyendo a mayoristas y comerciantes." },
+  { icon: <FaHome size={32} />, title: "PRODUCCIÓN PROPIA", desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
+  { icon: <FaShieldAlt size={32} />, title: "CALIDAD GARANTIZADA", desc: "Selección y controles en cada etapa para asegurar lo mejor." },
+  { icon: <FaTruck size={32} />, title: "ENVÍOS Y SUCURSALES", desc: "Llegamos a nuestros clientes con rapidez y en frío." },
+  { icon: <FaHandshake size={32} />, title: "ATENCIÓN PERSONALIZADA", desc: "Te asesoramos, incluyendo a mayoristas y comerciantes." },
 ];
 
 const CARD_W = 152; // px, must match w-[152px] below
@@ -486,7 +486,7 @@ export default function App() {
             {features.map((f, i) => (
               <div key={i} className="flex flex-col items-center gap-3">
                 <div className="text-[#C0392B]">{f.icon}</div>
-                <p className="font-black text-[11px] sm:text-xs tracking-wide text-[#1a2340]">{f.title}</p>
+                <p className="font-black tracking-wide text-[#1a2340]">{f.title}</p>
                 <p className="text-[11px] text-gray-500 leading-relaxed">{f.desc}</p>
               </div>
             ))}
