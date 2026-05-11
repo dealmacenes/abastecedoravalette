@@ -467,9 +467,10 @@ export default function App() {
           </div>
         </div>
       </section>
+        <div id="venta-mayorista" className="w-full h-1"/>
 
         {/* WHOLESALE */}
-        <section id="venta-mayorista" className="bg-[#8B0000] py-10 sm:py-12 px-4">
+        <section className="bg-[#8B0000] py-10 sm:py-12 px-4">
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-5">
               <div className="w-16 h-16 rounded-full border-2 border-white/40 flex items-center justify-center flex-shrink-0">
