@@ -171,18 +171,18 @@ const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 function CutCard({ item }) {
   return (
     <div className="flex-shrink-0 w-fit group cursor-pointer items-center border border-neutral-200 rounded-md items-stretch overflow-hidden">
-      <div className="overflow-hidden rounded-xl bg-white aspect-square mb-2">
+      <div className="fle overflow-hidden rounded-xl bg-white mb-2">
         <img
           src={item.img}
           alt={item.name}
-          className="w-[152px] h-[152px] object-scale-down group-hover:scale-105 transition-transform duration-300 p-2"
+          className="w-[152px] h-[152px] object-scale-down justify-self-center group-hover:scale-105 transition-transform duration-300 p-2"
           onError={(e) => {
             e.target.src =
               "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80";
           }}
         />
       </div>
-      <div className="flex flex-col max-w-[152px] bg-red-900 p-2">
+      <div className="flex flex-col w-full bg-[#1a2340] p-2">
         <p className="w-full text-center font-bold text-white">{item.name}</p>
         <p className="w-full text-center text-sm text-neutral-100 -mt-[2px]">{item.desc}</p>
       </div>
@@ -208,7 +208,7 @@ function MeatSection({ icon, title, subtitle, items }) {
   
 
   return (
-    <div className="mb-6 border border-red-100 p-2 overflow-x-auto bg-red-50/50">
+    <div className="mb-6 border border-red-100 py-2 overflow-x-auto bg-neutral-50/50">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
@@ -442,7 +442,7 @@ export default function App() {
         <section className="relative overflow-hidden bg-[#1a2340] min-h-[380px] sm:min-h-[420px]">
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1558030006-450675393462?w=1200&q=80"
+              src="hero.png"
               alt="hero"
               className="w-full h-full object-cover opacity-40"
               style={{ objectPosition: "center right" }}
@@ -533,7 +533,7 @@ export default function App() {
             />
           ))}
         </section>
-        <div id="nuestras-sucursales" className="flex w-full h-35 -mt-30 sm:-mt-40" />
+        <div id="nuestras-sucursales" className="flex w-full h-35 -mt-10 sm:-mt-40" />
 
         {/* Nuestras Sucursales (Mapas) */}
         <section className=" md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20">
