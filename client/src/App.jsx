@@ -203,11 +203,7 @@ function MeatSection({ icon, title, subtitle, items }) {
   const maxScroll = items.length * (CARD_W + CARD_GAP) - CARD_GAP;
   const atEnd =
     scrollLeft + 10 >= maxScroll - (scrollRef.current?.clientWidth ?? 0);
-  const totalDots = Math.ceil(items.length / 2);
-  const activeDot = Math.min(
-    Math.round(scrollLeft / SCROLL_STEP),
-    totalDots - 1,
-  );
+  
 
   return (
     <div className="mb-6">
@@ -239,7 +235,7 @@ function MeatSection({ icon, title, subtitle, items }) {
           <div
             ref={scrollRef}
             onScroll={onScroll}
-            className="flex gap-3 w-full overflow-x-auto"
+            className="flex w-full overflow-x-auto"
             style={{
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
