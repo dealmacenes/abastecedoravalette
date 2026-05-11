@@ -341,7 +341,7 @@ export default function App() {
               onClick={() => setContactOpen(true)}
               className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
             >
-              Contactanos
+              Contactanos <FaWhatsapp className="size-8"/>
             </button>
             <button
               onClick={() => setMenuOpen((v) => !v)}
@@ -365,7 +365,7 @@ export default function App() {
                 className="hover:text-[#C0392B] transition-colors py-1"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                {item}
+                {item} ➜
               </a>
             ))}
           </div>
@@ -666,7 +666,7 @@ export default function App() {
               </div>
             </div>
             <a
-              href="https://wa.me/541128353615"
+              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20estoy%20interesado%20en%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)"
               className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3 rounded-xl hover:bg-red-50 transition-colors whitespace-nowrap"
             >
               ATENCIÓN PERSONALIZADA <FaWhatsapp size={16} />
