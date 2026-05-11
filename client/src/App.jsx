@@ -210,15 +210,15 @@ function MeatSection({ icon, title, subtitle, items }) {
   );
 
   return (
-    <div className="border border-gray-200 rounded-2xl p-4 sm:p-6 mb-6">
+    <div className="border border-gray-200 rounded-2xl mb-6">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
           <div className="flex gap-2 items-center w-full">
-            <div className="text-[#C0392B] mb-2">{icon}</div>
-            <h3 className="font-black text-[#1a2340] uppercase">{title}</h3>
+            <div className="text-[#C0392B] my-2 ms-2">{icon}</div>
+            <h3 className="font-black text-[#1a2340] uppercase px-2">{title}</h3>
           </div>
-          <p className="text-normal text-gray-500 mb-4 leading-relaxed">
+          <p className="text-normal text-gray-500 mb-4 leading-relaxed px-2">
             {subtitle}
           </p>
         </div>
@@ -229,7 +229,7 @@ function MeatSection({ icon, title, subtitle, items }) {
           {scrollLeft > 8 && (
             <button
               onClick={() => scrollTo(-1)}
-              className="absolute -left-3 top-[40%] -translate-y-1/2 w-8 h-8 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 z-10"
+              className="absolute left-3 top-[40%] -translate-y-1/2 w-8 h-8 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 z-10"
             >
               <ChevronLeft size={16} />
             </button>
@@ -270,7 +270,7 @@ function MeatSection({ icon, title, subtitle, items }) {
           {!atEnd && (
             <button
               onClick={() => scrollTo(1)}
-              className="absolute -right-3 top-[40%] -translate-y-1/2 w-8 h-8 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 z-10"
+              className="absolute right-3 top-[40%] -translate-y-1/2 w-8 h-8 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 z-10"
             >
               <ChevronRight size={16} />
             </button>
@@ -352,7 +352,7 @@ export default function App() {
           </div>
         </div>
         {menuOpen && (
-          <div className="flex flex-wrap flex-row sm:justify-around bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
+          <div className="flex flex-wrap flex-row justify-around bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
             {[
               "Nuestras Carnes",
               "Nuestras Sucursales",
