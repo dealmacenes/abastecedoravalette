@@ -170,7 +170,7 @@ const SCROLL_STEP = (CARD_W + CARD_GAP) * 1;
 
 function CutCard({ item }) {
   return (
-    <div className="flex-shrink-0 w-[152px] group cursor-pointer">
+    <div className="flex-shrink-0 w-[152px] group cursor-pointer items-center">
       <div className="overflow-hidden rounded-xl bg-white aspect-square mb-2">
         <img
           src={item.img}
@@ -235,7 +235,7 @@ function MeatSection({ icon, title, subtitle, items }) {
           <div
             ref={scrollRef}
             onScroll={onScroll}
-            className="flex w-full overflow-x-auto"
+            className="flex w-full overflow-x-auto px-6"
             style={{
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
