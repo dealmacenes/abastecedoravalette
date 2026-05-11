@@ -7,9 +7,6 @@ import {
   FaTruck,
   FaHandshake,
   FaHome,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
   FaBars,
   FaTimes,
   FaChevronRight,
@@ -141,6 +138,7 @@ const cuts = {
     },
   ],
 };
+
 const features = [
   {
     icon: <FaHome size={32} />,
@@ -314,7 +312,7 @@ export default function App() {
     cerdo: {
       icon: <GiPig size={40} />,
       title: "CARNE DE CERDO",
-      subtitle: "Cortes frescos y de excelente calidad, todos los días.",
+      subtitle: "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
     },
     pollo: {
       icon: <GiChicken size={40} />,
@@ -480,7 +478,7 @@ export default function App() {
               Ofrecemos una amplia selección de cortes frescos y de calidad para
               tu mesa, con el respaldo de nuestra producción.
             </p>
-            <div className="flex flex-col gap-3 w-9/10 mx-auto items-center">
+            <div className="flex flex-col md:grid md:grid-cols-3 items-stretch gap-3 w-9/10 mx-auto items-center">
               {[
                 {
                   icon: <FaShieldAlt className=" size-8 shrink-0" />,
@@ -506,7 +504,7 @@ export default function App() {
                   <p className="text-white text-lg font-bold leading-tight mb-1">
                     {p.title}
                   </p>
-                  <p className="text-gray-400 leading-tight">{p.desc}</p>
+                  <p className="text-center text-gray-400 leading-tight">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -551,12 +549,12 @@ export default function App() {
             />
           ))}
         </section>
-        <div id="nuestras-sucursales" className="flex w-full h-35" />
+        <div id="nuestras-sucursales" className="flex w-full h-35 -mt-30 sm:-mt-40" />
 
         {/* Nuestras Sucursales (Mapas) */}
         <section className=" md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-black text-[#2B3175] mb-4">
+            <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl mb-4">
               Nuestras Sucursales
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
