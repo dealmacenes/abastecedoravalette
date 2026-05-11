@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-
-    --font-montserrat: "Montserrat", sans-serif; 
-    --color-main: #b73727;
-    --color-main-border: #8d2a1d;
-    --color-main-accent: #de2e23;
-    --color-main-background: #fffaf7;
-    --color-main-text: #fffaf7;
-    --color-main-button: #f4f7f9;
+  --font-montserrat: "Montserrat", sans-serif;
+  --color-main: #b73727;
+  --color-main-border: #8d2a1d;
+  --color-main-accent: #de2e23;
+  --color-main-background: #fffaf7;
+  --color-main-text: #fffaf7;
+  --color-main-button: #f4f7f9;
 }
 
 .hide-scrollbar::-webkit-scrollbar {

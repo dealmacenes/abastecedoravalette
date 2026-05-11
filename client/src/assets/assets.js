@@ -22,7 +22,6 @@ import img21 from "work21.jpg";
 import img22 from "work22.jpg";
 import img23 from "work23.jpg";
 
-
 export const carnes = [
   { tipo: "cerdo", name: "Bifes de cerdo", image: img1 },
   { tipo: "cerdo", name: "Bondiola", image: img2 },
