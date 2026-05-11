@@ -5,6 +5,7 @@ import { GiCow, GiPig, GiChicken } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 
+
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const cuts = {
@@ -258,7 +259,6 @@ function MeatSection({ icon, title, subtitle, items }) {
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("vacuna");
 
 
   const sections = {
@@ -280,12 +280,12 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <img src="iconAndText.png" className="h-15 w-fit events-pointer-none" />
           <div className="flex items-center gap-3">
-            <a
-              href="https://wa.me/541128353615"
+            <button
+              onClick={() => setContactOpen(true)}
               className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
             >
               <FaWhatsapp size={16} /> Contacto
-            </a>
+            </button>
             <button
               onClick={() => setMenuOpen((v) => !v)}
               className="w-9 h-9 flex items-center justify-center text-[#1a2340] hover:bg-gray-100 rounded-lg transition-colors"
@@ -310,6 +310,65 @@ export default function App() {
 )}
       </nav>
 
+      {/* ── MODAL CONTACTO ── */}
+      {contactOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center"
+          onClick={() => setContactOpen(false)}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+
+          {/* Panel */}
+          <div
+            className="relative bg-white rounded-t-3xl sm:rounded-2xl w-full sm:max-w-sm mx-0 sm:mx-4 p-6 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#C0392B] mb-0.5">WHATSAPP</p>
+                <h3 className="font-black text-[#1a2340] text-lg leading-tight">¿Con quién querés hablar?</h3>
+              </div>
+              <button
+                onClick={() => setContactOpen(false)}
+                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-400 transition-colors"
+              >
+                <FaTimes size={14} />
+              </button>
+            </div>
+
+            {/* Opciones */}
+            <div className="flex flex-col gap-3">
+              {[
+                { label: "Atención Comercial", sub: "Sucursal Luis Guillón", href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n." },
+                { label: "Atención Comercial", sub: "Sucursal Moreno",       href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno." },
+                { label: "Atención Personalizada", sub: "Mayoristas",        href: "https://wa.me/541128353615?text=Hola!%20Estoy%20interesado%20en%20la%20venta%20mayorista." },
+              ].map((op, i) => (
+                <a
+                  key={i}
+                  href={op.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setContactOpen(false)}
+                  className="flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
+                    <FaWhatsapp size={20} className="text-[#25D366]" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#1a2340] text-sm leading-tight">{op.label}</p>
+                    <p className="text-xs text-gray-500">{op.sub}</p>
+                  </div>
+                  <FaChevronRight size={12} className="ml-auto text-gray-300 group-hover:text-[#25D366] transition-colors" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+      <main className="flex-1 flex flex-col"></main>
+
       {/* ── PAGE BODY ── */}
       <main className="flex-1 flex flex-col">
 
@@ -326,23 +385,23 @@ export default function App() {
           </div>
 
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-            <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-3">UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS</p>
+            <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-3">UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS</p>
             <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
               VARIEDAD PARA<br />TODOS LOS DÍAS
             </h1>
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8">
               Ofrecemos una amplia selección de cortes frescos y de calidad para tu mesa, con el respaldo de nuestra producción.
             </p>
-            <div className="grid grid-cols-3 gap-3 max-w-md">
+            <div className="flex flex-col gap-3 w-9/10 mx-auto items-center">
               {[
-                { icon: <FaShieldAlt size={18} />, title: "Calidad garantizada", desc: "Selección y control en cada proceso." },
-                { icon: <MdOutlineSevereCold size={18} />, title: "Siempre frescas", desc: "Reposición diaria en todas las sucursales." },
-                { icon: <MdOutlineShoppingCart size={18} />, title: "Venta por Mayor y menor", desc: "Ventas por unidad o por volumen." },
+                { icon: <FaShieldAlt className=" size-8 shrink-0"/>, title: "Calidad garantizada", desc: "Selección y control en cada proceso." },
+                { icon: <MdOutlineSevereCold className=" size-8 shrink-0"/>, title: "Siempre frescas", desc: "Reposición diaria en todas las sucursales." },
+                { icon: <MdOutlineShoppingCart className="size-8 shrink-0"/>, title: "Venta por Mayor y menor", desc: "Ventas por unidad o por volumen." },
               ].map((p, i) => (
-                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-xl p-3">
+                <div key={i} className="flex flex-col w-full bg-white/10 backdrop-blur-sm rounded-xl p-3 items-center">
                   <div className="text-[#C0392B] mb-1">{p.icon}</div>
-                  <p className="text-white font-bold leading-tight mb-1">{p.title}</p>
-                  <p className="text-gray-400 text-[11px] leading-tight">{p.desc}</p>
+                  <p className="text-white text-lg font-bold leading-tight mb-1">{p.title}</p>
+                  <p className="text-gray-400 leading-tight">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -358,8 +417,8 @@ export default function App() {
 
         {/* Heart */}
         <div className="flex justify-center -mt-4 relative z-10 scroll-margin-top-10">
-          <div className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center text-red-500">
-            <LuBeef />
+          <div className="size-13 bg-white rounded-full shadow flex items-center justify-center text-red-500">
+            <LuBeef className="size-9 shrink-0 stroke-1"/>
           </div>
         </div>
 
@@ -378,7 +437,7 @@ export default function App() {
 
         {/* Nuestras Sucursales (Mapas) */}
       <section
-        className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20"
+        className=" md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20"
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-black text-[#2B3175] mb-4">
@@ -425,7 +484,7 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
                 >
-                  <FaWhatsapp className="w-5 h-5" /> Contactar Sucursal
+                  <FaWhatsapp className="w-5 h-5" /> Contactar Sucursal Luis Guillon
                 </a>
               </div>
             </div>
@@ -460,7 +519,7 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
                 >
-                  <FaWhatsapp className="w-5 h-5" /> Contactar Sucursal
+                  <FaWhatsapp className="w-5 h-5" /> Contactar Sucursal Moreno
                 </a>
               </div>
             </div>
