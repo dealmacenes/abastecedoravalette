@@ -341,7 +341,7 @@ export default function App() {
               onClick={() => setContactOpen(true)}
               className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
             >
-              Contactanos <FaWhatsapp className="size-5"/>
+              <FaWhatsapp className="size-5"/> Contactanos
             </button>
             <button
               onClick={() => setMenuOpen((v) => !v)}
@@ -352,7 +352,7 @@ export default function App() {
           </div>
         </div>
         {menuOpen && (
-          <div className="flex flex-wrap sm:flex sm:flex-row sm:justify-around bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
+          <div className="flex flex-wrap flex-row sm:justify-around bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
             {[
               "Nuestras Carnes",
               "Nuestras Sucursales",
