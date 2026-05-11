@@ -21,7 +21,12 @@ import { LuBeef } from "react-icons/lu";
 const cuts = {
   vacuna: [
     {
-      name: "Bifé Angosto",
+      name: "Media Res",
+      desc: "Fresca y lista para despostar",
+      img: "mediaRes.png",
+    },
+    {
+      name: "Bife Angosto",
       desc: "Ideal para parrilla",
       img: "work14.jpg",
     },
@@ -84,6 +89,11 @@ const cuts = {
 
   cerdo: [
     {
+      name: "Cerdo",
+      desc: "Frescura y genética",
+      img: "work22.jpg",
+    },
+    {
       name: "Bondiola",
       desc: "Jugosa y llena de sabor",
       img: "work2.jpg",
@@ -112,11 +122,6 @@ const cuts = {
       name: "Pernil",
       desc: "Ideal para reuniones y eventos",
       img: "work21.jpg",
-    },
-    {
-      name: "Cerdo",
-      desc: "Frescura y calidad todos los días",
-      img: "work22.jpg",
     },
   ],
 
@@ -403,8 +408,8 @@ export default function App() {
                   href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.%20(%20Enviar%20➜%20)",
                 },
                 {
-                  label: "Asesor a comerciantes",
-                  sub: "Atención personalizada para comerciantes y mayoristas",
+                  label: "Atención personalizada",
+                  sub: "Atención personalizada, asesoría y ventas para comerciantes y mayoristas",
                   href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)",
                 },
               ].map((op, i) => (
@@ -457,7 +462,7 @@ export default function App() {
             <p className="text-white/80 text-sm font-bold uppercase tracking-widest mb-3">
               UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS
             </p>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8 mt-15">
+            <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8 mt-15 text-center mx-auto">
               Ofrecemos una amplia selección de cortes de carne frescos y de calidad para
               tu mesa, con el respaldo de nuestra experiencia produciendo en vacas, cerdos y pollos.
             </p>
@@ -466,17 +471,17 @@ export default function App() {
                 {
                   icon: <FaShieldAlt className=" size-8 shrink-0" />,
                   title: "Calidad garantizada",
-                  desc: "Selección y control en cada proceso.",
+                  desc: "Al ser productores, nos enfocanos en la selección y el control en cada proceso.",
                 },
                 {
                   icon: <MdOutlineSevereCold className=" size-8 shrink-0" />,
                   title: "Siempre frescas",
-                  desc: "Reposición diaria en todas las sucursales.",
+                  desc: "Reposición diaria en todas las sucursales, directo desde nuestros criaderos.",
                 },
                 {
                   icon: <MdOutlineShoppingCart className="size-8 shrink-0" />,
-                  title: "Venta por Mayor y menor",
-                  desc: "Ventas por unidad o por volumen.",
+                  title: "Ventas minoristas y mayoristas",
+                  desc: "Entre nuestros clientes se encuentran familias, emprendedores, comercios y empresas que confian en nuestra calidad y servicio.",
                 },
               ].map((p, i) => (
                 <div
@@ -502,6 +507,7 @@ export default function App() {
             </svg>
           </div>
         </section>
+
         <div id="nuestras-carnes" className="flex w-full h-25" />
 
         {/* Heart */}
@@ -533,99 +539,130 @@ export default function App() {
             />
           ))}
         </section>
-        <div id="nuestras-sucursales" className="flex w-full h-35 -mt-10 sm:-mt-40" />
+        
+        <div id="nuestras-sucursales" className="flex w-full h-15" />
+
+        <div className="flex w-full">
+            <svg viewBox="0 0 1440 60" fill="none" className="w-full">
+              <path
+                d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z"
+                fill="#1a2340"
+              />
+            </svg>
+          </div>
 
         {/* Nuestras Sucursales (Mapas) */}
-        <section className=" md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20">
-          <div className="text-center mb-12">
-            <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl mb-4">
-              Nuestras Sucursales
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Visitanos y viví una experiencia de compra directa, con la mejor
-              atención y los cortes más frescos de la zona.
-            </p>
-          </div>
+<section className="bg-main relative pt-4 pb-8 md:py-24 z-20 overflow-x-hidden">
+  
+  <div className="lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="text-center my-12">
+      <h2 className="text-white font-black text-3xl sm:text-4xl mb-4">
+        Nuestras Sucursales
+      </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Card Luis Guillon */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
-              <div className="h-48 relative overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed"
-                  className="w-full h-full border-0 saturate-[0.8] contrast-110"
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-              <div className="p-5">
-                <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
-                  Luis Guillon
-                </h3>
-                <p className="text-gray-600 flex items-start gap-3 mb-2">
-                  <MapPin
-                    className="mt-1 flex-shrink-0 text-[#E3343A]"
-                    size={18}
-                  />
-                  <span>
-                    <strong>Av. Luciano Valette 1696</strong>
-                    <br /> A 4 cuadras de camino de cintura
-                  </span>
-                </p>
-                <div className="mt-6">
-                  <a
-                    href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n%20(%20Enviar%20➜%20)"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
-                  >
-                    <FaWhatsapp className="w-5 h-5" /> Contactar con Sucursal
-                    Luis Guillon
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
-              <div className="h-48 relative overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed"
-                  className="w-full h-full border-0 saturate-[0.8] contrast-110"
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-                <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
-              </div>
-              <div className="p-5">
-                <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
-                  Moreno
-                </h3>
-                <p className="text-gray-600 flex items-start gap-3 mb-2">
-                  <MapPin
-                    className="mt-1 flex-shrink-0 text-[#E3343A]"
-                    size={18}
-                  />
-                  <span>
-                    <strong>Av. Del Libertador 4200</strong>
-                    <br /> Mercado Modelo Moreno
-                  </span>
-                </p>
-                <div className="mt-6">
-                  <a
-                    href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno%20(%20Enviar%20➜%20)"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
-                  >
-                    <FaWhatsapp className="w-5 h-5" /> Contactar con Sucursal
-                    Moreno
-                  </a>
-                </div>
-              </div>
-            </div>
+      <p className="text-neutral-200 max-w-2xl mx-auto">
+        Visitanos y viví una experiencia de compra directa, con la mejor
+        atención y los cortes más frescos de la zona.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+      
+      {/* Card Luis Guillon */}
+      <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
+        
+        <div className="h-48 relative overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed"
+            className="w-full h-full border-0 saturate-[0.8] contrast-110"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div className="p-5">
+          <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
+            Luis Guillon
+          </h3>
+
+          <p className="text-gray-600 flex items-start gap-3 mb-2">
+            <MapPin
+              className="mt-1 flex-shrink-0 text-[#E3343A]"
+              size={18}
+            />
+
+            <span>
+              <strong>Av. Luciano Valette 1696</strong>
+              <br /> A 4 cuadras de camino de cintura
+            </span>
+          </p>
+
+          <div className="mt-6">
+            <a
+              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n%20(%20Enviar%20➜%20)"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
+            >
+              <FaWhatsapp className="w-5 h-5" />
+              Contactar con Sucursal Luis Guillon
+            </a>
           </div>
-        </section>
+        </div>
+      </div>
+
+      {/* Card Moreno */}
+      <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
+        
+        <div className="h-48 relative overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed"
+            className="w-full h-full border-0 saturate-[0.8] contrast-110"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+          <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
+        </div>
+
+        <div className="p-5">
+          <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
+            Moreno
+          </h3>
+
+          <p className="text-gray-600 flex items-start gap-3 mb-2">
+            <MapPin
+              className="mt-1 flex-shrink-0 text-[#E3343A]"
+              size={18}
+            />
+
+            <span>
+              <strong>Av. Del Libertador 4200</strong>
+              <br /> Mercado Modelo Moreno
+            </span>
+          </p>
+
+          <div className="mt-6">
+            <a
+              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno%20(%20Enviar%20➜%20)"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
+            >
+              <FaWhatsapp className="w-5 h-5" />
+              Contactar con Sucursal Moreno
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
         <div id="venta-mayorista" className="flex w-full h-15" />
 
         {/* WHOLESALE */}
