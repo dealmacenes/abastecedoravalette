@@ -170,7 +170,7 @@ const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 function CutCard({ item }) {
   return (
-    <div className="flex-shrink-0 w-[152px] group cursor-pointer items-center">
+    <div className="flex-shrink-0 w-[152px] group cursor-pointer items-center border border-neutral-500 rounded">
       <div className="overflow-hidden rounded-xl bg-white aspect-square mb-2">
         <img
           src={item.img}
@@ -206,15 +206,15 @@ function MeatSection({ icon, title, subtitle, items }) {
   
 
   return (
-    <div className="mb-6 border-y border-gray-100">
+    <div className="mb-6 border border-gray-100 p-2 overflow-x-auto">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
-          <div className="flex gap-2 items-center w-full">
-            <div className="text-[#C0392B] my-2 ms-2">{icon}</div>
-            <h3 className="font-black text-[#1a2340] uppercase px-2">{title}</h3>
+          <div className="flex gap-2 items-center w-full px-4">
+            <div className="text-[#C0392B] my-2">{icon}</div>
+            <h3 className="font-black text-[#1a2340] uppercase">{title}</h3>
           </div>
-          <p className="text-normal text-gray-500 mb-4 leading-relaxed px-2">
+          <p className="text-normal text-gray-500 mb-4 leading-relaxed px-4">
             {subtitle}
           </p>
         </div>
