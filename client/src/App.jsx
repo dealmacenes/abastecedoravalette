@@ -163,14 +163,14 @@ const features = [
 ];
 
 const CARD_W = 152; // px, must match w-[152px] below
-const CARD_GAP = 12;
-const SCROLL_STEP = (CARD_W + CARD_GAP) * 1;
+const CARD_GAP = 20;
+const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 // ─── SUBCOMPONENTS ────────────────────────────────────────────────────────────
 
 function CutCard({ item }) {
   return (
-    <div className="flex-shrink-0 w-[152px] group cursor-pointer items-center">
+    <div className="flex flex-shrink-0 w-[152px] group cursor-pointer items-center">
       <div className="overflow-hidden rounded-xl bg-white aspect-square mb-2">
         <img
           src={item.img}
@@ -182,8 +182,8 @@ function CutCard({ item }) {
           }}
         />
       </div>
-      <p className="font-bold text-[13px] text-[#1a2340]">{item.name}</p>
-      <p className="text-[11px] text-gray-500 mb-2">{item.desc}</p>
+      <p className="w-full text-center font-bold text-[13px] text-[#1a2340]">{item.name}</p>
+      <p className="w-full text-center text-[11px] text-gray-500 mb-2">{item.desc}</p>
     </div>
   );
 }
@@ -246,7 +246,7 @@ function MeatSection({ icon, title, subtitle, items }) {
               .hide-sb::-webkit-scrollbar { display: none; }
             `}</style>
             <div
-              className="hide-sb flex gap-3"
+              className="hide-sb flex gap-5"
               style={
                 {
                   /* trick: apply hide class via ref parent */
