@@ -341,7 +341,7 @@ export default function App() {
               onClick={() => setContactOpen(true)}
               className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
             >
-              Contactanos <FaWhatsapp className="size-8"/>
+              Contactanos <FaWhatsapp className="size-5"/>
             </button>
             <button
               onClick={() => setMenuOpen((v) => !v)}
@@ -362,7 +362,7 @@ export default function App() {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
-                className="hover:text-[#C0392B] transition-colors py-1"
+                className="hover:text-[#C0392B] transition-colors py-1 uppercase"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 {item} ➜
