@@ -163,7 +163,7 @@ const features = [
 ];
 
 const CARD_W = 152; // px, must match w-[152px] below
-const CARD_GAP = 14;
+const CARD_GAP = 12;
 const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 // ─── SUBCOMPONENTS ────────────────────────────────────────────────────────────
@@ -234,6 +234,37 @@ function MeatSection({ icon, title, subtitle, items }) {
               <ChevronLeft size={16} />
             </button>
           )}
+
+          {/* Scrollable track — native scroll, hidden scrollbar */}
+          <div
+            ref={scrollRef}
+            onScroll={onScroll}
+            className="flex gap-3 w-full overflow-x-auto"
+            style={{
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            <style>{`
+              .hide-sb::-webkit-scrollbar { display: none; }
+            `}</style>
+            <div
+              className="hide-sb flex gap-3"
+              style={
+                {
+                  /* trick: apply hide class via ref parent */
+                }
+              }
+            >
+              {/* inner trick not needed; apply on the outer div directly via inline ref */}
+            </div>
+            {items.map((item, i) => (
+              <div key={i} style={{ flexShrink: 0 }}>
+                <CutCard item={item} />
+              </div>
+            ))}
+          </div>
 
           {/* Next arrow */}
           {!atEnd && (
