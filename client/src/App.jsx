@@ -451,17 +451,15 @@ export default function App() {
           </div>
 
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+            <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
+              ABASTECEDORA VALETTE
+            </h1>
             <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-3">
               UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS
             </p>
-            <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
-              ABASTECEDORA VALETTE
-              <br />
-              SABEMOS DE CARNES
-            </h1>
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8">
-              Ofrecemos una amplia selección de cortes frescos y de calidad para
-              tu mesa, con el respaldo de nuestra producción.
+              Ofrecemos una amplia selección de cortes de carne frescos y de calidad para
+              tu mesa, con el respaldo de nuestra experiencia producción en vacas, cerdos y pollos.
             </p>
             <div className="flex flex-col md:grid md:grid-cols-3 items-stretch gap-3 w-9/10 mx-auto items-center">
               {[
