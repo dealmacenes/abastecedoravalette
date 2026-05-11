@@ -505,14 +505,13 @@ export default function App() {
 
         {/* FOOTER */}
         <footer className="bg-[#1a2340] text-white pt-10 pb-6 px-4 mt-auto">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
+          <div className="flex flex-col gap-8 pb-8 border-b border-white/10">
             <div>
-              <div className="w-fit overflow-hidden px-2 py-1 rounded-md bg-white">
-              <img src="iconAndText.png" className="h-15 overflow-hidden bg-white rounded-8 w-fit" />
-              </div>
+              
+              <img src="iconWithText.svg" className="h-15 w-fit" />
               <div className="flex gap-3 mt-4">
-                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaInstagram size={14} /></a>
-                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaFacebookF size={14} /></a>
+                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaInstagram size={14} /> @abastecedora.valette</a>
+                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors"><FaFacebookF size={14} /> Abastecedora Valette</a>
               </div>
             </div>
             <div>
