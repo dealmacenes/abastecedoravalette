@@ -206,7 +206,7 @@ function MeatSection({ icon, title, subtitle, items }) {
   
 
   return (
-    <div className="mb-6 bg-neutral-50">
+    <div className="mb-6 border-y border-gray-100">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
@@ -512,10 +512,11 @@ export default function App() {
         </div>
 
         {/* CORTES */}
-        <section className="max-w-6xl w-full mx-auto px-4 sm:px-6 pt-8 pb-12">
+        <section className="max-w-6xl w-full pt-8 pb-12">
           <div className="text-center mb-8">
             <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-1">
               NUESTROS CORTES
+
             </p>
             <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl">
               Elegí lo que necesitás
