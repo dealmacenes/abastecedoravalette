@@ -459,7 +459,7 @@ export default function App() {
             </p>
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8 mt-15">
               Ofrecemos una amplia selección de cortes de carne frescos y de calidad para
-              tu mesa, con el respaldo de nuestra experiencia producción en vacas, cerdos y pollos.
+              tu mesa, con el respaldo de nuestra experiencia produciendo en vacas, cerdos y pollos.
             </p>
             <div className="flex flex-col md:grid md:grid-cols-3 items-stretch gap-3 w-9/10 mx-auto items-center">
               {[
@@ -481,7 +481,7 @@ export default function App() {
               ].map((p, i) => (
                 <div
                   key={i}
-                  className="flex flex-col w-full bg-white/10 backdrop-blur-sm p-3 items-center rounded-tr-md rounded-bl-md"
+                  className="flex flex-col w-full bg-white/10 backdrop-blur-sm p-3 items-center rounded-tl-lg rounded-br-lg"
                 >
                   <div className="text-[#C0392B] mb-1">{p.icon}</div>
                   <p className="text-white text-lg font-bold leading-tight mb-1">
