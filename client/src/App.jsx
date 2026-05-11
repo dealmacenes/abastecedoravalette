@@ -506,22 +506,6 @@ export default function App() {
               </div>
             </div>
             <div>
-              <p className="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">NAVEGACIÓN</p>
-              <ul className="space-y-2 text-sm text-gray-400">
-                {["Sucursales", "Venta Mayorista", "Quiénes Somos"].map((item) => (
-                  <li key={item}><a href="#" className="hover:text-white transition-colors">• {item}</a></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">CONTACTO</p>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li className="flex items-center gap-2"><FaPhoneAlt size={11} className="text-[#C0392B]" /> +54 11 2835 3615</li>
-                <li className="flex items-start gap-2"><FaEnvelope size={11} className="text-[#C0392B] mt-0.5" /><span className="break-all">ventas@abastecedoravalette.com.ar</span></li>
-              </ul>
-              <p className="text-xs text-gray-500 mt-4">Seguinos en nuestras redes</p>
-            </div>
-            <div>
               <p className="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">SUCURSALES</p>
               <ul className="space-y-3 text-sm text-gray-400">
                 <li className="flex items-start gap-2">
