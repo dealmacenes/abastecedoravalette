@@ -412,17 +412,17 @@ export default function App() {
                 {
                   label: "Atención Comercial",
                   sub: "Sucursal Luis Guillón",
-                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.",
+                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.%20(%20Enviar%20➜%20)",
                 },
                 {
                   label: "Atención Comercial",
                   sub: "Sucursal Moreno",
-                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.",
+                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.%20(%20Enviar%20➜%20)",
                 },
                 {
                   label: "Atención Personalizada",
                   sub: "Mayoristas",
-                  href: "https://wa.me/541128353615?text=Hola!%20Estoy%20interesado%20en%20la%20venta%20mayorista.",
+                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20estoy%20interesado%20en%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)",
                 },
               ].map((op, i) => (
                 <a
@@ -593,7 +593,7 @@ export default function App() {
                 </p>
                 <div className="mt-6">
                   <a
-                    href="https://wa.me/541128353615"
+                    href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n%20(%20Enviar%20➜%20)"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
@@ -631,7 +631,7 @@ export default function App() {
                 </p>
                 <div className="mt-6">
                   <a
-                    href="https://wa.me/541128353615"
+                    href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno%20(%20Enviar%20➜%20)"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
