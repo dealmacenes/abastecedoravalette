@@ -302,6 +302,7 @@ export default function App() {
         key={item}
         href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
         className="hover:text-[#C0392B] transition-colors py-1"
+        onClick={()=> setMenuOpen(!menuOpen)}
       >
         {item}
       </a>
