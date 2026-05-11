@@ -408,19 +408,19 @@ export default function App() {
             <div className="flex flex-col gap-3">
               {[
                 {
-                  label: "Atención Comercial",
-                  sub: "Sucursal Luis Guillón",
+                  label: "Sucursal Luis Guillon",
+                  sub: "Atención Comercial",
                   href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.%20(%20Enviar%20➜%20)",
                 },
                 {
-                  label: "Atención Comercial",
-                  sub: "Sucursal Moreno",
+                  label: "Sucursal Moreno",
+                  sub: "Atención Comercial",
                   href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.%20(%20Enviar%20➜%20)",
                 },
                 {
-                  label: "Atención Personalizada",
-                  sub: "Mayoristas",
-                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20estoy%20interesado%20en%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)",
+                  label: "Mayoristas y comerciantes",
+                  sub: "Atención personalizada y asesoría.",
+                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)",
                 },
               ].map((op, i) => (
                 <a
@@ -661,12 +661,12 @@ export default function App() {
                 </h3>
                 <p className="text-sm text-red-200 max-w-sm">
                   Accedé a precios especiales por volumen y sumate a nuestra red
-                  de clientes mayoristas en todo el país.
+                  de clientes mayoristas en todo el país. Te acompañamos y asesoramos en el proceso!
                 </p>
               </div>
             </div>
             <a
-              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20estoy%20interesado%20en%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)"
+              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)"
               className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3 rounded-xl hover:bg-red-50 transition-colors whitespace-nowrap"
             >
               ATENCIÓN PERSONALIZADA <FaWhatsapp size={16} />
