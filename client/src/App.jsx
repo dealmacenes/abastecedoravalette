@@ -170,20 +170,22 @@ const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 function CutCard({ item }) {
   return (
-    <div className="flex-shrink-0 w-[152px] group cursor-pointer items-center border border-neutral-300 rounded items-stretch">
+    <div className="flex-shrink-0 w-[152px] group cursor-pointer items-center border border-neutral-200 rounded-md items-stretch">
       <div className="overflow-hidden rounded-xl bg-white aspect-square mb-2">
         <img
           src={item.img}
           alt={item.name}
-          className="w-full h-full object-scale-down group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-scale-down group-hover:scale-105 transition-transform duration-300 mx-2 mt-2"
           onError={(e) => {
             e.target.src =
               "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80";
           }}
         />
       </div>
-      <p className="w-full text-center font-bold text-[13px] text-[#1a2340]">{item.name}</p>
-      <p className="w-full text-center text-[11px] text-gray-500 mb-2">{item.desc}</p>
+      <div className="flex flex-col w-full bg-neutral-200">
+        <p className="w-full text-center font-bold text-[13px] text-[#1a2340]">{item.name}</p>
+        <p className="w-full text-center text-[11px] text-gray-500 mb-2">{item.desc}</p>
+      </div>
     </div>
   );
 }
