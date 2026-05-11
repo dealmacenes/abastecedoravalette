@@ -355,9 +355,10 @@ export default function App() {
             </svg>
           </div>
         </section>
+        <div id="nuestras-carnes" className="flex w-full h-10"/>
 
         {/* Heart */}
-        <div id="nuestras-carnes" className="flex justify-center -mt-4 relative z-10 scroll-margin-top-10">
+        <div className="flex justify-center -mt-4 relative z-10 scroll-margin-top-10">
           <div className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center text-red-500">
             <LuBeef />
           </div>
@@ -374,10 +375,10 @@ export default function App() {
             <MeatSection key={key} icon={sec.icon} title={sec.title} subtitle={sec.subtitle} items={cuts[key]} />
           ))}
         </section>
+        <div id="nuestras-sucursales" className="flex w-full h-10"/>
 
         {/* Nuestras Sucursales (Mapas) */}
       <section
-        id="nuestras-sucursales"
         className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-20"
       >
         <div className="text-center mb-12">
@@ -487,9 +488,10 @@ export default function App() {
             </a>
           </div>
         </section>
+        <div id="calidad-de-servicios" className="flex w-full h-10"/>
 
         {/* FEATURES */}
-        <section id="calidad-de-nuestros-servicios" className="bg-white py-12 px-4">
+        <section className="bg-white py-12 px-4">
           <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
             {features.map((f, i) => (
               <div key={i} className="flex flex-col items-center gap-3">
