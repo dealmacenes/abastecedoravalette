@@ -207,7 +207,6 @@ function MeatSection({ icon, title, subtitle, items }) {
             onScroll={onScroll}
             className="flex gap-3 w-full overflow-x-auto"
             style={{
-              scrollSnapType: "x mandatory",
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -223,7 +222,7 @@ function MeatSection({ icon, title, subtitle, items }) {
               {/* inner trick not needed; apply on the outer div directly via inline ref */}
             </div>
             {items.map((item, i) => (
-              <div key={i} style={{ scrollSnapAlign: "start", flexShrink: 0 }}>
+              <div key={i} style={{ flexShrink: 0 }}>
                 <CutCard item={item} />
               </div>
             ))}
