@@ -467,7 +467,7 @@ export default function App() {
           </div>
         </div>
       </section>
-        <div id="venta-mayorista" className="w-full h-1"/>
+        <div id="venta-mayorista" className="flex w-full h-1"/>
 
         {/* WHOLESALE */}
         <section className="bg-[#8B0000] py-10 sm:py-12 px-4">
