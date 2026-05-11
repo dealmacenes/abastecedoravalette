@@ -375,7 +375,7 @@ export default function App() {
             <MeatSection key={key} icon={sec.icon} title={sec.title} subtitle={sec.subtitle} items={cuts[key]} />
           ))}
         </section>
-        <div id="nuestras-sucursales" className="flex w-full h-10"/>
+        <div id="nuestras-sucursales" className="flex w-full h-15"/>
 
         {/* Nuestras Sucursales (Mapas) */}
       <section
@@ -468,7 +468,7 @@ export default function App() {
           </div>
         </div>
       </section>
-        <div id="venta-mayorista" className="flex w-full h-10"/>
+        <div id="venta-mayorista" className="flex w-full h-15"/>
 
         {/* WHOLESALE */}
         <section className="bg-[#8B0000] py-10 sm:py-12 px-4">
