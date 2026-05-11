@@ -182,7 +182,7 @@ function CutCard({ item }) {
           }}
         />
       </div>
-      <div className="flex flex-col w-full bg-neutral-200 py-2">
+      <div className="flex flex-col w-full bg-sky-300 py-2">
         <p className="w-full text-center font-bold text-[13px] text-[#1a2340]">{item.name}</p>
         <p className="w-full text-center text-[11px] text-gray-500 -mt-[2px]">{item.desc}</p>
       </div>
