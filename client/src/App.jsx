@@ -510,8 +510,8 @@ export default function App() {
               
               <img src="iconWithText.svg" className="h-15 w-fit" />
               <div className="flex gap-3 mt-4">
-                <a href="https://www.instagram.com/abastecedora.valette?igsh=a2MwbTM2dTl5dGhj" target="_blank" className="flex w-fit h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors gap-2"><FaInstagram size={14} /> @abastecedora.valette</a>
-                <a href="https://www.facebook.com/share/1D5Qyoawao/" target="_blank" className="flex w-fit h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors gap-2"><FaFacebookF size={14} /> Abastecedora Valette</a>
+                <a href="https://www.instagram.com/abastecedora.valette?igsh=a2MwbTM2dTl5dGhj" target="_blank" className="flex w-fit h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors gap-2 px-2"><FaInstagram size={14} /> @abastecedora.valette</a>
+                <a href="https://www.facebook.com/share/1D5Qyoawao/" target="_blank" className="flex w-fit h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors gap-2 px-2"><FaFacebookF size={14} /> Abastecedora Valette</a>
               </div>
             </div>
             <div>
