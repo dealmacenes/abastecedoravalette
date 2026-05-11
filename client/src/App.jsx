@@ -352,21 +352,23 @@ export default function App() {
           </div>
         </div>
         {menuOpen && (
-          <div className="bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
+          <div className="sm:flex sm:justify-arround bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
             {[
               "Nuestras Carnes",
               "Nuestras Sucursales",
               "Venta Mayorista",
               "Calidad de Servicios",
             ].map((item) => (
+              <div className=" w-fit px-2 py-1 rounded-sm border-[#C0392B] bg-[#C0392B]/10">
               <a
                 key={item}
                 href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
                 className="hover:text-[#C0392B] transition-colors py-1 uppercase"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                {item} ➜
+                {item}
               </a>
+              </div>
             ))}
           </div>
         )}
