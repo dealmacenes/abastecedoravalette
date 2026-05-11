@@ -170,21 +170,21 @@ const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 function CutCard({ item }) {
   return (
-    <div className="flex-shrink-0 w-[152px] group cursor-pointer items-center border border-neutral-200 rounded-md items-stretch">
+    <div className="flex-shrink-0 w-fit group cursor-pointer items-center border border-neutral-200 rounded-md items-stretch overflow-hidden">
       <div className="overflow-hidden rounded-xl bg-white aspect-square mb-2">
         <img
           src={item.img}
           alt={item.name}
-          className="w-full h-full object-scale-down group-hover:scale-105 transition-transform duration-300 p-2"
+          className="w-[152px] h-[152px] object-scale-down group-hover:scale-105 transition-transform duration-300 p-2"
           onError={(e) => {
             e.target.src =
               "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80";
           }}
         />
       </div>
-      <div className="flex flex-col w-full bg-sky-300 py-2">
-        <p className="w-full text-center font-bold text-[13px] text-[#1a2340]">{item.name}</p>
-        <p className="w-full text-center text-[11px] text-gray-500 -mt-[2px]">{item.desc}</p>
+      <div className="flex flex-col max-w-[152px] bg-red-900 p-2">
+        <p className="w-full text-center font-bold text-white">{item.name}</p>
+        <p className="w-full text-center text-sm text-neutral-100 -mt-[2px]">{item.desc}</p>
       </div>
     </div>
   );
@@ -208,7 +208,7 @@ function MeatSection({ icon, title, subtitle, items }) {
   
 
   return (
-    <div className="mb-6 border border-gray-100 p-2 overflow-x-auto">
+    <div className="mb-6 border border-red-100 p-2 overflow-x-auto bg-red-50/50">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
@@ -237,7 +237,7 @@ function MeatSection({ icon, title, subtitle, items }) {
           <div
             ref={scrollRef}
             onScroll={onScroll}
-            className="flex w-full overflow-x-auto px-6 gap-5"
+            className="flex w-full overflow-x-auto gap-5"
             style={{
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
@@ -403,8 +403,8 @@ export default function App() {
                   href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.%20(%20Enviar%20➜%20)",
                 },
                 {
-                  label: "Mayoristas y comerciantes",
-                  sub: "Atención personalizada y asesoría.",
+                  label: "Asesor a comerciantes",
+                  sub: "Atención personalizada para comerciantes y mayoristas",
                   href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)",
                 },
               ].map((op, i) => (
@@ -454,7 +454,7 @@ export default function App() {
             <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
               ABASTECEDORA VALETTE
             </h1>
-            <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-3">
+            <p className="text-white/80 text-sm font-bold uppercase tracking-widest mb-3">
               UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS
             </p>
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8 mt-15">
