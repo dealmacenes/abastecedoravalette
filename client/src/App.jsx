@@ -352,7 +352,7 @@ export default function App() {
           </div>
         </div>
         {menuOpen && (
-          <div className="sm:flex sm:justify-arround bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
+          <div className="sm:flex sm:flex-row sm:justify-around bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
             {[
               "Nuestras Carnes",
               "Nuestras Sucursales",
