@@ -335,7 +335,8 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <img
             src="iconAndText.png"
-            className="h-15 w-fit events-pointer-none"
+            className="h-20 w-fit events-pointer-none"
+            onClick={()=> window.scrollTo({ top: 0, behavior: "smooth" })}
           />
           <div className="flex items-center gap-3">
             <button
@@ -698,11 +699,11 @@ export default function App() {
             {/* Contenido principal */}
             
             {/* Fila 1 — Logo + redes */}
-            <img src="iconWithText.svg" className="h-14 w-fit mx-auto" />
+            <img src="iconWithText.svg" className="h-14 w-fit mx-auto sm:my-auto" />
 
             {/* Fila 2 — Contacto */}
-            <div className="flex flex-col items-center max-w-5/6 mx-auto">
-              <p className="font-bold text-xs my-4 text-gray-400 uppercase tracking-wider">
+            <div className="flex flex-col items-center max-w-5/6 mx-auto mt-4 sm:mt-0 sm:my-auto">
+              <p className="font-bold text-xs mb-4 text-gray-400 uppercase tracking-wider">
                 Seguinos en nuestras redes
               </p>
               <div className="flex flex-col gap-2 mt-2">
@@ -726,7 +727,7 @@ export default function App() {
             </div>
           </div>
           {/* Copyright */}
-            <p className="flex w-full text-center text-xs text-gray-500 mt-6">
+            <p className="flex w-fit mx-auto text-center text-xs text-gray-500 mt-6">
               © {new Date().getFullYear()} Abastecedora Valette. Todos los
               derechos reservados.
             </p>
