@@ -356,7 +356,7 @@ export default function App() {
         </section>
 
         {/* Heart */}
-        <div id="nuestras-carnes" className="flex justify-center -mt-4 relative z-10">
+        <div id="nuestras-carnes" className="flex justify-center -mt-4 relative z-10 scroll-margin-top-10">
           <div className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center text-red-500">
             <LuBeef />
           </div>
