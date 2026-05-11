@@ -164,7 +164,7 @@ const features = [
 
 const CARD_W = 152; // px, must match w-[152px] below
 const CARD_GAP = 12;
-const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
+const SCROLL_STEP = (CARD_W + CARD_GAP) * 1;
 
 // ─── SUBCOMPONENTS ────────────────────────────────────────────────────────────
 
@@ -210,7 +210,7 @@ function MeatSection({ icon, title, subtitle, items }) {
   );
 
   return (
-    <div className="border border-gray-200 rounded-2xl mb-6">
+    <div className="mb-6">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
@@ -224,7 +224,7 @@ function MeatSection({ icon, title, subtitle, items }) {
         </div>
 
         {/* Carousel */}
-        <div className="flex-1 min-w-0 relative flex items-center">
+        <div className="flex w-full min-w-0 relative flex items-center">
           {/* Prev arrow */}
           {scrollLeft > 8 && (
             <button
@@ -278,21 +278,6 @@ function MeatSection({ icon, title, subtitle, items }) {
         </div>
       </div>
 
-      {/* Dots */}
-      <div className="flex gap-1.5 mt-4 pl-[120px] sm:pl-[158px]">
-        {Array.from({ length: totalDots }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() =>
-              scrollRef.current?.scrollTo({
-                left: i * SCROLL_STEP,
-                behavior: "smooth",
-              })
-            }
-            className={`w-2 h-2 rounded-full transition-colors ${activeDot === i ? "bg-[#C0392B]" : "bg-gray-300"}`}
-          />
-        ))}
-      </div>
     </div>
   );
 }
