@@ -4,11 +4,7 @@
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
   --color-main: #1a2340;
-  --color-main-border: #8d2a1d;
-  --color-main-accent: #de2e23;
-  --color-main-background: #fffaf7;
-  --color-main-text: #fffaf7;
-  --color-main-button: #f4f7f9;
+  --color-main-red: #C0392B;
 }
 
 .hide-scrollbar::-webkit-scrollbar {

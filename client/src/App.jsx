@@ -176,7 +176,7 @@ const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 function CutCard({ item }) {
   return (
-    <div className="flex-shrink-0 w-fit group cursor-pointer items-center border border-neutral-200 rounded-md items-stretch overflow-hidden">
+    <div className="flex-shrink-0 w-fit group cursor-pointer items-center rounded-md items-stretch overflow-hidden">
       <div className="fle overflow-hidden rounded-xl bg-white mb-2">
         <img
           src={item.img}
@@ -188,7 +188,7 @@ function CutCard({ item }) {
           }}
         />
       </div>
-      <div className="flex flex-col w-full bg-[#1a2340] p-2">
+      <div className="flex flex-col w-full rounded-md bg-[#1a2340] p-2">
         <p className="w-full text-center font-bold text-white">{item.name}</p>
         <p className="w-full text-center text-sm text-neutral-100 -mt-[2px]">{item.desc}</p>
       </div>
@@ -214,7 +214,7 @@ function MeatSection({ icon, title, subtitle, items }) {
   
 
   return (
-    <div className="mb-6 border border-red-100 py-4 overflow-x-auto bg-red-50/50">
+    <div className="my-20 w-full border-y-4 border-y-red-400 py-4 overflow-x-auto bg-main-red">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
@@ -243,7 +243,7 @@ function MeatSection({ icon, title, subtitle, items }) {
           <div
             ref={scrollRef}
             onScroll={onScroll}
-            className="flex w-full overflow-x-auto gap-5"
+            className="flex w-full overflow-x-auto gap-5 pr-4.5"
             style={{
               WebkitOverflowScrolling: "touch",
               scrollbarWidth: "none",
@@ -311,11 +311,11 @@ export default function App() {
   };
 
   return (
-    /*
-      FIX: The root div must NOT be overflow-hidden or a scroll container.
-      Using min-h-screen + flex-col ensures sticky works against the viewport,
-      not a clipped ancestor. The page scrolls naturally on <html>/<body>.
-    */
+  
+   <>
+   {menuOpen && (
+    <div className="fixed top-0 left-0 w-full h-full z-50" onClick={() => setMenuOpen(false)}/>
+   )}
     <div className="min-h-screen flex flex-col font-sans text-[#1a2340] bg-white">
       {/* ── NAVBAR — sticky against viewport ── */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -328,7 +328,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setContactOpen(true)}
-              className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
+              className="flex items-center gap-2 bg-main-red text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
             >
               <FaWhatsapp className="size-5"/> Contactanos
             </button>
@@ -341,22 +341,23 @@ export default function App() {
           </div>
         </div>
         {menuOpen && (
-          <div className="flex flex-wrap flex-row justify-around bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
+          <div className="fixed w-6/10 top-18 shadow-sm right-4 flex flex-col bg-white rounded-lg border border-gray-100 p-2 gap-1 font-semibold">
             {[
               "Nuestras Carnes",
               "Nuestras Sucursales",
               "Venta Mayorista",
               "Calidad de Servicios",
             ].map((item) => (
-              <div className=" w-fit px-2 py-1 rounded-sm border border-[#C0392B] bg-[#C0392B]/10">
+              <div className="flex flex-col w-full items-center">
               <a
                 key={item}
                 href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
-                className="hover:text-[#C0392B] transition-colors py-1 uppercase"
+                className="hover:text-[#C0392B] transition-colors p-1"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 {item}
               </a>
+              <div className="flex w-full h-[1px] rounded-full bg-neutral-300"/>
               </div>
             ))}
           </div>
@@ -453,7 +454,7 @@ export default function App() {
               className="w-full h-full object-cover opacity-40"
               style={{ objectPosition: "center right" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1a2340] via-[#1a2340]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1a2340]/80 via-[#1a2340]/50 to-transparent" />
           </div>
 
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-30">
@@ -461,18 +462,19 @@ export default function App() {
               ABASTECEDORA VALETTE
             </h1>
             <p className="text-white/80 text-sm font-bold uppercase tracking-widest mb-3">
-              UNA EXPERIENCIA DE COMPRA DIRECTA; SIN INTERMEDIARIOS
+              UNA EXPERIENCIA DE COMPRA DIRECTA, SIN INTERMEDIARIOS
             </p>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-sm mb-8 mt-15 text-center mx-auto">
+            <div className="flex flex-col sm:flex-row sm:gap-6 items-center justify-center mt-15">
+            <p className="text-gray-300 leading-relaxed max-w-sm sm:max-w-50 mb-8 text-center sm:text-start mx-auto sm:m-0">
               Ofrecemos una amplia selección de cortes de carne frescos y de calidad para
               tu mesa, con el respaldo de nuestra experiencia produciendo en vacas, cerdos y pollos.
             </p>
-            <div className="flex flex-col md:grid md:grid-cols-3 items-stretch gap-3 w-9/10 mx-auto items-center">
+            <div className="flex flex-col items-stretch gap-3 w-9/10 mx-auto sm:m-0 items-center">
               {[
                 {
                   icon: <FaShieldAlt className=" size-8 shrink-0" />,
                   title: "Calidad garantizada",
-                  desc: "Al ser productores, nos enfocanos en la selección y el control en cada proceso.",
+                  desc: "Al ser productores, nos enfocamos en la selección y el control en cada proceso.",
                 },
                 {
                   icon: <MdOutlineSevereCold className=" size-8 shrink-0" />,
@@ -487,15 +489,21 @@ export default function App() {
               ].map((p, i) => (
                 <div
                   key={i}
-                  className="flex flex-col w-full bg-white/10 backdrop-blur-sm p-3 items-center rounded-tl-lg rounded-br-lg"
+                  className="flex flex-col sm:flex-row sm:justify-start sm:items-center w-full bg-white/10 backdrop-blur-sm p-3 items-center rounded-tl-3xl rounded-br-3xl sm:gap-3 overflow-hidden"
                 >
-                  <div className="text-[#C0392B] mb-1">{p.icon}</div>
-                  <p className="text-white text-lg font-bold leading-tight mb-1">
+                  <div className="flex flex-col sm:flex-row items-center sm:w-5/13 gap-4">
+                   <div className="text-[#C0392B] mb-1 p-3 rounded-full bg-main/50 border border-neutral-500/60">{p.icon}</div>
+                   <p className="flex text-white text-lg font-bold leading-tight mb-1 text-center sm:text-start">
                     {p.title}
-                  </p>
-                  <p className="text-center text-gray-400 leading-tight">{p.desc}</p>
+                   </p>
+                  </div>
+                  <div className="hidden sm:flex h-14 w-[2px] bg-neutral-400 rounded-full"/>
+                  <p className="flex w-full text-center sm:text-start text-gray-400 leading-tight">{p.desc}</p>
+                  
                 </div>
               ))}
+            </div>
+            
             </div>
           </div>
 
@@ -756,5 +764,6 @@ export default function App() {
         </footer>
       </main>
     </div>
+    </>
   );
 }
