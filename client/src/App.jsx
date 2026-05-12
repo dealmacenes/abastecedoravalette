@@ -410,7 +410,7 @@ export default function App() {
 
             {/* Logo */}
             <img
-              src="/iconAndText.png"
+              src="/iconAndText.webp"
               className="h-20 w-fit cursor-pointer flex-shrink-0"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               alt="Abastecedora Valette"
@@ -476,7 +476,7 @@ export default function App() {
           <section className="relative overflow-hidden bg-[#1a2340] min-h-[400px] sm:min-h-[460px]">
             <div className="absolute inset-0">
               <img
-                src="/hero.png"
+                src="/hero.webp"
                 alt="Carnes Valette"
                 className="w-full h-full object-cover opacity-45"
                 style={{ objectPosition: "center right" }}
