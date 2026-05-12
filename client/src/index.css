@@ -5,6 +5,7 @@
   --font-montserrat: "Montserrat", sans-serif;
   --color-main: #1a2340;
   --color-main-red: #C0392B;
+  --color-buttons: #283459;
 }
 
 .hide-scrollbar::-webkit-scrollbar {

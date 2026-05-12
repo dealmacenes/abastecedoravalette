@@ -21,33 +21,117 @@ import { LuBeef } from "react-icons/lu";
 
 const cuts = {
   vacuna: [
-    { name: "Media Res",       desc: "Fresca y lista para despostar",  img: "/mediaRes.png" },
-    { name: "Bife Angosto",    desc: "Ideal para parrilla",            img: "/work14.jpg"   },
-    { name: "Asado",           desc: "Clásico argentino",              img: "/work11.jpg"   },
-    { name: "Nalga",           desc: "Tierna y sabrosa",               img: "/work10.jpg"   },
-    { name: "Vacío",           desc: "Jugoso y sabroso",               img: "/work12.jpg"   },
-    { name: "Lomo",            desc: "Corte premium y tierno",         img: "/work8.jpg"    },
-    { name: "Roast Beef",      desc: "Ideal para horno y guisos",      img: "/work7.jpg"    },
-    { name: "Picaña",          desc: "Muy jugosa y popular",           img: "/work3.jpg"    },
-    { name: "Colita de Cuadril", desc: "Magra y muy tierna",           img: "/work5.jpg"    },
-    { name: "Carne Picada",    desc: "Perfecta para comidas caseras",  img: "/work13.jpg"   },
-    { name: "Bola de Lomo",    desc: "Ideal para milanesas",           img: "/work14.jpg"   },
-    { name: "Tapa de Nalga",   desc: "Magra y versátil",               img: "/work15.jpg"   },
-    { name: "Tapa de Asado",   desc: "Clásico y tradicional",          img: "/work9.jpg"    },
+    {
+      name: "Media Res",
+      desc: "Fresca y lista para despostar",
+      img: "/mediaRes.png",
+    },
+    {
+      name: "Bife Angosto",
+      desc: "Tierno y jugoso, ideal para la parrilla",
+      img: "/work14.jpg",
+    },
+    {
+      name: "Asado",
+      desc: "El clásico argentino infaltable",
+      img: "/work11.jpg",
+    },
+    {
+      name: "Nalga",
+      desc: "Versátil y tierna, ideal al horno",
+      img: "/work10.jpg",
+    },
+    {
+      name: "Vacío",
+      desc: "Jugoso y sabroso a la parrilla",
+      img: "/work12.jpg",
+    },
+    { name: "Lomo", desc: "El corte más tierno y premium", img: "/work8.jpg" },
+    {
+      name: "Roast Beef",
+      desc: "Perfecto para horno y guisos",
+      img: "/work7.jpg",
+    },
+    {
+      name: "Picaña",
+      desc: "Jugosa y popular en todo asado",
+      img: "/work3.jpg",
+    },
+    {
+      name: "Colita de Cuadril",
+      desc: "Magra, tierna y fácil de cocinar",
+      img: "/work5.jpg",
+    },
+    {
+      name: "Carne Picada",
+      desc: "Perfecta para empanadas, salsas y más",
+      img: "/work13.jpg",
+    },
+    {
+      name: "Bola de Lomo",
+      desc: "La favorita para milanesas",
+      img: "/work14.jpg",
+    },
+    {
+      name: "Tapa de Nalga",
+      desc: "Magra y versátil en la cocina",
+      img: "/work15.jpg",
+    },
+    {
+      name: "Tapa de Asado",
+      desc: "Sabrosa y tradicional a la parrilla",
+      img: "/work9.jpg",
+    },
   ],
   cerdo: [
-    { name: "Cerdo",               desc: "Calidad y genética",                   img: "/work22.jpg" },
-    { name: "Bondiola",            desc: "Jugosa y llena de sabor",              img: "/work2.jpg"  },
-    { name: "Bife de Cerdo",       desc: "Tierno y perfecto a la plancha",       img: "/work1.jpg"  },
-    { name: "Pechito de Cerdo",    desc: "Ideal para parrilla lenta",            img: "/work6.jpg"  },
-    { name: "Chorizos",            desc: "Infaltables en cualquier asado",       img: "/work19.jpg" },
-    { name: "Salchichas Parrilleras", desc: "Doradas y súper sabrosas",          img: "/work20.jpg" },
-    { name: "Pernil",              desc: "Ideal para reuniones y eventos",       img: "/work21.jpg" },
+    {
+      name: "Cerdo",
+      desc: "Calidad superior y genética seleccionada",
+      img: "/work22.jpg",
+    },
+    { name: "Bondiola", desc: "Jugosa y llena de sabor", img: "/work2.jpg" },
+    {
+      name: "Bife de Cerdo",
+      desc: "Tierno y perfecto a la plancha",
+      img: "/work1.jpg",
+    },
+    {
+      name: "Pechito de Cerdo",
+      desc: "Ideal para parrilla lenta y ahumados",
+      img: "/work6.jpg",
+    },
+    {
+      name: "Chorizos",
+      desc: "Infaltables en cualquier asado",
+      img: "/work19.jpg",
+    },
+    {
+      name: "Salchichas Parrilleras",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Pernil",
+      desc: "Ideal para reuniones y eventos",
+      img: "/work21.jpg",
+    },
   ],
   pollo: [
-    { name: "Pollo Fresco", desc: "Fresco y natural",      img: "/work16.jpg" },
-    { name: "Pata y muslo", desc: "Rendidor y versátil",   img: "/work17.jpg" },
-    { name: "Supremas",     desc: "Sin piel",              img: "/work18.jpg" },
+    {
+      name: "Pollo Fresco",
+      desc: "Fresco, natural y de calidad",
+      img: "/work16.jpg",
+    },
+    {
+      name: "Pata y muslo",
+      desc: "Rendidor y versátil en la cocina",
+      img: "/work17.jpg",
+    },
+    {
+      name: "Supremas",
+      desc: "Sin piel, tiernas y magras",
+      img: "/work18.jpg",
+    },
   ],
 };
 
@@ -67,19 +151,19 @@ const WHATSAPP_CONTACTS = [
     label: "Sucursal Luis Guillón",
     sub: "Av. Luciano Valette 1696",
     buildHref: (cut) =>
-      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Luis%20Guill%C3%B3n.%20(%20Enviar%20%E2%9E%9C%20)`,
+      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Luis%20Guill%C3%B3n.`,
   },
   {
     label: "Sucursal Moreno",
     sub: "Av. Del Libertador 4200 — Mercado Modelo",
     buildHref: (cut) =>
-      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Moreno.%20(%20Enviar%20%E2%9E%9C%20)`,
+      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Moreno.`,
   },
   {
     label: "Atención personalizada",
     sub: "Mayoristas, comerciantes y pedidos especiales",
     buildHref: (cut) =>
-      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web.%20Quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20y%20me%20interesa%20la%20atenci%C3%B3n%20personalizada.%20(%20Enviar%20%E2%9E%9C%20)`,
+      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20y%20me%20interesa%20la%20atenci%C3%B3n%20personalizada.`,
   },
 ];
 
@@ -107,7 +191,7 @@ function CutCard({ item, onSelect }) {
         <img
           src={item.img}
           alt={item.name}
-          className="object-scale-down p-5 group-hover:scale-106 transition-transform duration-300"
+          className="object-scale-down aspect-square max-w-[160px] mx-auto p-5 group-hover:scale-106 transition-transform duration-300"
           onError={(e) => {
             e.target.src =
               "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80";
@@ -118,7 +202,7 @@ function CutCard({ item, onSelect }) {
       <div className="rounded-xl bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
         <p className="text-white font-bold text-sm text-center leading-tight">{item.name}</p>
         <p className="text-neutral-300 text-xs text-center mt-0.5 leading-tight">{item.desc}</p>
-        <p className="text-neutral-700 text-[10px] font-semibold text-center mt-1.5 flex items-center justify-center gap-1 hover:scale-105 transition-transform duration-200 px-2 py-1 rounded-md bg-white border border-neutral-300">
+        <p className="text-neutral-50 text-[10px] font-semibold text-center my-1.5 flex items-center justify-center gap-1 hover:scale-105 transition-transform duration-200 px-2 py-1 rounded-md bg-buttons border border-neutral-300 w-fit mx-auto">
           Click para consultar <FaChevronRight size={8} />
         </p>
       </div>
@@ -284,17 +368,17 @@ function ContactModal({ onClose }) {
     {
       label: "Sucursal Luis Guillón",
       sub: "Atención comercial",
-      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.%20(%20Enviar%20%E2%9E%9C%20)",
+      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.",
     },
     {
       label: "Sucursal Moreno",
       sub: "Atención comercial",
-      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.%20(%20Enviar%20%E2%9E%9C%20)",
+      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Moreno.",
     },
     {
       label: "Atención personalizada",
       sub: "Asesoría y ventas para comerciantes y mayoristas",
-      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20%E2%9E%9C%20)",
+      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web,%20me%20interesa%20la%20venta%20mayorista.",
     },
   ];
 
@@ -382,10 +466,10 @@ export default function App() {
   };
 
   const navLinks = [
+    { label: "Calidad y Servicios", href: "#calidad-de-servicios" },
     { label: "Nuestras Carnes",     href: "#nuestras-carnes"     },
     { label: "Sucursales",          href: "#nuestras-sucursales"  },
     { label: "Venta Mayorista",     href: "#venta-mayorista"      },
-    { label: "Calidad y Servicios", href: "#calidad-de-servicios" },
   ];
 
   return (
@@ -637,14 +721,14 @@ export default function App() {
                     address: "Av. Luciano Valette 1696",
                     detail: "A 4 cuadras de Camino de Cintura",
                     mapSrc: "https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed",
-                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n%20(%20Enviar%20%E2%9E%9C%20)",
+                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n",
                   },
                   {
                     name: "Moreno",
                     address: "Av. Del Libertador 4200",
                     detail: "Mercado Modelo Moreno",
                     mapSrc: "https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed",
-                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno%20(%20Enviar%20%E2%9E%9C%20)",
+                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno",
                   },
                 ].map((branch) => (
                   <div
