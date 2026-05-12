@@ -479,16 +479,15 @@ export default function App() {
       {/* SEO */}
       <Helmet>
         <title>
-          Abastecedora Valette | Carnicería mayorista y minorista - Luis Guillón
-          y Moreno
+          Abastecedora Valette | Producción y venta de carnes.
         </title>
         <meta
           name="description"
-          content="Venta de carne vacuna, cerdo y pollo por mayor y menor. Criadero propio. 2 sucursales: Luis Guillón (Av. Luciano Valette 1696) y Moreno (Av. Del Libertador 4200). Servicio de envío a domicilio."
+          content="Productores de carne vacuna, cerdo y pollo por mayor y menor. Sucursales en Luis Guillón y Moreno. Restaurantes, comercios y familias."
         />
         <meta
           name="keywords"
-          content="carnicería Luis Guillón, carniceria luis guillon, carne al por mayor GBA Sur, abastecedora Valette, cortes de carne Moreno, carnicerias, venta mayorista carne Buenos Aires"
+          content="carnicería Luis Guillón, carniceria luis guillon, carne al por mayor GBA Sur, abastecedora Valette, cortes de carne Moreno, carnicerias, venta mayorista carne Buenos Aires, envios, carne de cerdo, carne de pollo, carne de vaca, carne para asado, carne para restaurantes"
         />
         <link
           rel="canonical"
@@ -501,7 +500,7 @@ export default function App() {
         />
         <meta
           property="og:description"
-          content="Troceo de carne vacuna, cerdo y pollo. Criadero propio. Mayorista y minorista en GBA."
+          content="Productores de carne vacuna, cerdo y pollo con criadero propio. Venta mayorista y minorista para comercios y familias."
         />
         <meta property="og:type" content="business.business" />
         <meta
@@ -519,7 +518,7 @@ export default function App() {
         {
           "@type": "FoodEstablishment",
           "name": "Abastecedora Valette",
-          "description": "Venta mayorista y minorista de carne vacuna, cerdo y pollo. Criadero propio de cerdo.",
+          "description": "Productores y vendedores mayorista y minorista de carne vacuna, de cerdo y pollo.",
           "url": "https://www.abastecedoravalette.vercel.app/",
           "telephone": ["11-2835-3615", "11-2336-8224"],
           "email": "info@abastecedoravalette.com.ar",
@@ -559,7 +558,7 @@ export default function App() {
             "@type": "OfferCatalog",
             "name": "Cortes de carne",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne Vacuna" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Vaca" } },
               { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Cerdo" } },
               { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Pollo" } }
             ]
