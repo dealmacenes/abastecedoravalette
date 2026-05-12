@@ -118,7 +118,7 @@ function CutCard({ item, onSelect }) {
       <div className="rounded-xl bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
         <p className="text-white font-bold text-sm text-center leading-tight">{item.name}</p>
         <p className="text-neutral-300 text-xs text-center mt-0.5 leading-tight">{item.desc}</p>
-        <p className="text-red-300 text-[10px] font-semibold text-center mt-1.5 flex items-center justify-center gap-1 hover:scale-105 transition-transform duration-200">
+        <p className="text-neutral-700 text-[10px] font-semibold text-center mt-1.5 flex items-center justify-center gap-1 hover:scale-105 transition-transform duration-200 px-2 py-1 rounded-md bg-white border border-neutral-300">
           Click para consultar <FaChevronRight size={8} />
         </p>
       </div>
@@ -557,7 +557,8 @@ export default function App() {
           </section>
 
           {/* ── TRUST STRIP (moved up for credibility) ── */}
-          <section id="calidad-de-servicios" className="bg-white py-10 px-4 border-b border-gray-100">
+          <div id="calidad-de-servicios" className="h-1 mb-16 -mt-16" />
+          <section className="bg-white py-10 px-4 border-b border-gray-100">
             <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
               {features.map((f, i) => (
                 <div key={i} className="flex flex-col items-center gap-3 group">
@@ -574,7 +575,7 @@ export default function App() {
           </section>
 
           {/* ── CORTES ── */}
-          <div id="nuestras-carnes" className="h-8" />
+          <div id="nuestras-carnes" className="h-1 mb-16 -mt-16" />
 
           <section className="w-full py-10">
             {/* Section header */}
@@ -610,7 +611,7 @@ export default function App() {
           </section>
 
           {/* ── SUCURSALES ── */}
-          <div id="nuestras-sucursales" className="h-4" />
+          <div id="nuestras-sucursales" className="h-1 mb-16 -mt-16" />
 
           <div className="w-full">
             <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
@@ -662,7 +663,7 @@ export default function App() {
                     </div>
 
                     <div className="px-5 pt-3 pb-5">
-                      <p className="flex items-center text-xs text-neutral-400 gap-1 mb-3">
+                      <p className="flex items-center text-xs text-neutral-500 gap-1 mb-3">
                         Click en el mapa para abrir Google Maps <IoOpenOutline className="size-3.5" />
                       </p>
                       <h3 className="text-xl font-bold text-[#1a2340] mb-2">{branch.name}</h3>
@@ -692,8 +693,8 @@ export default function App() {
           </section>
 
           {/* ── WHOLESALE ── */}
-          <div id="venta-mayorista" />
-          <section className="bg-[#8B0000] py-10 sm:py-14 px-4">
+          <div id="venta-mayorista" className="h-1 mb-16 -mt-16 bg-main" />
+          <section className="bg-[#8B0000] py-10 sm:py-14 px-4 border-b-4 border-b-white">
             <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center flex-shrink-0">
