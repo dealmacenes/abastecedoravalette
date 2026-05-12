@@ -1,12 +1,8 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "https://dealmacenes-backend.vercel.app/api/$1"
-    },
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
     }
   ]
 }
