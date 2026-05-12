@@ -613,7 +613,7 @@ export default function App() {
           {/* ── SUCURSALES ── */}
           <div id="nuestras-sucursales" className="h-1 mb-16 -mt-16" />
 
-          <div className="w-full -mb-[2px]">
+          <div className="w-full">
             <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
               <path d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z" fill="#1a2340" />
             </svg>
