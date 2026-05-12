@@ -16,6 +16,7 @@ import { MdOutlineShoppingCart, MdOutlineSevereCold } from "react-icons/md";
 import { GiCow, GiPig, GiChicken } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
+import { Helmet } from "react-helmet-async";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -440,6 +441,104 @@ function ContactModal({ onClose }) {
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
+
+  {/* SEO */}
+    <Helmet>
+      <title>
+        Abastecedora Valette | Carnicería mayorista y minorista - Luis Guillón y
+        Moreno
+      </title>
+      <meta
+        name="description"
+        content="Venta de carne vacuna, cerdo y pollo por mayor y menor. Criadero propio. 2 sucursales: Luis Guillón (Av. Luciano Valette 1696) y Moreno (Av. Del Libertador 4200). Servicio de envío a domicilio."
+      />
+      <meta
+        name="keywords"
+        content="carnicería Luis Guillón, carniceria luis guillon, carne al por mayor GBA Sur, abastecedora Valette, cortes de carne Moreno, carnicerias, venta mayorista carne Buenos Aires"
+      />
+      <link
+        rel="canonical"
+        href="https://www.abastecedoravalette.vercel.app/"
+      />
+      {/* Open Graph para compartir en redes */}
+      <meta
+        property="og:title"
+        content="Abastecedora Valette — Carnes directo del productor"
+      />
+      <meta
+        property="og:description"
+        content="Troceo de carne vacuna, cerdo y pollo. Criadero propio. Mayorista y minorista en GBA."
+      />
+      <meta property="og:type" content="business.business" />
+      <meta
+        property="og:url"
+        content="https://www.abastecedoravalette.vercel.app/"
+      />
+      <meta
+        property="og:image"
+        content="https://www.abastecedoravalette.vercel.app/miniatura.jpg"
+      />{" "}
+      
+      <script type="application/ld+json">{`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "FoodEstablishment",
+          "name": "Abastecedora Valette",
+          "description": "Venta mayorista y minorista de carne vacuna, cerdo y pollo. Criadero propio de cerdo.",
+          "url": "https://www.abastecedoravalette.vercel.app/",
+          "telephone": ["11-2835-3615", "11-2336-8224"],
+          "email": "info@abastecedoravalette.com.ar",
+          "openingHours": "Mo-Sa 07:00-15:00",
+          "servesCuisine": "Carnicería",
+          "priceRange": "$$",
+          "location": [
+            {
+              "@type": "LocalBusiness",
+              "name": "Abastecedora Valette - Luis Guillón",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. Luciano Valette 1696",
+                "addressLocality": "Luis Guillón",
+                "addressRegion": "Provincia de Buenos Aires",
+                "addressCountry": "AR"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -34.7925,
+                "longitude": -58.4592
+              }
+            },
+            {
+              "@type": "LocalBusiness",
+              "name": "Abastecedora Valette - Moreno",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. Del Libertador 4200",
+                "addressLocality": "Moreno",
+                "addressRegion": "Provincia de Buenos Aires",
+                "addressCountry": "AR"
+              }
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Cortes de carne",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne Vacuna" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Cerdo" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Pollo" } }
+            ]
+          }
+        }
+      ]
+    }
+  `}</script>
+    </Helmet>;
+
+
+
   const [menuOpen,    setMenuOpen]    = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedCut, setSelectedCut] = useState(null);
