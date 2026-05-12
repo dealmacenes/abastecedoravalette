@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   FaWhatsapp,
   FaInstagram,
@@ -21,749 +21,745 @@ import { LuBeef } from "react-icons/lu";
 
 const cuts = {
   vacuna: [
-    {
-      name: "Media Res",
-      desc: "Fresca y lista para despostar",
-      img: "mediaRes.png",
-    },
-    {
-      name: "Bife Angosto",
-      desc: "Ideal para parrilla",
-      img: "work14.jpg",
-    },
-    {
-      name: "Asado",
-      desc: "Clásico argentino",
-      img: "work11.jpg",
-    },
-    {
-      name: "Nalga",
-      desc: "Tierna y sabrosa",
-      img: "work10.jpg",
-    },
-    {
-      name: "Vacío",
-      desc: "Jugoso y sabroso",
-      img: "work12.jpg",
-    },
-    {
-      name: "Lomo",
-      desc: "Corte premium y tierno",
-      img: "work8.jpg",
-    },
-    {
-      name: "Roast Beef",
-      desc: "Ideal para horno y guisos",
-      img: "work7.jpg",
-    },
-    {
-      name: "Picaña",
-      desc: "Muy jugosa y popular",
-      img: "work3.jpg",
-    },
-    {
-      name: "Colita de Cuadril",
-      desc: "Magra y muy tierna",
-      img: "work5.jpg",
-    },
-    {
-      name: "Carne Picada",
-      desc: "Perfecta para comidas caseras",
-      img: "work13.jpg",
-    },
-    {
-      name: "Bola de Lomo",
-      desc: "Ideal para milanesas",
-      img: "work14.jpg",
-    },
-    {
-      name: "Tapa de Nalga",
-      desc: "Magra y versátil",
-      img: "work15.jpg",
-    },
-    {
-      name: "Tapa de Asado",
-      desc: "Clásico y tradicional",
-      img: "work9.jpg",
-    },
+    { name: "Media Res",       desc: "Fresca y lista para despostar",  img: "/mediaRes.png" },
+    { name: "Bife Angosto",    desc: "Ideal para parrilla",            img: "/work14.jpg"   },
+    { name: "Asado",           desc: "Clásico argentino",              img: "/work11.jpg"   },
+    { name: "Nalga",           desc: "Tierna y sabrosa",               img: "/work10.jpg"   },
+    { name: "Vacío",           desc: "Jugoso y sabroso",               img: "/work12.jpg"   },
+    { name: "Lomo",            desc: "Corte premium y tierno",         img: "/work8.jpg"    },
+    { name: "Roast Beef",      desc: "Ideal para horno y guisos",      img: "/work7.jpg"    },
+    { name: "Picaña",          desc: "Muy jugosa y popular",           img: "/work3.jpg"    },
+    { name: "Colita de Cuadril", desc: "Magra y muy tierna",           img: "/work5.jpg"    },
+    { name: "Carne Picada",    desc: "Perfecta para comidas caseras",  img: "/work13.jpg"   },
+    { name: "Bola de Lomo",    desc: "Ideal para milanesas",           img: "/work14.jpg"   },
+    { name: "Tapa de Nalga",   desc: "Magra y versátil",               img: "/work15.jpg"   },
+    { name: "Tapa de Asado",   desc: "Clásico y tradicional",          img: "/work9.jpg"    },
   ],
-
   cerdo: [
-    {
-      name: "Cerdo",
-      desc: "Calidad y genética",
-      img: "work22.jpg",
-    },
-    {
-      name: "Bondiola",
-      desc: "Jugosa y llena de sabor",
-      img: "work2.jpg",
-    },
-    {
-      name: "Bife de Cerdo",
-      desc: "Tierno y perfecto a la plancha",
-      img: "work1.jpg",
-    },
-    {
-      name: "Pechito de Cerdo",
-      desc: "Ideal para parrilla lenta",
-      img: "work6.jpg",
-    },
-    {
-      name: "Chorizos",
-      desc: "Infaltables en cualquier asado",
-      img: "work19.jpg",
-    },
-    {
-      name: "Salchichas Parrilleras",
-      desc: "Doradas y súper sabrosas",
-      img: "work20.jpg",
-    },
-    {
-      name: "Pernil",
-      desc: "Ideal para reuniones y eventos",
-      img: "work21.jpg",
-    },
+    { name: "Cerdo",               desc: "Calidad y genética",                   img: "/work22.jpg" },
+    { name: "Bondiola",            desc: "Jugosa y llena de sabor",              img: "/work2.jpg"  },
+    { name: "Bife de Cerdo",       desc: "Tierno y perfecto a la plancha",       img: "/work1.jpg"  },
+    { name: "Pechito de Cerdo",    desc: "Ideal para parrilla lenta",            img: "/work6.jpg"  },
+    { name: "Chorizos",            desc: "Infaltables en cualquier asado",       img: "/work19.jpg" },
+    { name: "Salchichas Parrilleras", desc: "Doradas y súper sabrosas",          img: "/work20.jpg" },
+    { name: "Pernil",              desc: "Ideal para reuniones y eventos",       img: "/work21.jpg" },
   ],
-
   pollo: [
-    {
-      name: "Pollo Fresco",
-      desc: "Fresco y natural",
-      img: "work16.jpg",
-    },
-    {
-      name: "Pata y muslo",
-      desc: "Rendidor y versátil",
-      img: "work17.jpg",
-    },
-    {
-      name: "Supremas",
-      desc: "Sin piel",
-      img: "work18.jpg",
-    },
+    { name: "Pollo Fresco", desc: "Fresco y natural",      img: "/work16.jpg" },
+    { name: "Pata y muslo", desc: "Rendidor y versátil",   img: "/work17.jpg" },
+    { name: "Supremas",     desc: "Sin piel",              img: "/work18.jpg" },
   ],
 };
 
 const features = [
+  { icon: <FaHome size={28} />,     title: "SOMOS PRODUCTORES",            desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
+  { icon: <FaShieldAlt size={28} />, title: "CALIDAD GARANTIZADA",         desc: "Selección y controles en cada etapa para asegurar lo mejor." },
+  { icon: <FaTruck size={28} />,    title: "ENVÍOS Y SUCURSALES",          desc: "Llegamos a nuestros clientes con rapidez y en frío." },
+  { icon: <FaHandshake size={28} />,title: "ATENCIÓN PERSONALIZADA",       desc: "Te asesoramos, incluyendo a mayoristas y comerciantes." },
+];
+
+const CARD_W    = 160;
+const CARD_GAP  = 16;
+const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
+
+const WHATSAPP_CONTACTS = [
   {
-    icon: <FaHome size={32} />,
-    title: "PRODUCCIÓN PROPIA EN CERDOS",
-    desc: "Controlamos todo el proceso, desde el origen hasta tu mesa.",
+    label: "Sucursal Luis Guillón",
+    sub: "Av. Luciano Valette 1696",
+    buildHref: (cut) =>
+      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Luis%20Guill%C3%B3n.%20(%20Enviar%20%E2%9E%9C%20)`,
   },
   {
-    icon: <FaShieldAlt size={32} />,
-    title: "CALIDAD GARANTIZADA",
-    desc: "Selección y controles en cada etapa para asegurar lo mejor.",
+    label: "Sucursal Moreno",
+    sub: "Av. Del Libertador 4200 — Mercado Modelo",
+    buildHref: (cut) =>
+      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Moreno.%20(%20Enviar%20%E2%9E%9C%20)`,
   },
   {
-    icon: <FaTruck size={32} />,
-    title: "ENVÍOS Y SUCURSALES",
-    desc: "Llegamos a nuestros clientes con rapidez y en frío.",
-  },
-  {
-    icon: <FaHandshake size={32} />,
-    title: "ATENCIÓN PERSONALIZADA",
-    desc: "Te asesoramos, incluyendo a mayoristas y comerciantes.",
+    label: "Atención personalizada",
+    sub: "Mayoristas, comerciantes y pedidos especiales",
+    buildHref: (cut) =>
+      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web.%20Quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20y%20me%20interesa%20la%20atenci%C3%B3n%20personalizada.%20(%20Enviar%20%E2%9E%9C%20)`,
   },
 ];
 
-const CARD_W = 152; // px, must match w-[152px] below
-const CARD_GAP = 20;
-const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
+// ─── HOOK: lock body scroll when a modal is open ─────────────────────────────
+function useScrollLock(active) {
+  useEffect(() => {
+    if (active) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [active]);
+}
 
-// ─── SUBCOMPONENTS ────────────────────────────────────────────────────────────
-
-function CutCard({ item }) {
+// ─── CUT CARD ─────────────────────────────────────────────────────────────────
+function CutCard({ item, onSelect }) {
   return (
-    <div className="flex-shrink-0 w-fit group cursor-pointer items-center rounded-md items-stretch overflow-hidden">
-      <div className="fle overflow-hidden rounded-xl bg-white mb-2">
+    <button
+      onClick={() => onSelect(item.name)}
+      className="flex-shrink-0 w-fit group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 rounded-2xl"
+    >
+      {/* Image */}
+      <div className="h-[160px] w-full overflow-hidden aspect-square rounded-2xl bg-white shadow-sm mb-2 border border-gray-100 group-hover:shadow-md transition-shadow duration-300">
         <img
           src={item.img}
           alt={item.name}
-          className="w-[152px] h-[152px] object-scale-down justify-self-center group-hover:scale-105 transition-transform duration-300 p-2"
+          className="object-scale-down p-5 group-hover:scale-106 transition-transform duration-300"
           onError={(e) => {
             e.target.src =
               "https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80";
           }}
         />
       </div>
-      <div className="flex flex-col w-full rounded-md bg-[#1a2340] p-2">
-        <p className="w-full text-center font-bold text-white">{item.name}</p>
-        <p className="w-full text-center text-sm text-neutral-100 -mt-[2px]">{item.desc}</p>
+      {/* Label */}
+      <div className="rounded-xl bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
+        <p className="text-white font-bold text-sm text-center leading-tight">{item.name}</p>
+        <p className="text-neutral-300 text-xs text-center mt-0.5 leading-tight">{item.desc}</p>
+        <p className="text-red-300 text-[10px] font-semibold text-center mt-1.5 flex items-center justify-center gap-1 hover:scale-105 transition-transform duration-200">
+          Click para consultar <FaChevronRight size={8} />
+        </p>
+      </div>
+    </button>
+  );
+}
+
+// ─── MEAT SECTION ─────────────────────────────────────────────────────────────
+function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
+  const scrollRef = useRef(null);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [maxScroll, setMaxScroll] = useState(1);
+
+  const onScroll = () => setScrollLeft(scrollRef.current?.scrollLeft ?? 0);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const recalc = () =>
+      setMaxScroll(el.scrollWidth - el.clientWidth);
+    recalc();
+    const ro = new ResizeObserver(recalc);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const scrollTo = (dir) => {
+    scrollRef.current?.scrollBy({ left: dir * SCROLL_STEP, behavior: "smooth" });
+  };
+
+  const atStart = scrollLeft <= 8;
+  const atEnd   = scrollLeft >= maxScroll - 8;
+
+  return (
+    <div className="w-full mb-6">
+      {/* Section header card */}
+      <div className="mx-4 sm:mx-6 rounded-2xl bg-white border border-gray-100 shadow-sm px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+        <div className="text-[#C0392B] flex-shrink-0 flex justify-center sm:justify-start">
+          {icon}
+        </div>
+        <div className="sm:border-l sm:border-gray-200 sm:pl-5">
+          <h3 className="font-black text-[#1a2340] text-lg text-center sm:text-left leading-tight">
+            {title}
+          </h3>
+          <p className="text-gray-500 text-sm text-center sm:text-left mt-0.5 leading-snug">
+            {subtitle}
+          </p>
+        </div>
+      </div>
+
+      {/* Carousel */}
+      <div className="relative flex">
+        {!atStart && (
+          <button
+            onClick={() => scrollTo(-1)}
+            aria-label="Anterior"
+            className="absolute left-1 top-1/2 -translate-y-1/2 w-9 h-9 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 active:scale-95 transition z-10"
+          >
+            <ChevronLeft size={18} />
+          </button>
+        )}
+
+        <div
+          ref={scrollRef}
+          onScroll={onScroll}
+          className="flex gap-4 overflow-x-auto px-4 sm:px-6 py-2"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+        >
+          {items.map((item, i) => (
+            <CutCard key={i} item={item} onSelect={onSelectCut} />
+          ))}
+        </div>
+
+        {!atEnd && (
+          <button
+            onClick={() => scrollTo(1)}
+            aria-label="Siguiente"
+            className="absolute right-1 top-1/2 -translate-y-1/2 w-9 h-9 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 active:scale-95 transition z-10"
+          >
+            <ChevronRight size={18} />
+          </button>
+        )}
       </div>
     </div>
   );
 }
 
-function MeatSection({ icon, title, subtitle, items }) {
-  const scrollRef = useRef(null);
-  const [scrollLeft, setScrollLeft] = useState(0);
+// ─── CUT QUERY MODAL ──────────────────────────────────────────────────────────
+function CutModal({ cutName, onClose }) {
+  useScrollLock(!!cutName);
 
-  const onScroll = () => setScrollLeft(scrollRef.current?.scrollLeft ?? 0);
-
-  const scrollTo = (dir) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.scrollBy({ left: dir * SCROLL_STEP, behavior: "smooth" });
-  };
-
-  const maxScroll = items.length * (CARD_W + CARD_GAP) - CARD_GAP;
-  const atEnd =
-    scrollLeft + 10 >= maxScroll - (scrollRef.current?.clientWidth ?? 0);
-  
+  if (!cutName) return null;
 
   return (
-    <div className="my-20 w-full border-y-4 border-y-red-400 py-4 overflow-x-auto bg-main-red">
-      <div className="flex flex-col gap-3 sm:gap-5">
-        {/* Left info panel */}
-        <div className="w-full flex-shrink-0">
-          <div className="flex flex-col bg-white rounded-lg items-center justify-center w-9/10 mx-auto px-4 pb-2">
-            <div className="text-[#C0392B] p-2">{icon}</div>
-            <h3 className="font-black text-center text-[#1a2340] uppercase">{title}</h3>
-            <p className="text-sm text-center text-gray-500 mb-4 leading-relaxed px-4">
-              {subtitle}
+    <div
+      className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div
+        className="relative bg-white rounded-t-3xl sm:rounded-2xl w-full sm:max-w-sm mx-0 sm:mx-4 p-6 shadow-2xl"
+        style={{ animation: "slideUp .22s cubic-bezier(.22,1,.36,1)" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <style>{`@keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}`}</style>
+
+        {/* Drag handle — mobile */}
+        <div className="sm:hidden w-10 h-1 rounded-full bg-gray-200 mx-auto mb-4" />
+
+        <div className="flex items-start justify-between mb-1">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#C0392B] mb-0.5">
+              CONSULTA DE CORTE
+            </p>
+            <h3 className="font-black text-[#1a2340] text-lg leading-tight">
+              {cutName}
+            </h3>
+            <p className="text-sm text-gray-500 mt-0.5">
+              ¿Con qué sucursal querés consultar?
             </p>
           </div>
+          <button
+            onClick={onClose}
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-400 transition-colors flex-shrink-0 ml-2"
+          >
+            <FaTimes size={14} />
+          </button>
         </div>
 
-        {/* Carousel */}
-        <div className="flex w-full min-w-0 relative flex items-center">
-          {/* Prev arrow */}
-          {scrollLeft > 8 && (
-            <button
-              onClick={() => scrollTo(-1)}
-              className="absolute left-3 top-[40%] -translate-y-1/2 w-8 h-8 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 z-10"
+        <div className="flex flex-col gap-3 mt-5">
+          {WHATSAPP_CONTACTS.map((contact, i) => (
+            <a
+              key={i}
+              href={contact.buildHref(cutName)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 active:scale-[.98] transition-all group"
             >
-              <ChevronLeft size={16} />
-            </button>
-          )}
-
-          {/* Scrollable track — native scroll, hidden scrollbar */}
-          <div
-            ref={scrollRef}
-            onScroll={onScroll}
-            className="flex w-full overflow-x-auto gap-5 pr-4.5"
-            style={{
-              WebkitOverflowScrolling: "touch",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
-            <style>{`
-              .hide-sb::-webkit-scrollbar { display: none; }
-            `}</style>
-            <div
-              className="hide-sb flex gap-5"
-              style={
-                {
-                  /* trick: apply hide class via ref parent */
-                }
-              }
-            >
-              {/* inner trick not needed; apply on the outer div directly via inline ref */}
-            </div>
-            {items.map((item, i) => (
-              <div key={i} style={{ flexShrink: 0 }}>
-                <CutCard item={item} />
+              <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
+                <FaWhatsapp size={20} className="text-[#25D366]" />
               </div>
-            ))}
-          </div>
-
-          {/* Next arrow */}
-          {!atEnd && (
-            <button
-              onClick={() => scrollTo(1)}
-              className="absolute right-3 top-[40%] -translate-y-1/2 w-8 h-8 bg-white border border-gray-200 rounded-full shadow-md flex items-center justify-center text-[#1a2340] hover:bg-gray-50 z-10"
-            >
-              <ChevronRight size={16} />
-            </button>
-          )}
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-[#1a2340] text-sm leading-tight">
+                  {contact.label}
+                </p>
+                <p className="text-xs text-gray-500 mt-0.5 leading-tight">{contact.sub}</p>
+              </div>
+              <FaChevronRight size={12} className="text-gray-300 group-hover:text-[#25D366] transition-colors flex-shrink-0" />
+            </a>
+          ))}
         </div>
       </div>
+    </div>
+  );
+}
 
+// ─── CONTACT MODAL ────────────────────────────────────────────────────────────
+function ContactModal({ onClose }) {
+  useScrollLock(true);
+
+  const contacts = [
+    {
+      label: "Sucursal Luis Guillón",
+      sub: "Atención comercial",
+      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.%20(%20Enviar%20%E2%9E%9C%20)",
+    },
+    {
+      label: "Sucursal Moreno",
+      sub: "Atención comercial",
+      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.%20(%20Enviar%20%E2%9E%9C%20)",
+    },
+    {
+      label: "Atención personalizada",
+      sub: "Asesoría y ventas para comerciantes y mayoristas",
+      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20%E2%9E%9C%20)",
+    },
+  ];
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div
+        className="relative bg-white rounded-t-3xl sm:rounded-2xl w-full sm:max-w-sm mx-0 sm:mx-4 p-6 shadow-2xl"
+        style={{ animation: "slideUp .22s cubic-bezier(.22,1,.36,1)" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="sm:hidden w-10 h-1 rounded-full bg-gray-200 mx-auto mb-4" />
+
+        <div className="flex items-center justify-between mb-5">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#C0392B] mb-0.5">
+              WHATSAPP
+            </p>
+            <h3 className="font-black text-[#1a2340] text-lg leading-tight">
+              ¿Con quién querés hablar?
+            </h3>
+          </div>
+          <button
+            onClick={onClose}
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-400 transition-colors"
+          >
+            <FaTimes size={14} />
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          {contacts.map((op, i) => (
+            <a
+              key={i}
+              href={op.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 active:scale-[.98] transition-all group"
+            >
+              <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
+                <FaWhatsapp size={20} className="text-[#25D366]" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-[#1a2340] text-sm leading-tight">{op.label}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{op.sub}</p>
+              </div>
+              <FaChevronRight size={12} className="ml-auto text-gray-300 group-hover:text-[#25D366] transition-colors" />
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
-
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen,    setMenuOpen]    = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [selectedCut, setSelectedCut] = useState(null);
+
+  // Close menu when clicking outside
+  const anyModalOpen = contactOpen || !!selectedCut;
 
   const sections = {
     vacuna: {
-      icon: <GiCow size={80} />,
+      icon: <GiCow size={52} />,
       title: "CARNE VACUNA",
       subtitle: "Los mejores cortes para asado, milanesas y cocina diaria.",
     },
     cerdo: {
-      icon: <GiPig size={80} />,
+      icon: <GiPig size={52} />,
       title: "CARNE DE CERDO",
       subtitle: "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
     },
     pollo: {
-      icon: <GiChicken size={80} />,
+      icon: <GiChicken size={52} />,
       title: "POLLO FRESCO",
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
     },
   };
 
+  const navLinks = [
+    { label: "Nuestras Carnes",     href: "#nuestras-carnes"     },
+    { label: "Sucursales",          href: "#nuestras-sucursales"  },
+    { label: "Venta Mayorista",     href: "#venta-mayorista"      },
+    { label: "Calidad y Servicios", href: "#calidad-de-servicios" },
+  ];
+
   return (
-  
-   <>
-   {menuOpen && (
-    <div className="fixed top-0 left-0 w-full h-full z-50" onClick={() => setMenuOpen(false)}/>
-   )}
-    <div className="min-h-screen flex flex-col font-sans text-[#1a2340] bg-white">
-      {/* ── NAVBAR — sticky against viewport ── */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <img
-            src="iconAndText.png"
-            className="h-20 w-fit events-pointer-none"
-            onClick={()=> window.scrollTo({ top: 0, behavior: "smooth" })}
-          />
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setContactOpen(true)}
-              className="flex items-center gap-2 bg-main-red text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#a93226] transition-colors"
-            >
-              <FaWhatsapp className="size-5"/> Contactanos
-            </button>
-            <button
-              onClick={() => setMenuOpen((v) => !v)}
-              className="w-9 h-9 flex items-center justify-center text-[#1a2340] hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              {menuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
-            </button>
-          </div>
-        </div>
-        {menuOpen && (
-          <div className="fixed w-6/10 top-18 shadow-sm right-4 flex flex-col bg-white rounded-lg border border-gray-100 p-2 gap-1 font-semibold">
-            {[
-              "Nuestras Carnes",
-              "Nuestras Sucursales",
-              "Venta Mayorista",
-              "Calidad de Servicios",
-            ].map((item) => (
-              <div className="flex flex-col w-full items-center">
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replaceAll(" ", "-")}`}
-                className="hover:text-[#C0392B] transition-colors p-1"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                {item}
-              </a>
-              <div className="flex w-full h-[1px] rounded-full bg-neutral-300"/>
-              </div>
-            ))}
-          </div>
-        )}
-      </nav>
+    <>
+      {/* ── MODALS ── */}
+      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
+      {selectedCut  && <CutModal cutName={selectedCut} onClose={() => setSelectedCut(null)} />}
 
-      {/* ── MODAL CONTACTO ── */}
-      {contactOpen && (
+      {/* Overlay to close mobile menu */}
+      {menuOpen && !anyModalOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center"
-          onClick={() => setContactOpen(false)}
-        >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+          className="fixed inset-0 z-40"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
 
-          {/* Panel */}
-          <div
-            className="relative bg-white rounded-t-3xl sm:rounded-2xl w-full sm:max-w-sm mx-0 sm:mx-4 p-6 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header */}
-            <div className="flex items-center justify-between mb-5">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#C0392B] mb-0.5">
-                  WHATSAPP
-                </p>
-                <h3 className="font-black text-[#1a2340] text-lg leading-tight">
-                  ¿Con quién querés hablar?
-                </h3>
-              </div>
-              <button
-                onClick={() => setContactOpen(false)}
-                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-400 transition-colors"
-              >
-                <FaTimes size={14} />
-              </button>
-            </div>
+      <div className="min-h-screen flex flex-col font-sans text-[#1a2340] bg-white">
 
-            {/* Opciones */}
-            <div className="flex flex-col gap-3">
-              {[
-                {
-                  label: "Sucursal Luis Guillon",
-                  sub: "Atención Comercial",
-                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.%20(%20Enviar%20➜%20)",
-                },
-                {
-                  label: "Sucursal Moreno",
-                  sub: "Atención Comercial",
-                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno.%20(%20Enviar%20➜%20)",
-                },
-                {
-                  label: "Atención personalizada",
-                  sub: "Atención personalizada, asesoría y ventas para comerciantes y mayoristas",
-                  href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)",
-                },
-              ].map((op, i) => (
+        {/* ── NAVBAR ── */}
+        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+
+            {/* Logo */}
+            <img
+              src="/iconAndText.png"
+              className="h-20 w-fit cursor-pointer flex-shrink-0"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              alt="Abastecedora Valette"
+            />
+
+            {/* Desktop nav links */}
+            <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
+              {navLinks.map((link) => (
                 <a
-                  key={i}
-                  href={op.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setContactOpen(false)}
-                  className="flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 transition-all group"
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-semibold text-[#1a2340] hover:text-[#C0392B] px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
-                    <FaWhatsapp size={20} className="text-[#25D366]" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#1a2340] text-sm leading-tight">
-                      {op.label}
-                    </p>
-                    <p className="text-xs text-gray-500">{op.sub}</p>
-                  </div>
-                  <FaChevronRight
-                    size={12}
-                    className="ml-auto text-gray-300 group-hover:text-[#25D366] transition-colors"
-                  />
+                  {link.label}
                 </a>
               ))}
             </div>
-          </div>
-        </div>
-      )}
 
-      {/* ── PAGE BODY ── */}
-      <main className="flex-1 flex flex-col">
-        {/* HERO */}
-        <section className="relative overflow-hidden bg-[#1a2340] min-h-[380px] sm:min-h-[420px]">
-          <div className="absolute inset-0">
-            <img
-              src="hero.png"
-              alt="hero"
-              className="w-full h-full object-cover opacity-40"
-              style={{ objectPosition: "center right" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1a2340]/80 via-[#1a2340]/50 to-transparent" />
+            {/* Right actions */}
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <button
+                onClick={() => setContactOpen(true)}
+                className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all shadow-sm"
+              >
+                <FaWhatsapp className="size-4" />
+                <span className="hidden sm:inline">Contactanos</span>
+              </button>
+
+              {/* Hamburger — mobile only */}
+              <button
+                onClick={() => setMenuOpen((v) => !v)}
+                className="md:hidden w-9 h-9 flex items-center justify-center text-[#1a2340] hover:bg-gray-100 rounded-xl transition-colors"
+                aria-label="Menú"
+              >
+                {menuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
+              </button>
+            </div>
           </div>
 
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-30">
-            <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
-              ABASTECEDORA VALETTE
-            </h1>
-            <p className="text-white/80 text-sm font-bold uppercase tracking-widest mb-3">
-              UNA EXPERIENCIA DE COMPRA DIRECTA, SIN INTERMEDIARIOS
-            </p>
-            <div className="flex flex-col sm:flex-row sm:gap-6 items-center justify-center mt-15">
-            <p className="text-gray-300 leading-relaxed max-w-sm sm:max-w-50 mb-8 text-center sm:text-start mx-auto sm:m-0">
-              Ofrecemos una amplia selección de cortes de carne frescos y de calidad para
-              tu mesa, con el respaldo de nuestra experiencia produciendo en vacas, cerdos y pollos.
-            </p>
-            <div className="flex flex-col items-stretch gap-3 w-9/10 mx-auto sm:m-0 items-center">
-              {[
-                {
-                  icon: <FaShieldAlt className=" size-8 shrink-0" />,
-                  title: "Calidad garantizada",
-                  desc: "Al ser productores, nos enfocamos en la selección y el control en cada proceso.",
-                },
-                {
-                  icon: <MdOutlineSevereCold className=" size-8 shrink-0" />,
-                  title: "Carnes frescas, siempre.",
-                  desc: "Reposición diaria en todas las sucursales, directo desde nuestros criaderos.",
-                },
-                {
-                  icon: <MdOutlineShoppingCart className="size-8 shrink-0" />,
-                  title: "Ventas minoristas y mayoristas",
-                  desc: "Entre nuestros clientes se encuentran familias, emprendedores, comercios y empresas que confian en nuestra calidad y servicio.",
-                },
-              ].map((p, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col sm:flex-row sm:justify-start sm:items-center w-full bg-white/10 backdrop-blur-sm p-3 items-center rounded-tl-3xl rounded-br-3xl sm:gap-3 overflow-hidden"
+          {/* Mobile dropdown menu */}
+          {menuOpen && (
+            <div className="md:hidden absolute right-4 top-[68px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl p-2 z-50"
+                 style={{ animation: "slideUp .18s cubic-bezier(.22,1,.36,1)" }}>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-[#1a2340] hover:bg-gray-50 hover:text-[#C0392B] transition-colors"
                 >
-                  <div className="flex flex-col sm:flex-row items-center sm:w-5/13 gap-4">
-                   <div className="text-[#C0392B] mb-1 p-3 rounded-full bg-main/50 border border-neutral-500/60">{p.icon}</div>
-                   <p className="flex text-white text-lg font-bold leading-tight mb-1 text-center sm:text-start">
-                    {p.title}
-                   </p>
+                  {link.label}
+                  <FaChevronRight size={10} className="text-gray-300" />
+                </a>
+              ))}
+            </div>
+          )}
+        </nav>
+
+        {/* ── PAGE BODY ── */}
+        <main className="flex-1 flex flex-col">
+
+          {/* ── HERO ── */}
+          <section className="relative overflow-hidden bg-[#1a2340] min-h-[400px] sm:min-h-[460px]">
+            <div className="absolute inset-0">
+              <img
+                src="/hero.png"
+                alt="Carnes Valette"
+                className="w-full h-full object-cover opacity-45"
+                style={{ objectPosition: "center right" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1a2340]/90 via-[#1a2340]/60 to-transparent" />
+            </div>
+
+            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
+
+              {/* Left: headline + CTA */}
+              <div className="flex-1 mb-10 md:mb-0">
+                <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-3">
+                  Compra directa · Sin intermediarios
+                </p>
+                <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
+                  ABASTECEDORA<br />VALETTE
+                </h1>
+                <p className="text-gray-300 leading-relaxed max-w-sm mb-8 text-sm sm:text-base">
+                  Ofrecemos una amplia selección de cortes de carne frescos y de calidad para tu mesa, con el respaldo de nuestra experiencia produciendo en vacas, cerdos y pollos.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="#nuestras-carnes"
+                    className="inline-flex items-center justify-center gap-2 bg-[#C0392B] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all text-sm shadow-md"
+                  >
+                    Ver nuestros cortes <ChevronRight size={16} />
+                  </a>
+                  <button
+                    onClick={() => setContactOpen(true)}
+                    className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/20 active:scale-[.97] transition-all text-sm backdrop-blur-sm"
+                  >
+                    <FaWhatsapp size={16} /> Contactanos
+                  </button>
+                </div>
+              </div>
+
+              {/* Right: value props */}
+              <div className="flex flex-col gap-3 w-full md:w-[340px] flex-shrink-0">
+                {[
+                  {
+                    icon: <FaShieldAlt className="size-6 shrink-0" />,
+                    title: "Calidad garantizada",
+                    desc: "Al ser productores, nos enfocamos en la selección y el control en cada proceso.",
+                  },
+                  {
+                    icon: <MdOutlineSevereCold className="size-6 shrink-0" />,
+                    title: "Carnes frescas, siempre.",
+                    desc: "Reposición diaria en todas las sucursales, directo desde nuestros criaderos.",
+                  },
+                  {
+                    icon: <MdOutlineShoppingCart className="size-6 shrink-0" />,
+                    title: "Ventas minoristas y mayoristas",
+                    desc: "Familias, emprendedores, comercios y empresas confían en nuestra calidad.",
+                  },
+                ].map((p, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl px-4 py-3"
+                  >
+                    <div className="text-[#C0392B] mt-0.5 p-2 rounded-xl bg-[#1a2340]/60 border border-white/10 flex-shrink-0">
+                      {p.icon}
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-sm leading-tight">{p.title}</p>
+                      <p className="text-gray-400 text-xs leading-snug mt-0.5">{p.desc}</p>
+                    </div>
                   </div>
-                  <div className="hidden sm:flex h-14 w-[2px] bg-neutral-400 rounded-full"/>
-                  <p className="flex w-full text-center sm:text-start text-gray-400 leading-tight">{p.desc}</p>
-                  
+                ))}
+              </div>
+            </div>
+
+            {/* Wave divider */}
+            <div className="absolute bottom-0 left-0 right-0">
+              <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
+                <path d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z" fill="white" />
+              </svg>
+            </div>
+          </section>
+
+          {/* ── TRUST STRIP (moved up for credibility) ── */}
+          <section id="calidad-de-servicios" className="bg-white py-10 px-4 border-b border-gray-100">
+            <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+              {features.map((f, i) => (
+                <div key={i} className="flex flex-col items-center gap-3 group">
+                  <div className="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-[#C0392B] group-hover:bg-[#C0392B] group-hover:text-white transition-colors duration-300">
+                    {f.icon}
+                  </div>
+                  <p className="font-black text-xs tracking-wide text-[#1a2340] leading-tight">
+                    {f.title}
+                  </p>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
-            
-            </div>
-          </div>
+          </section>
 
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 60" fill="none" className="w-full">
-              <path
-                d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z"
-                fill="white"
-              />
-            </svg>
-          </div>
-        </section>
+          {/* ── CORTES ── */}
+          <div id="nuestras-carnes" className="h-8" />
 
-        <div id="nuestras-carnes" className="flex w-full h-25" />
-
-        {/* Heart */}
-        <div className="flex justify-center -mt-4 relative z-10 scroll-margin-top-10">
-          <div className="size-13 bg-white rounded-full shadow flex items-center justify-center text-red-500">
-            <LuBeef className="size-9 shrink-0 stroke-1" />
-          </div>
-        </div>
-
-        {/* CORTES */}
-        <section className="max-w-6xl w-full pt-8 pb-12">
-          <div className="text-center mb-8">
-            <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-1">
-              NUESTROS CORTES
-
-            </p>
-            <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl">
-              Elegí lo que necesitás
-            </h2>
-          </div>
-
-          {Object.entries(sections).map(([key, sec]) => (
-            <MeatSection
-              key={key}
-              icon={sec.icon}
-              title={sec.title}
-              subtitle={sec.subtitle}
-              items={cuts[key]}
-            />
-          ))}
-        </section>
-        
-        <div id="nuestras-sucursales" className="flex w-full h-15" />
-
-        <div className="flex w-full">
-            <svg viewBox="0 0 1440 60" fill="none" className="w-full">
-              <path
-                d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z"
-                fill="#1a2340"
-              />
-            </svg>
-          </div>
-
-        {/* Nuestras Sucursales (Mapas) */}
-<section className="bg-main relative pt-4 pb-8 md:py-24 z-20 overflow-x-hidden">
-  
-  <div className="lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div className="text-center my-12">
-      <h2 className="text-white font-black text-3xl sm:text-4xl mb-4">
-        Nuestras Sucursales
-      </h2>
-
-      <p className="text-neutral-200 max-w-2xl mx-auto">
-        Visitanos y viví una experiencia de compra directa, con la mejor
-        atención y los cortes más frescos de la zona.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-8">
-      
-      {/* Card Luis Guillon */}
-      <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
-        
-        <div className="h-48 relative overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed"
-            className="w-full h-full border-0 saturate-[0.8] contrast-110"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-
-        <div className="px-5 pt-2 pb-5">
-          <p className="flex items-center text-sm text-neutral-500 gap-1">Click en el mapa para abrir Google Maps <IoOpenOutline className="size-4"/></p>
-          <h3 className="mt-4 text-2xl font-bold text-[#2B3175] mb-3">
-            Luis Guillon
-          </h3>
-
-          <p className="text-gray-600 flex items-start gap-3 mb-2">
-            <MapPin
-              className="mt-1 flex-shrink-0 text-[#E3343A]"
-              size={18}
-            />
-
-            <span>
-              <strong>Av. Luciano Valette 1696</strong>
-              <br /> A 4 cuadras de camino de cintura
-            </span>
-          </p>
-
-          <div className="mt-6">
-            <a
-              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n%20(%20Enviar%20➜%20)"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
-            >
-              <FaWhatsapp className="w-5 h-5" />
-              Contactar con Sucursal Luis Guillon
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Card Moreno */}
-      <div className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(43,49,117,0.2)] transition-all duration-300 transform hover:-translate-y-1">
-        
-        <div className="h-48 relative overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed"
-            className="w-full h-full border-0 saturate-[0.8] contrast-110"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-
-          <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
-        </div>
-
-        <div className="px-5 pt-2 pb-5">
-          <p className="flex items-center text-sm text-neutral-500 gap-1">Click en el mapa para abrir Google Maps <IoOpenOutline className="size-4"/></p>
-          <h3 className="mt-4 text-2xl font-bold text-[#2B3175] mb-3">
-            Moreno
-          </h3>
-
-          <p className="text-gray-600 flex items-start gap-3 mb-2">
-            <MapPin
-              className="mt-1 flex-shrink-0 text-[#E3343A]"
-              size={18}
-            />
-
-            <span>
-              <strong>Av. Del Libertador 4200</strong>
-              <br /> Mercado Modelo Moreno
-            </span>
-          </p>
-
-          <div className="mt-6">
-            <a
-              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno%20(%20Enviar%20➜%20)"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all"
-            >
-              <FaWhatsapp className="w-5 h-5" />
-              Contactar con Sucursal Moreno
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-        <div id="venta-mayorista" className="flex w-full h-15" />
-
-        {/* WHOLESALE */}
-        <section className="bg-[#8B0000] py-10 sm:py-12 px-4">
-          <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-full border-2 border-white/40 flex items-center justify-center flex-shrink-0">
-                <FaHandshake size={32} className="text-white" />
+          <section className="w-full py-10">
+            {/* Section header */}
+            <div className="text-center mb-10 px-4">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-50 mb-4">
+                <LuBeef className="size-7 text-[#C0392B] stroke-[1.5]" />
               </div>
-              <div className="text-white">
-                <p className="text-xs font-bold uppercase tracking-widest text-red-300 mb-1">
-                  VENTA MAYORISTA
-                </p>
-                <h3 className="font-black text-2xl sm:text-3xl leading-tight mb-1">
-                  ¿Tenés un comercio o<br />
-                  sos distribuidor?
-                </h3>
-                <p className="text-sm text-red-200 max-w-sm">
-                  Accedé a precios especiales por volumen y sumate a nuestra red
-                  de clientes mayoristas en todo el país. Te acompañamos y asesoramos en el proceso!
-                </p>
-              </div>
-            </div>
-            <a
-              href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20➜%20)"
-              className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3 rounded-xl hover:bg-red-50 transition-colors whitespace-nowrap"
-            >
-              ATENCIÓN PERSONALIZADA <FaWhatsapp size={16} />
-            </a>
-          </div>
-        </section>
-        <div id="calidad-de-servicios" className="flex w-full h-10" />
-
-        {/* FEATURES */}
-        <section className="bg-white py-12 px-4">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
-            {features.map((f, i) => (
-              <div key={i} className="flex flex-col items-center gap-3">
-                <div className="text-[#C0392B]">{f.icon}</div>
-                <p className="font-black tracking-wide text-[#1a2340]">
-                  {f.title}
-                </p>
-                <p className="text-[11px] text-gray-500 leading-relaxed">
-                  {f.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <footer className="bg-[#1a2340] text-white pt-12 pb-6 px-4 mt-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {/* Contenido principal */}
-            
-            {/* Fila 1 — Logo + redes */}
-            <img src="iconWithText.svg" className="h-14 w-fit mx-auto sm:my-auto" />
-
-            {/* Fila 2 — Contacto */}
-            <div className="flex flex-col items-center max-w-5/6 mx-auto mt-4 sm:mt-0 sm:my-auto">
-              <p className="font-bold text-xs mb-4 text-gray-400 uppercase tracking-wider">
-                Seguinos en nuestras redes
+              <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-2">
+                NUESTROS CORTES
               </p>
-              <div className="flex flex-col gap-2 mt-2">
-                <a
-                  href="https://www.instagram.com/abastecedora.valette?igsh=a2MwbTM2dTl5dGhj"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex w-full h-8 rounded-xl border border-white/30 items-center justify-center hover:bg-white/10 transition-colors gap-2 px-4 py-2 text-sm"
-                >
-                  <FaInstagram size={16} /> @abastecedora.valette
-                </a>
-                <a
-                  href="https://www.facebook.com/share/1D5Qyoawao/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex w-full h-8 rounded-xl border border-white/30 items-center justify-center hover:bg-white/10 transition-colors gap-2 px-4 py-2 text-sm"
-                >
-                  <FaFacebookF size={16} /> Abastecedora Valette
-                </a>
+              <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl mb-3">
+                Elegí lo que necesitás
+              </h2>
+              <p className="text-gray-500 text-sm max-w-md mx-auto">
+                Tocá cualquier corte para consultar disponibilidad y precio directamente por WhatsApp.
+              </p>
+            </div>
+
+            {/* Meat categories */}
+            <div className="flex flex-col gap-2">
+              {Object.entries(sections).map(([key, sec]) => (
+                <div key={key} className="bg-gray-50 border-y border-gray-100 py-6">
+                  <MeatSection
+                    icon={sec.icon}
+                    title={sec.title}
+                    subtitle={sec.subtitle}
+                    items={cuts[key]}
+                    onSelectCut={setSelectedCut}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── SUCURSALES ── */}
+          <div id="nuestras-sucursales" className="h-4" />
+
+          <div className="w-full">
+            <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
+              <path d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z" fill="#1a2340" />
+            </svg>
+          </div>
+
+          <section className="bg-[#1a2340] pt-4 pb-16 px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-white font-black text-3xl sm:text-4xl mb-3">
+                  Nuestras Sucursales
+                </h2>
+                <p className="text-neutral-400 max-w-xl mx-auto text-sm">
+                  Visitanos y viví una experiencia de compra directa, con la mejor atención y los cortes más frescos de la zona.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    name: "Luis Guillón",
+                    address: "Av. Luciano Valette 1696",
+                    detail: "A 4 cuadras de Camino de Cintura",
+                    mapSrc: "https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed",
+                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n%20(%20Enviar%20%E2%9E%9C%20)",
+                  },
+                  {
+                    name: "Moreno",
+                    address: "Av. Del Libertador 4200",
+                    detail: "Mercado Modelo Moreno",
+                    mapSrc: "https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed",
+                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno%20(%20Enviar%20%E2%9E%9C%20)",
+                  },
+                ].map((branch) => (
+                  <div
+                    key={branch.name}
+                    className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <div className="h-44 relative">
+                      <iframe
+                        src={branch.mapSrc}
+                        className="w-full h-full border-0 saturate-75 contrast-110"
+                        loading="lazy"
+                        allowFullScreen
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title={`Mapa sucursal ${branch.name}`}
+                      />
+                    </div>
+
+                    <div className="px-5 pt-3 pb-5">
+                      <p className="flex items-center text-xs text-neutral-400 gap-1 mb-3">
+                        Click en el mapa para abrir Google Maps <IoOpenOutline className="size-3.5" />
+                      </p>
+                      <h3 className="text-xl font-bold text-[#1a2340] mb-2">{branch.name}</h3>
+                      <p className="text-gray-600 flex items-start gap-2.5 mb-1 text-sm">
+                        <MapPin className="mt-0.5 flex-shrink-0 text-[#C0392B]" size={16} />
+                        <span>
+                          <strong>{branch.address}</strong><br />
+                          {branch.detail}
+                        </span>
+                      </p>
+                      <div className="mt-5">
+                        <a
+                          href={branch.waHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full flex items-center justify-center gap-2 bg-gray-50 border-2 border-gray-100 hover:border-[#25D366] hover:bg-green-50 text-gray-700 hover:text-[#128C7E] font-bold py-3 px-4 rounded-xl transition-all text-sm active:scale-[.98]"
+                        >
+                          <FaWhatsapp className="size-5 text-[#25D366]" />
+                          Contactar con Sucursal {branch.name}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-          {/* Copyright */}
-            <p className="flex w-fit mx-auto text-center text-xs text-gray-500 mt-6">
-              © {new Date().getFullYear()} Abastecedora Valette. Todos los
-              derechos reservados.
+          </section>
+
+          {/* ── WHOLESALE ── */}
+          <div id="venta-mayorista" />
+          <section className="bg-[#8B0000] py-10 sm:py-14 px-4">
+            <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-5">
+                <div className="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center flex-shrink-0">
+                  <FaHandshake size={30} className="text-white" />
+                </div>
+                <div className="text-white">
+                  <p className="text-xs font-bold uppercase tracking-widest text-red-300 mb-1">
+                    VENTA MAYORISTA
+                  </p>
+                  <h3 className="font-black text-2xl sm:text-3xl leading-tight mb-1">
+                    ¿Tenés un comercio o<br />sos distribuidor?
+                  </h3>
+                  <p className="text-sm text-red-200 max-w-sm">
+                    Accedé a precios especiales por volumen y sumate a nuestra red de clientes mayoristas. Te acompañamos y asesoramos en el proceso.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20%E2%9E%9C%20)"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3.5 rounded-xl hover:bg-red-50 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
+              >
+                ATENCIÓN PERSONALIZADA <FaWhatsapp size={16} />
+              </a>
+            </div>
+          </section>
+
+          {/* ── FOOTER ── */}
+          <footer className="bg-[#1a2340] text-white pt-12 pb-6 px-4">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+              <img
+                src="/iconWithText.svg"
+                className="h-14 w-fit mx-auto sm:mx-0"
+                alt="Abastecedora Valette"
+              />
+              <div className="flex flex-col items-center sm:items-end gap-3">
+                <p className="font-bold text-xs text-gray-400 uppercase tracking-wider">
+                  Seguinos en nuestras redes
+                </p>
+                <div className="flex flex-col gap-2 w-full max-w-xs">
+                  <a
+                    href="https://www.instagram.com/abastecedora.valette?igsh=a2MwbTM2dTl5dGhj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 h-9 rounded-xl border border-white/20 hover:bg-white/10 active:scale-[.98] transition-all text-sm px-4"
+                  >
+                    <FaInstagram size={15} /> @abastecedora.valette
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/1D5Qyoawao/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 h-9 rounded-xl border border-white/20 hover:bg-white/10 active:scale-[.98] transition-all text-sm px-4"
+                  >
+                    <FaFacebookF size={15} /> Abastecedora Valette
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p className="text-center text-xs text-gray-600 mt-10">
+              © {new Date().getFullYear()} Abastecedora Valette. Todos los derechos reservados.
             </p>
-        </footer>
-      </main>
-    </div>
+          </footer>
+        </main>
+      </div>
     </>
   );
 }
