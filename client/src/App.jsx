@@ -436,7 +436,7 @@ export default function App() {
                 className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all shadow-sm"
               >
                 <FaWhatsapp className="size-4" />
-                <span className="hidden sm:inline">Contactanos</span>
+                <span >Contactanos</span>
               </button>
 
               {/* Hamburger — mobile only */}
