@@ -475,6 +475,7 @@ export default function App() {
 
   return (
     <>
+    <div className="hidden">
       {/* SEO */}
       <Helmet>
         <title>
@@ -568,6 +569,7 @@ export default function App() {
     }
   `}</script>
       </Helmet>
+    </div>
       
       ;{/* ── MODALS ── */}
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
