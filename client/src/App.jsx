@@ -3,19 +3,17 @@ import {
   FaWhatsapp,
   FaInstagram,
   FaFacebookF,
-  FaShieldAlt,
   FaBars,
   FaTimes,
   FaChevronRight,
 } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa6";
 import { IoOpenOutline } from "react-icons/io5";
-import { MdOutlineShoppingCart, MdOutlineSevereCold } from "react-icons/md";
 import { GiCow, GiPig, GiChicken } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
-import { PiBarnFill, PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
+import { PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -135,13 +133,6 @@ const cuts = {
   ],
 };
 
-const features = [
-  { icon: <PiBarnFill size={60} />,     title: "SOMOS PRODUCTORES",            desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
-  { icon: <PiCowFill size={60} />, title: "CALIDAD GARANTIZADA",         desc: "Selección y controles en cada etapa para asegurar lo mejor." },
-  { icon: <PiTruckFill size={60} />,    title: "ENVÍOS Y SUCURSALES",          desc: "Llegamos a nuestros clientes con rapidez y en frío." },
-  { icon: <PiHandshakeFill size={60} />,title: "ATENCIÓN PERSONALIZADA",       desc: "Acompañamiento especial a mayoristas y comerciantes." },
-];
-
 const CARD_W    = 160;
 const CARD_GAP  = 16;
 const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
@@ -184,10 +175,10 @@ function CutCard({ item, onSelect }) {
   return (
     <button
       onClick={() => onSelect(item.name)}
-      className="flex-shrink-0 w-fit group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 shadow-sm rounded-2xl"
+      className="flex-shrink-0 w-fit group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 shadow-sm rounded-lg overflow-hidden"
     >
       {/* Image */}
-      <div className="h-[160px] w-full overflow-hidden aspect-square rounded-t-2xl bg-white border border-gray-100 group-hover:shadow-md transition-shadow duration-300">
+      <div className="h-[160px] w-full overflow-hidden aspect-square bg-white border border-gray-100 group-hover:shadow-md transition-shadow duration-300">
         <img
           src={item.img}
           alt={item.name}
@@ -199,7 +190,7 @@ function CutCard({ item, onSelect }) {
         />
       </div>
       {/* Label */}
-      <div className="rounded-b-2xl bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
+      <div className="bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
         <p className="text-white font-bold text-sm text-center leading-tight">{item.name}</p>
         <p className="text-neutral-300 text-xs text-center mt-0.5 leading-tight">{item.desc}</p>
       </div>
@@ -463,7 +454,6 @@ export default function App() {
   };
 
   const navLinks = [
-    { label: "Calidad y Servicios", href: "#calidad-de-servicios" },
     { label: "Nuestras Carnes",     href: "#nuestras-carnes"     },
     { label: "Sucursales",          href: "#nuestras-sucursales"  },
     { label: "Venta Mayorista",     href: "#venta-mayorista"      },
@@ -658,8 +648,8 @@ export default function App() {
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
               {/* Left: headline + CTA */}
               <div className="flex-1 mb-10 md:mb-0">
-                <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-3">
-                  Compra directa · Sin intermediarios
+                <p className="text-white/90 text-xs font-bold uppercase tracking-widest mb-3">
+                  Una experiencia de compra directa, sin intermediarios.
                 </p>
                 <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
                   ABASTECEDORA
@@ -691,17 +681,17 @@ export default function App() {
               <div className="flex flex-col gap-3 w-full md:w-[340px] flex-shrink-0">
                 {[
                   {
-                    icon: <FaShieldAlt className="size-6 shrink-0" />,
+                    icon: <PiCowFill className="size-8 shrink-0" />,
                     title: "Calidad garantizada",
                     desc: "Al ser productores, nos enfocamos en la selección y el control en cada proceso.",
                   },
                   {
-                    icon: <MdOutlineSevereCold className="size-6 shrink-0" />,
+                    icon: <PiTruckFill className="size-8 shrink-0" />,
                     title: "Carnes frescas, siempre.",
                     desc: "Reposición diaria en todas las sucursales, directo desde nuestros criaderos.",
                   },
                   {
-                    icon: <MdOutlineShoppingCart className="size-6 shrink-0" />,
+                    icon: <PiHandshakeFill className="size-8 shrink-0" />,
                     title: "Ventas minoristas y mayoristas",
                     desc: "Familias, emprendedores, comercios y empresas confían en nuestra calidad.",
                   },
@@ -710,7 +700,7 @@ export default function App() {
                     key={i}
                     className="flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl px-4 py-3"
                   >
-                    <div className="text-[#C0392B] mt-0.5 p-2 rounded-xl bg-[#1a2340]/60 border border-white/10 flex-shrink-0">
+                    <div className="text-white mt-0.5 p-2 rounded-xl bg-[#1a2340]/60 border border-white/10 flex-shrink-0">
                       {p.icon}
                     </div>
                     <div>
@@ -734,32 +724,6 @@ export default function App() {
                   fill="white"
                 />
               </svg>
-            </div>
-          </section>
-
-          {/* ── TRUST STRIP (moved up for credibility) ── */}
-          <div id="calidad-de-servicios" className="h-1 mb-16 -mt-16" />
-          <section className="bg-white py-10 px-4 border-b border-gray-100">
-            <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-              {features.map((f, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center gap-2 bg-main/70 rounded-2xl p-4 drop-shadow-sm drop-shadow-main"
-                >
-                  <div className="flex gap-2 flex-col items-center h-fit w-full">
-                    <div className="flex w-fit mx-auto text-white">
-                      {f.icon}
-                    </div>
-                    <p className="flex font-black text-sm tracking-wide text-white leading-tight">
-                      {f.title}
-                    </p>
-                  </div>
-
-                  <p className="flex text-sm text-gray-400">
-                    {f.desc}
-                  </p>
-                </div>
-              ))}
             </div>
           </section>
 
