@@ -4,19 +4,18 @@ import {
   FaInstagram,
   FaFacebookF,
   FaShieldAlt,
-  FaTruck,
-  FaHandshake,
-  FaHome,
   FaBars,
   FaTimes,
   FaChevronRight,
 } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa6";
 import { IoOpenOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart, MdOutlineSevereCold } from "react-icons/md";
 import { GiCow, GiPig, GiChicken } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
+import { PiBarnFill, PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -137,10 +136,10 @@ const cuts = {
 };
 
 const features = [
-  { icon: <FaHome size={28} />,     title: "SOMOS PRODUCTORES",            desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
-  { icon: <FaShieldAlt size={28} />, title: "CALIDAD GARANTIZADA",         desc: "Selección y controles en cada etapa para asegurar lo mejor." },
-  { icon: <FaTruck size={28} />,    title: "ENVÍOS Y SUCURSALES",          desc: "Llegamos a nuestros clientes con rapidez y en frío." },
-  { icon: <FaHandshake size={28} />,title: "ATENCIÓN PERSONALIZADA",       desc: "Te asesoramos, incluyendo a mayoristas y comerciantes." },
+  { icon: <PiBarnFill size={60} />,     title: "SOMOS PRODUCTORES",            desc: "Controlamos todo el proceso, desde el origen hasta tu mesa." },
+  { icon: <PiCowFill size={60} />, title: "CALIDAD GARANTIZADA",         desc: "Selección y controles en cada etapa para asegurar lo mejor." },
+  { icon: <PiTruckFill size={60} />,    title: "ENVÍOS Y SUCURSALES",          desc: "Llegamos a nuestros clientes con rapidez y en frío." },
+  { icon: <PiHandshakeFill size={60} />,title: "ATENCIÓN PERSONALIZADA",       desc: "Acompañamiento especial a mayoristas y comerciantes." },
 ];
 
 const CARD_W    = 160;
@@ -185,10 +184,10 @@ function CutCard({ item, onSelect }) {
   return (
     <button
       onClick={() => onSelect(item.name)}
-      className="flex-shrink-0 w-fit group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 rounded-2xl"
+      className="flex-shrink-0 w-fit group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 shadow-sm rounded-2xl"
     >
       {/* Image */}
-      <div className="h-[160px] w-full overflow-hidden aspect-square rounded-2xl bg-white shadow-sm mb-2 border border-gray-100 group-hover:shadow-md transition-shadow duration-300">
+      <div className="h-[160px] w-full overflow-hidden aspect-square rounded-t-2xl bg-white border border-gray-100 group-hover:shadow-md transition-shadow duration-300">
         <img
           src={item.img}
           alt={item.name}
@@ -200,12 +199,9 @@ function CutCard({ item, onSelect }) {
         />
       </div>
       {/* Label */}
-      <div className="rounded-xl bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
+      <div className="rounded-b-2xl bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
         <p className="text-white font-bold text-sm text-center leading-tight">{item.name}</p>
         <p className="text-neutral-300 text-xs text-center mt-0.5 leading-tight">{item.desc}</p>
-        <p className="text-neutral-50 text-[10px] font-semibold text-center my-1.5 flex items-center justify-center gap-1 hover:scale-105 transition-transform duration-200 px-2 py-1 rounded-md bg-buttons border border-neutral-300 w-fit mx-auto">
-          Click para consultar <FaChevronRight size={8} />
-        </p>
       </div>
     </button>
   );
@@ -240,15 +236,15 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
   return (
     <div className="w-full mb-6">
       {/* Section header card */}
-      <div className="mx-4 sm:mx-6 rounded-2xl bg-white border border-gray-100 shadow-sm px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-        <div className="text-[#C0392B] flex-shrink-0 flex justify-center sm:justify-start">
+      <div className="px-5 py-4 flex flex-row items-center gap-3 mb-4">
+        <div className="text-[#C0392B] flex-shrink-0 flex">
           {icon}
         </div>
-        <div className="sm:border-l sm:border-gray-200 sm:pl-5">
-          <h3 className="font-black text-[#1a2340] text-lg text-center sm:text-left leading-tight">
+        <div className="sborder-l border-gray-200 pl-5">
+          <h3 className="font-black text-[#1a2340] text-lg leading-tight">
             {title}
           </h3>
-          <p className="text-gray-500 text-sm text-center sm:text-left mt-0.5 leading-snug">
+          <p className="text-gray-500 text-sm text-left mt-0.5 leading-snug">
             {subtitle}
           </p>
         </div>
@@ -322,7 +318,7 @@ function CutModal({ cutName, onClose }) {
               {cutName}
             </h3>
             <p className="text-sm text-gray-500 mt-0.5">
-              ¿Con qué sucursal querés consultar?
+              ¿Con qué sucursal querés hacer la consulta?
             </p>
           </div>
           <button
@@ -450,17 +446,17 @@ export default function App() {
 
   const sections = {
     vacuna: {
-      icon: <GiCow size={52} />,
+      icon: <GiCow size={60} />,
       title: "CARNE VACUNA",
       subtitle: "Los mejores cortes para asado, milanesas y cocina diaria.",
     },
     cerdo: {
-      icon: <GiPig size={52} />,
+      icon: <GiPig size={60} />,
       title: "CARNE DE CERDO",
       subtitle: "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
     },
     pollo: {
-      icon: <GiChicken size={52} />,
+      icon: <GiChicken size={60} />,
       title: "POLLO FRESCO",
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
     },
@@ -475,12 +471,9 @@ export default function App() {
 
   return (
     <>
-    
       {/* SEO */}
       <Helmet>
-        <title>
-          Abastecedora Valette | Producción y venta de carnes.
-        </title>
+        <title>Abastecedora Valette | Producción y venta de carnes.</title>
         <meta
           name="description"
           content="Productores de carne vacuna, cerdo y pollo por mayor y menor. Sucursales en Luis Guillón y Moreno. Restaurantes, comercios y familias."
@@ -568,8 +561,7 @@ export default function App() {
     }
   `}</script>
       </Helmet>
-    
-      
+
       {/* ── MODALS ── */}
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
       {selectedCut && (
@@ -748,16 +740,22 @@ export default function App() {
           {/* ── TRUST STRIP (moved up for credibility) ── */}
           <div id="calidad-de-servicios" className="h-1 mb-16 -mt-16" />
           <section className="bg-white py-10 px-4 border-b border-gray-100">
-            <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
               {features.map((f, i) => (
-                <div key={i} className="flex flex-col items-center gap-3 group">
-                  <div className="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-[#C0392B] group-hover:bg-[#C0392B] group-hover:text-white transition-colors duration-300">
-                    {f.icon}
+                <div
+                  key={i}
+                  className="flex flex-col items-center gap-2 bg-main/70 rounded-2xl p-4 drop-shadow-sm drop-shadow-main"
+                >
+                  <div className="flex gap-2 flex-col items-center h-fit w-full">
+                    <div className="flex w-fit mx-auto text-white">
+                      {f.icon}
+                    </div>
+                    <p className="flex font-black text-sm tracking-wide text-white leading-tight">
+                      {f.title}
+                    </p>
                   </div>
-                  <p className="font-black text-xs tracking-wide text-[#1a2340] leading-tight">
-                    {f.title}
-                  </p>
-                  <p className="text-[11px] text-gray-500 leading-relaxed">
+
+                  <p className="flex text-sm text-gray-400">
                     {f.desc}
                   </p>
                 </div>
@@ -780,10 +778,13 @@ export default function App() {
               <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl mb-3">
                 Elegí lo que necesitás
               </h2>
-              <p className="text-gray-500 text-sm max-w-md mx-auto">
-                Tocá cualquier corte para consultar disponibilidad y precio
-                directamente por WhatsApp.
-              </p>
+              <div className="border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
+                <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
+                <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
+                  Tocá cualquier corte para consultar por disponibilidad y 
+                  precio directamente a nuestro WhatsApp.
+                </p>
+              </div>
             </div>
 
             {/* Meat categories */}
