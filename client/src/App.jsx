@@ -441,45 +441,77 @@ function ContactModal({ onClose }) {
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
+  const [menuOpen,    setMenuOpen]    = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [selectedCut, setSelectedCut] = useState(null);
 
-  {/* SEO */}
-    <Helmet>
-      <title>
-        Abastecedora Valette | Carnicería mayorista y minorista - Luis Guillón y
-        Moreno
-      </title>
-      <meta
-        name="description"
-        content="Venta de carne vacuna, cerdo y pollo por mayor y menor. Criadero propio. 2 sucursales: Luis Guillón (Av. Luciano Valette 1696) y Moreno (Av. Del Libertador 4200). Servicio de envío a domicilio."
-      />
-      <meta
-        name="keywords"
-        content="carnicería Luis Guillón, carniceria luis guillon, carne al por mayor GBA Sur, abastecedora Valette, cortes de carne Moreno, carnicerias, venta mayorista carne Buenos Aires"
-      />
-      <link
-        rel="canonical"
-        href="https://www.abastecedoravalette.vercel.app/"
-      />
-      {/* Open Graph para compartir en redes */}
-      <meta
-        property="og:title"
-        content="Abastecedora Valette — Carnes directo del productor"
-      />
-      <meta
-        property="og:description"
-        content="Troceo de carne vacuna, cerdo y pollo. Criadero propio. Mayorista y minorista en GBA."
-      />
-      <meta property="og:type" content="business.business" />
-      <meta
-        property="og:url"
-        content="https://www.abastecedoravalette.vercel.app/"
-      />
-      <meta
-        property="og:image"
-        content="https://www.abastecedoravalette.vercel.app/miniatura.jpg"
-      />{" "}
-      
-      <script type="application/ld+json">{`
+  // Close menu when clicking outside
+  const anyModalOpen = contactOpen || !!selectedCut;
+
+  const sections = {
+    vacuna: {
+      icon: <GiCow size={52} />,
+      title: "CARNE VACUNA",
+      subtitle: "Los mejores cortes para asado, milanesas y cocina diaria.",
+    },
+    cerdo: {
+      icon: <GiPig size={52} />,
+      title: "CARNE DE CERDO",
+      subtitle: "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
+    },
+    pollo: {
+      icon: <GiChicken size={52} />,
+      title: "POLLO FRESCO",
+      subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
+    },
+  };
+
+  const navLinks = [
+    { label: "Calidad y Servicios", href: "#calidad-de-servicios" },
+    { label: "Nuestras Carnes",     href: "#nuestras-carnes"     },
+    { label: "Sucursales",          href: "#nuestras-sucursales"  },
+    { label: "Venta Mayorista",     href: "#venta-mayorista"      },
+  ];
+
+  return (
+    <>
+      {/* SEO */}
+      <Helmet>
+        <title>
+          Abastecedora Valette | Carnicería mayorista y minorista - Luis Guillón
+          y Moreno
+        </title>
+        <meta
+          name="description"
+          content="Venta de carne vacuna, cerdo y pollo por mayor y menor. Criadero propio. 2 sucursales: Luis Guillón (Av. Luciano Valette 1696) y Moreno (Av. Del Libertador 4200). Servicio de envío a domicilio."
+        />
+        <meta
+          name="keywords"
+          content="carnicería Luis Guillón, carniceria luis guillon, carne al por mayor GBA Sur, abastecedora Valette, cortes de carne Moreno, carnicerias, venta mayorista carne Buenos Aires"
+        />
+        <link
+          rel="canonical"
+          href="https://www.abastecedoravalette.vercel.app/"
+        />
+        {/* Open Graph para compartir en redes */}
+        <meta
+          property="og:title"
+          content="Abastecedora Valette — Carnes directo del productor"
+        />
+        <meta
+          property="og:description"
+          content="Troceo de carne vacuna, cerdo y pollo. Criadero propio. Mayorista y minorista en GBA."
+        />
+        <meta property="og:type" content="business.business" />
+        <meta
+          property="og:url"
+          content="https://www.abastecedoravalette.vercel.app/"
+        />
+        <meta
+          property="og:image"
+          content="https://www.abastecedoravalette.vercel.app/miniatura.jpg"
+        />{" "}
+        <script type="application/ld+json">{`
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -535,48 +567,13 @@ export default function App() {
       ]
     }
   `}</script>
-    </Helmet>;
-
-
-
-  const [menuOpen,    setMenuOpen]    = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
-  const [selectedCut, setSelectedCut] = useState(null);
-
-  // Close menu when clicking outside
-  const anyModalOpen = contactOpen || !!selectedCut;
-
-  const sections = {
-    vacuna: {
-      icon: <GiCow size={52} />,
-      title: "CARNE VACUNA",
-      subtitle: "Los mejores cortes para asado, milanesas y cocina diaria.",
-    },
-    cerdo: {
-      icon: <GiPig size={52} />,
-      title: "CARNE DE CERDO",
-      subtitle: "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
-    },
-    pollo: {
-      icon: <GiChicken size={52} />,
-      title: "POLLO FRESCO",
-      subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
-    },
-  };
-
-  const navLinks = [
-    { label: "Calidad y Servicios", href: "#calidad-de-servicios" },
-    { label: "Nuestras Carnes",     href: "#nuestras-carnes"     },
-    { label: "Sucursales",          href: "#nuestras-sucursales"  },
-    { label: "Venta Mayorista",     href: "#venta-mayorista"      },
-  ];
-
-  return (
-    <>
-      {/* ── MODALS ── */}
+      </Helmet>
+      
+      ;{/* ── MODALS ── */}
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
-      {selectedCut  && <CutModal cutName={selectedCut} onClose={() => setSelectedCut(null)} />}
-
+      {selectedCut && (
+        <CutModal cutName={selectedCut} onClose={() => setSelectedCut(null)} />
+      )}
       {/* Overlay to close mobile menu */}
       {menuOpen && !anyModalOpen && (
         <div
@@ -584,13 +581,10 @@ export default function App() {
           onClick={() => setMenuOpen(false)}
         />
       )}
-
       <div className="min-h-screen flex flex-col font-sans text-[#1a2340] bg-white">
-
         {/* ── NAVBAR ── */}
         <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-
             {/* Logo */}
             <img
               src="/iconAndText.webp"
@@ -619,7 +613,7 @@ export default function App() {
                 className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all shadow-sm"
               >
                 <FaWhatsapp className="size-4" />
-                <span >Contactanos</span>
+                <span>Contactanos</span>
               </button>
 
               {/* Hamburger — mobile only */}
@@ -635,8 +629,10 @@ export default function App() {
 
           {/* Mobile dropdown menu */}
           {menuOpen && (
-            <div className="md:hidden absolute right-4 top-[68px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl p-2 z-50"
-                 style={{ animation: "slideUp .18s cubic-bezier(.22,1,.36,1)" }}>
+            <div
+              className="md:hidden absolute right-4 top-[68px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl p-2 z-50"
+              style={{ animation: "slideUp .18s cubic-bezier(.22,1,.36,1)" }}
+            >
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -654,7 +650,6 @@ export default function App() {
 
         {/* ── PAGE BODY ── */}
         <main className="flex-1 flex flex-col">
-
           {/* ── HERO ── */}
           <section className="relative overflow-hidden bg-[#1a2340] min-h-[400px] sm:min-h-[460px]">
             <div className="absolute inset-0">
@@ -668,17 +663,20 @@ export default function App() {
             </div>
 
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
-
               {/* Left: headline + CTA */}
               <div className="flex-1 mb-10 md:mb-0">
                 <p className="text-[#C0392B] text-xs font-bold uppercase tracking-widest mb-3">
                   Compra directa · Sin intermediarios
                 </p>
                 <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
-                  ABASTECEDORA<br />VALETTE
+                  ABASTECEDORA
+                  <br />
+                  VALETTE
                 </h1>
                 <p className="text-gray-300 leading-relaxed max-w-sm mb-8 text-sm sm:text-base">
-                  Ofrecemos una amplia selección de cortes de carne frescos y de calidad para tu mesa, con el respaldo de nuestra experiencia produciendo en vacas, cerdos y pollos.
+                  Ofrecemos una amplia selección de cortes de carne frescos y de
+                  calidad para tu mesa, con el respaldo de nuestra experiencia
+                  produciendo en vacas, cerdos y pollos.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
@@ -723,8 +721,12 @@ export default function App() {
                       {p.icon}
                     </div>
                     <div>
-                      <p className="text-white font-bold text-sm leading-tight">{p.title}</p>
-                      <p className="text-gray-400 text-xs leading-snug mt-0.5">{p.desc}</p>
+                      <p className="text-white font-bold text-sm leading-tight">
+                        {p.title}
+                      </p>
+                      <p className="text-gray-400 text-xs leading-snug mt-0.5">
+                        {p.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -734,7 +736,10 @@ export default function App() {
             {/* Wave divider */}
             <div className="absolute bottom-0 left-0 right-0">
               <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
-                <path d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z" fill="white" />
+                <path
+                  d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z"
+                  fill="white"
+                />
               </svg>
             </div>
           </section>
@@ -751,7 +756,9 @@ export default function App() {
                   <p className="font-black text-xs tracking-wide text-[#1a2340] leading-tight">
                     {f.title}
                   </p>
-                  <p className="text-[11px] text-gray-500 leading-relaxed">{f.desc}</p>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">
+                    {f.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -773,14 +780,18 @@ export default function App() {
                 Elegí lo que necesitás
               </h2>
               <p className="text-gray-500 text-sm max-w-md mx-auto">
-                Tocá cualquier corte para consultar disponibilidad y precio directamente por WhatsApp.
+                Tocá cualquier corte para consultar disponibilidad y precio
+                directamente por WhatsApp.
               </p>
             </div>
 
             {/* Meat categories */}
             <div className="flex flex-col gap-2">
               {Object.entries(sections).map(([key, sec]) => (
-                <div key={key} className="bg-gray-50 border-y border-gray-100 py-6">
+                <div
+                  key={key}
+                  className="bg-gray-50 border-y border-gray-100 py-6"
+                >
                   <MeatSection
                     icon={sec.icon}
                     title={sec.title}
@@ -798,7 +809,10 @@ export default function App() {
 
           <div className="w-full">
             <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
-              <path d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z" fill="#1a2340" />
+              <path
+                d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z"
+                fill="#1a2340"
+              />
             </svg>
           </div>
 
@@ -809,7 +823,8 @@ export default function App() {
                   Nuestras Sucursales
                 </h2>
                 <p className="text-neutral-400 max-w-xl mx-auto text-sm">
-                  Visitanos y viví una experiencia de compra directa, con la mejor atención y los cortes más frescos de la zona.
+                  Visitanos y viví una experiencia de compra directa, con la
+                  mejor atención y los cortes más frescos de la zona.
                 </p>
               </div>
 
@@ -819,15 +834,19 @@ export default function App() {
                     name: "Luis Guillón",
                     address: "Av. Luciano Valette 1696",
                     detail: "A 4 cuadras de Camino de Cintura",
-                    mapSrc: "https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed",
-                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n",
+                    mapSrc:
+                      "https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed",
+                    waHref:
+                      "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n",
                   },
                   {
                     name: "Moreno",
                     address: "Av. Del Libertador 4200",
                     detail: "Mercado Modelo Moreno",
-                    mapSrc: "https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed",
-                    waHref: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno",
+                    mapSrc:
+                      "https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+4200,+Moreno,+Buenos+Aires&output=embed",
+                    waHref:
+                      "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno",
                   },
                 ].map((branch) => (
                   <div
@@ -847,13 +866,20 @@ export default function App() {
 
                     <div className="px-5 pt-3 pb-5">
                       <p className="flex items-center text-xs text-neutral-500 gap-1 mb-3">
-                        Click en el mapa para abrir Google Maps <IoOpenOutline className="size-3.5" />
+                        Click en el mapa para abrir Google Maps{" "}
+                        <IoOpenOutline className="size-3.5" />
                       </p>
-                      <h3 className="text-xl font-bold text-[#1a2340] mb-2">{branch.name}</h3>
+                      <h3 className="text-xl font-bold text-[#1a2340] mb-2">
+                        {branch.name}
+                      </h3>
                       <p className="text-gray-600 flex items-start gap-2.5 mb-1 text-sm">
-                        <MapPin className="mt-0.5 flex-shrink-0 text-[#C0392B]" size={16} />
+                        <MapPin
+                          className="mt-0.5 flex-shrink-0 text-[#C0392B]"
+                          size={16}
+                        />
                         <span>
-                          <strong>{branch.address}</strong><br />
+                          <strong>{branch.address}</strong>
+                          <br />
                           {branch.detail}
                         </span>
                       </p>
@@ -888,10 +914,13 @@ export default function App() {
                     VENTA MAYORISTA
                   </p>
                   <h3 className="font-black text-2xl sm:text-3xl leading-tight mb-1">
-                    ¿Tenés un comercio o<br />sos distribuidor?
+                    ¿Tenés un comercio o<br />
+                    sos distribuidor?
                   </h3>
                   <p className="text-sm text-red-200 max-w-sm">
-                    Accedé a precios especiales por volumen y sumate a nuestra red de clientes mayoristas. Te acompañamos y asesoramos en el proceso.
+                    Accedé a precios especiales por volumen y sumate a nuestra
+                    red de clientes mayoristas. Te acompañamos y asesoramos en
+                    el proceso.
                   </p>
                 </div>
               </div>
@@ -939,7 +968,8 @@ export default function App() {
               </div>
             </div>
             <p className="text-center text-xs text-gray-600 mt-10">
-              © {new Date().getFullYear()} Abastecedora Valette. Todos los derechos reservados.
+              © {new Date().getFullYear()} Abastecedora Valette. Todos los
+              derechos reservados.
             </p>
           </footer>
         </main>
