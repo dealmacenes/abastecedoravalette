@@ -11,6 +11,7 @@ import {
   FaTimes,
   FaChevronRight,
 } from "react-icons/fa";
+import { IoOpenOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart, MdOutlineSevereCold } from "react-icons/md";
 import { GiCow, GiPig, GiChicken } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
@@ -90,7 +91,7 @@ const cuts = {
   cerdo: [
     {
       name: "Cerdo",
-      desc: "Frescura y genética",
+      desc: "Calidad y genética",
       img: "work22.jpg",
     },
     {
@@ -213,17 +214,17 @@ function MeatSection({ icon, title, subtitle, items }) {
   
 
   return (
-    <div className="mb-6 border border-red-100 py-2 overflow-x-auto bg-neutral-50/50">
+    <div className="mb-6 border border-red-100 py-4 overflow-x-auto bg-red-50/50">
       <div className="flex flex-col gap-3 sm:gap-5">
         {/* Left info panel */}
         <div className="w-full flex-shrink-0">
-          <div className="flex gap-2 items-center w-full px-4">
-            <div className="text-[#C0392B] my-2">{icon}</div>
-            <h3 className="font-black text-[#1a2340] uppercase">{title}</h3>
+          <div className="flex flex-col bg-white rounded-lg items-center justify-center w-9/10 mx-auto px-4 pb-2">
+            <div className="text-[#C0392B] p-2">{icon}</div>
+            <h3 className="font-black text-center text-[#1a2340] uppercase">{title}</h3>
+            <p className="text-sm text-center text-gray-500 mb-4 leading-relaxed px-4">
+              {subtitle}
+            </p>
           </div>
-          <p className="text-normal text-gray-500 mb-4 leading-relaxed px-4">
-            {subtitle}
-          </p>
         </div>
 
         {/* Carousel */}
@@ -293,17 +294,17 @@ export default function App() {
 
   const sections = {
     vacuna: {
-      icon: <GiCow size={40} />,
+      icon: <GiCow size={80} />,
       title: "CARNE VACUNA",
       subtitle: "Los mejores cortes para asado, milanesas y cocina diaria.",
     },
     cerdo: {
-      icon: <GiPig size={40} />,
+      icon: <GiPig size={80} />,
       title: "CARNE DE CERDO",
       subtitle: "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
     },
     pollo: {
-      icon: <GiChicken size={40} />,
+      icon: <GiChicken size={80} />,
       title: "POLLO FRESCO",
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
     },
@@ -475,7 +476,7 @@ export default function App() {
                 },
                 {
                   icon: <MdOutlineSevereCold className=" size-8 shrink-0" />,
-                  title: "Siempre frescas",
+                  title: "Carnes frescas, siempre.",
                   desc: "Reposición diaria en todas las sucursales, directo desde nuestros criaderos.",
                 },
                 {
@@ -582,8 +583,9 @@ export default function App() {
           ></iframe>
         </div>
 
-        <div className="p-5">
-          <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
+        <div className="px-5 pt-2 pb-5">
+          <p className="flex items-center text-sm text-neutral-500 gap-1">Click en el mapa para abrir Google Maps <IoOpenOutline className="size-4"/></p>
+          <h3 className="mt-4 text-2xl font-bold text-[#2B3175] mb-3">
             Luis Guillon
           </h3>
 
@@ -628,8 +630,9 @@ export default function App() {
           <div className="absolute inset-0 bg-[#2B3175]/10 pointer-events-none"></div>
         </div>
 
-        <div className="p-5">
-          <h3 className="text-2xl font-bold text-[#2B3175] mb-3">
+        <div className="px-5 pt-2 pb-5">
+          <p className="flex items-center text-sm text-neutral-500 gap-1">Click en el mapa para abrir Google Maps <IoOpenOutline className="size-4"/></p>
+          <h3 className="mt-4 text-2xl font-bold text-[#2B3175] mb-3">
             Moreno
           </h3>
 
