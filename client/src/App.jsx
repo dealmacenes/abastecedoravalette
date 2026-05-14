@@ -20,7 +20,7 @@ import { PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
 const cuts = {
   vacuna: [
     {
-      name: "Media Res",
+      name: "1/2 Res de Vaca",
       desc: "Fresca y lista para despostar",
       img: "/mediaRes.png",
     },
@@ -162,75 +162,39 @@ const cuts = {
   ],
   cerdo: [
     {
-      name: "Lechón",
-      desc: "Calidad superior y genética seleccionada",
-      img: "/work22.jpg",
-    },
-    {
       name: "1/2 Res de Cerdo",
-      desc: "Calidad superior y genética seleccionada",
+      desc: "Media res fresca, lista para despostar",
       img: "/mediaResCerdo.jpg",
     },
     {
+      name: "Lechón",
+      desc: "Tierno y festivo, ideal para eventos",
+      img: "/work22.jpg",
+    },
+    {
       name: "Carre de Cerdo",
-      desc: "Calidad superior y genética seleccionada",
+      desc: "Corte premium, jugoso y tierno",
       img: "/carre.webp",
     },
     {
-      name: "Churrasquito",
-      desc: "Frescas y listas para la parrilla",
-      img: "/churrasquitos.png",
+      name: "Bondiola",
+      desc: "Jugosa y llena de sabor",
+      img: "/bondiola.jpg",
     },
-    { name: "Bondiola", desc: "Jugosa y llena de sabor", img: "/work2.jpg" },
     {
       name: "Bondiola en Caja",
-      desc: "Calidad superior y genética seleccionada",
+      desc: "Bondiola al por mayor, calidad garantizada",
       img: "/bondiolaEnCaja.png",
     },
     {
-      name: "Recorte",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Grasa de Cerdo",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Huesito de Cerdo",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Patita de Cerdo",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Cuero de Cerdo",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Cabeza de Cerdo",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Anqueta de Cerdo",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Picada de Cerdo",
-      desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
+      name: "Pernil (Jamón)",
+      desc: "Ideal para reuniones y eventos",
+      img: "/work21.jpg",
     },
     {
       name: "Paleta",
-      desc: "Calidad superior y genética seleccionada",
-      img: "/work22.jpg",
+      desc: "Versátil, ideal al horno o estofado",
+      img: "/paletaDeCerdo.jpg",
     },
     {
       name: "Bife de Cerdo",
@@ -238,9 +202,19 @@ const cuts = {
       img: "/work1.jpg",
     },
     {
+      name: "Churrasquito",
+      desc: "Pequeño, tierno y rápido a la parrilla",
+      img: "/churrasquitos.png",
+    },
+    {
       name: "Pechito de Cerdo",
       desc: "Ideal para parrilla lenta y ahumados",
       img: "/work6.jpg",
+    },
+    {
+      name: "Anqueta de Cerdo",
+      desc: "Sabrosa, ideal para horno o parrilla",
+      img: "/anquetaDeCerdo.png",
     },
     {
       name: "Chorizos",
@@ -259,18 +233,48 @@ const cuts = {
     },
     {
       name: "Morcilla",
-      desc: "Frescas y listas para la parrilla",
+      desc: "Clásica y sabrosa en el asado",
       img: "/morcilla.jpg",
     },
     {
       name: "Morcilla Vasca",
-      desc: "Frescas y listas para la parrilla",
+      desc: "Con verduras, suave y tradicional",
       img: "/morcillaVasca.jpg",
     },
     {
-      name: "Pernil (Jamón)",
-      desc: "Ideal para reuniones y eventos",
-      img: "/work21.jpg",
+      name: "Picada de Cerdo",
+      desc: "Ideal para empanadas y rellenos",
+      img: "/picadaDeCerdo.jpg",
+    },
+    {
+      name: "Recorte",
+      desc: "Económico, ideal para guisos y rellenos",
+      img: "/recorteDeCerdo.png",
+    },
+    {
+      name: "Patita de Cerdo",
+      desc: "Ideal para caldos y gelatinas",
+      img: "/patitaDeCerdo.jpg",
+    },
+    {
+      name: "Huesito de Cerdo",
+      desc: "Perfecto para caldos y guisos",
+      img: "/huesitoDeCerdo.webp",
+    },
+    {
+      name: "Cuero de Cerdo",
+      desc: "Para chicharrón o dar sabor a guisos",
+      img: "/cueroDeCerdo.jpg",
+    },
+    {
+      name: "Grasa de Cerdo",
+      desc: "Para frituras y preparaciones caseras",
+      img: "/grasaDeCerdo.png",
+    },
+    {
+      name: "Cabeza de Cerdo",
+      desc: "Para queso de cerdo y preparados",
+      img: "/cabezaDeCerdo.png",
     },
   ],
   pollo: [
