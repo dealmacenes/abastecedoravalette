@@ -694,6 +694,72 @@ function ContactModal({ onClose }) {
   );
 }
 
+// ─── TROCEO SECTION ───────────────────────────────────────────────────────────
+const TROCEOS = [
+  {
+    name: "Completo",
+    desc: "La media res entera sin dividir, ideal para grandes volúmenes.",
+  },
+  {
+    name: "Pistola",
+    desc: "Cuarto trasero completo: pierna y lomo. El más solicitado por carnicerías.",
+  },
+  {
+    name: "Barra de Bife",
+    desc: "Lomo y bifes juntos, sin costillas. Ideal para cortes premium.",
+  },
+  {
+    name: "Mocho",
+    desc: "Parte trasera sin el cuarto delantero. Buena proporción de cortes nobles.",
+  },
+  {
+    name: "Parrillero",
+    desc: "Selección orientada al asado: asado, vacío y cortes de parrilla.",
+  },
+  {
+    name: "Pecho",
+    desc: "Parte delantera con hueso. Económica, ideal para pucheros y caldos.",
+  },
+];
+
+function TroceoSection() {
+  return (
+    <section className="w-full py-10 px-4 bg-white">
+      <div className="max-w-2xl mx-auto">
+        <div className="flex flex-row items-center gap-3 mb-6">
+          <div className="text-[#C0392B]">
+            <GiCow size={48} />
+          </div>
+          <div>
+            <h3 className="font-black text-[#1a2340] text-lg leading-tight">
+              TROCEO DE 1/2 RES
+            </h3>
+            <p className="text-gray-500 text-sm mt-0.5">
+              Trozamos la media res según tu necesidad. <br /> Elegí el tipo de corte.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col divide-y divide-gray-100 border border-gray-200 rounded-2xl overflow-hidden">
+          {TROCEOS.map((t, i) => (
+            <div key={i} className="flex items-start gap-4 px-5 py-4 bg-white hover:bg-gray-50 transition-colors">
+              <div className="w-2 h-2 rounded-full bg-[#C0392B] mt-2 flex-shrink-0" />
+              <div>
+                <p className="font-bold text-[#1a2340]">{t.name}</p>
+                <p className="text-gray-500 text-sm mt-0.5 leading-snug">{t.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-gray-400 mt-4 text-center">
+          Consultá disponibilidad y precios por WhatsApp.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -1046,6 +1112,17 @@ export default function App() {
                 </div>
               ))}
             </div>
+
+            {/* ── TROCEO ── */}
+            <div className="w-full -mt-[0.5px]">
+              <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
+                <path
+                  d="M0 0 Q360 60 720 30 Q1080 0 1440 40 L1440 0 Z"
+                  fill="#f9fafb"
+                />
+              </svg>
+            </div>
+            <TroceoSection />
           </section>
 
           {/* ── SUCURSALES ── */}
@@ -1060,7 +1137,7 @@ export default function App() {
             </svg>
           </div>
 
-          <section className="bg-[#1a2340] pt-4 pb-16 px-4">
+          <section className="bg-[#1a2340] pt-10 pb-16 px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-white font-black text-3xl sm:text-4xl mb-3">
