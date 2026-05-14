@@ -32,7 +32,7 @@ const BASE_CUTS = {
     {
       name: "Lomo",
       desc: "El corte más tierno y premium",
-      img: "/work8.jpg",
+      img: "/lomoVaca.jpg",
     },
     {
       name: "Bife Ancho",
@@ -57,17 +57,17 @@ const BASE_CUTS = {
     {
       name: "Asado",
       desc: "El clásico argentino infaltable",
-      img: "/work11.jpg",
+      img: "/asado.jpg",
     },
     {
       name: "Tapa de Asado",
       desc: "Sabrosa y tradicional a la parrilla",
-      img: "/work9.jpg",
+      img: "/tapaDeAsado.jpg",
     },
     {
       name: "Vacío",
       desc: "Jugoso y sabroso a la parrilla",
-      img: "/work12.jpg",
+      img: "/vacio.jpg",
     },
     {
       name: "Matambre",
@@ -77,7 +77,7 @@ const BASE_CUTS = {
     {
       name: "Picaña",
       desc: "Jugosa y popular en todo asado",
-      img: "/work3.jpg",
+      img: "/picana.jpg",
     },
     {
       name: "Cuadril",
@@ -87,22 +87,22 @@ const BASE_CUTS = {
     {
       name: "Colita de Cuadril",
       desc: "Magra, tierna y fácil de cocinar",
-      img: "/work5.jpg",
+      img: "/colitaDeCuadril.jpg",
     },
     {
       name: "Roast Beef",
       desc: "Ideal para horno y cocción lenta",
-      img: "/work7.jpg",
+      img: "/roastBeef.jpg",
     },
     {
       name: "Nalga",
       desc: "Versátil y tierna, ideal al horno",
-      img: "/work10.jpg",
+      img: "/nalga.jpg",
     },
     {
       name: "Tapa de Nalga",
       desc: "Magra y versátil en la cocina",
-      img: "/work15.jpg",
+      img: "/tapaDeNalga.jpg",
     },
     {
       name: "Bola de Lomo",
@@ -168,7 +168,7 @@ const BASE_CUTS = {
     {
       name: "Carne Picada Especial",
       desc: "Perfecta para empanadas y salsas",
-      img: "/work13.jpg",
+      img: "/carnePicada.jpg",
       tags: ["preparados"],
     },
   ],
@@ -181,7 +181,7 @@ const BASE_CUTS = {
     {
       name: "Lechón",
       desc: "Tierno y festivo, ideal para eventos",
-      img: "/work22.jpg",
+      img: "/lechon.jpg",
     },
     {
       name: "Carre de Cerdo",
@@ -201,7 +201,7 @@ const BASE_CUTS = {
     {
       name: "Pernil (Jamón)",
       desc: "Ideal para reuniones y eventos",
-      img: "/work21.jpg",
+      img: "/pernil.jpg",
     },
     {
       name: "Paleta",
@@ -211,7 +211,7 @@ const BASE_CUTS = {
     {
       name: "Bife de Cerdo",
       desc: "Tierno y perfecto a la plancha",
-      img: "/work1.jpg",
+      img: "/bifeDeCerdo.jpg",
     },
     {
       name: "Churrasquito",
@@ -227,7 +227,7 @@ const BASE_CUTS = {
     {
       name: "Pechito de Cerdo",
       desc: "Ideal para parrilla lenta y ahumados",
-      img: "/work6.jpg",
+      img: "/pechitoDeCerdo.jpg",
     },
     {
       name: "Anqueta de Cerdo",
@@ -237,7 +237,7 @@ const BASE_CUTS = {
     {
       name: "Chorizos",
       desc: "Infaltables en cualquier asado",
-      img: "/work19.jpg",
+      img: "/chorizos.jpg",
       tags: ["embutidos"],
     },
     {
@@ -249,7 +249,7 @@ const BASE_CUTS = {
     {
       name: "Salchichas Parrilleras",
       desc: "Frescas y listas para la parrilla",
-      img: "/work20.jpg",
+      img: "/salchichaParrillera.jpg",
       tags: ["embutidos"],
     },
     {
@@ -310,12 +310,12 @@ const BASE_CUTS = {
     {
       name: "Pollo Entero",
       desc: "Fresco, natural y de calidad",
-      img: "/work16.jpg",
+      img: "/polloEntero.jpg",
     },
     {
       name: "Supremas",
       desc: "Sin piel, tiernas y magras",
-      img: "/work18.jpg",
+      img: "/supremas.jpg",
     },
     {
       name: "Caja de Supremas",
@@ -337,7 +337,7 @@ const BASE_CUTS = {
     {
       name: "Pata y Muslo",
       desc: "Rendidoras y jugosas, ideales al horno",
-      img: "/work17.jpg",
+      img: "/pataYMuslo.jpg",
     },
     {
       name: "Caja de Pata y Muslo",
@@ -792,11 +792,6 @@ export default function App() {
       title: "POLLO FRESCO",
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
     },
-    cordero:{
-      icon: <GiSheep size={60} />,
-      title: "CARNE DE CORDERO",
-      subtitle: "Cortes especiales y de excelente calidad.",
-    },
     embutidos: {
       icon: <TbMeat size={60} />,
       title: "EMBUTIDOS",
@@ -806,6 +801,11 @@ export default function App() {
       icon: <MdOutlineFoodBank size={60} />,
       title: "PREPARADOS",
       subtitle: "Listos para cocinar: milanesas, hamburguesas y más.",
+    },
+    cordero: {
+      icon: <GiSheep size={60} />,
+      title: "CARNE DE CORDERO",
+      subtitle: "Cortes especiales y de excelente calidad.",
     },
   };
 
@@ -1073,7 +1073,7 @@ export default function App() {
             </div>
 
             {/* Wave divider */}
-            <div className="absolute bottom-0 left-0 right-0">
+            <div className="absolute bottom-0 left-0 right-0 -mt-[1px]">
               <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
                 <path
                   d="M0 60 Q360 0 720 30 Q1080 60 1440 20 L1440 60 Z"
