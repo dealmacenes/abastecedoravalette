@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa6";
 import { IoOpenOutline } from "react-icons/io5";
-import { GiCow, GiPig, GiChicken } from "react-icons/gi";
+import { GiCow, GiPig, GiChicken, GiSheep } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
@@ -359,6 +359,13 @@ const BASE_CUTS = {
       desc: "Ideal para caldos y sopas caseras",
       img: "/carcasaPollo.jpeg",
     },
+  ],
+  cordero:[
+    {
+      name: "Cordero",
+      desc: "Producto fresco y exclusivo",
+      img: "/cordero.jpg",
+    }
   ],
 };
 
@@ -784,6 +791,11 @@ export default function App() {
       icon: <GiChicken size={60} />,
       title: "POLLO FRESCO",
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
+    },
+    cordero:{
+      icon: <GiSheep size={60} />,
+      title: "CARNE DE CORDERO",
+      subtitle: "Cortes especiales y de excelente calidad.",
     },
     embutidos: {
       icon: <TbMeat size={60} />,
