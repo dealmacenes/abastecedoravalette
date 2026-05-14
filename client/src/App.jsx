@@ -1246,7 +1246,7 @@ export default function App() {
                 </div>
               </div>
               <a
-                href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista.%20(%20Enviar%20%E2%9E%9C%20)"
+                href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3.5 rounded-xl hover:bg-red-50 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
