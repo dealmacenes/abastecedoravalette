@@ -14,10 +14,15 @@ import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
 import { PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
+import { MdOutlineFoodBank } from "react-icons/md";
+import { TbMeat } from "react-icons/tb";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
-const cuts = {
+// Fuente de verdad: solo las 3 categorías de animales.
+// Los items con `tags` aparecerán también en las secciones cruzadas
+// (ej: tags: ["embutidos"] → aparece en la sección EMBUTIDOS).
+const BASE_CUTS = {
   vacuna: [
     {
       name: "1/2 Res de Vaca",
@@ -118,6 +123,7 @@ const cuts = {
       name: "Hamburguesas de Carne",
       desc: "Caseras, jugosas y listas para cocinar",
       img: "/hamburguesasDeVaca.jpg",
+      tags: ["preparados"],
     },
     {
       name: "Palomita",
@@ -163,6 +169,7 @@ const cuts = {
       name: "Carne Picada Especial",
       desc: "Perfecta para empanadas y salsas",
       img: "/work13.jpg",
+      tags: ["preparados"],
     },
   ],
   cerdo: [
@@ -215,6 +222,7 @@ const cuts = {
       name: "Hamburguesas de Cerdo",
       desc: "Caseras, jugosas y listas para cocinar",
       img: "/hamburguesasDeCerdo.jpg",
+      tags: ["preparados"],
     },
     {
       name: "Pechito de Cerdo",
@@ -230,31 +238,37 @@ const cuts = {
       name: "Chorizos",
       desc: "Infaltables en cualquier asado",
       img: "/work19.jpg",
+      tags: ["embutidos"],
     },
     {
       name: "Chorizo Bombón",
       desc: "El bocado parrillero perfecto",
       img: "/chorizoBombon.webp",
+      tags: ["embutidos"],
     },
     {
       name: "Salchichas Parrilleras",
       desc: "Frescas y listas para la parrilla",
       img: "/work20.jpg",
+      tags: ["embutidos"],
     },
     {
       name: "Morcilla",
       desc: "Clásica y sabrosa en el asado",
       img: "/morcilla.jpg",
+      tags: ["embutidos"],
     },
     {
       name: "Morcilla Vasca",
       desc: "Con verduras, suave y tradicional",
       img: "/morcillaVasca.jpg",
+      tags: ["embutidos"],
     },
     {
       name: "Picada de Cerdo",
       desc: "Ideal para empanadas y rellenos",
       img: "/picadaDeCerdo.jpg",
+      tags: ["preparados"],
     },
     {
       name: "Recorte",
@@ -312,11 +326,13 @@ const cuts = {
       name: "Milanesas de Pollo",
       desc: "Listas para cocinar, rebozadas al momento",
       img: "/milanesasPollo.jpg",
+      tags: ["preparados"],
     },
     {
       name: "Hamburguesas de Pollo",
       desc: "Caseras, jugosas y listas para cocinar",
       img: "/hamburguesasPollo.jpg",
+      tags: ["preparados"],
     },
     {
       name: "Pata y Muslo",
@@ -344,66 +360,27 @@ const cuts = {
       img: "/carcasaPollo.jpeg",
     },
   ],
-  embutidos: [
-    {
-      name: "Chorizo",
-      desc: "Artesanal, ideal para la parrilla",
-      img: "/work19.jpg",
-    },
-    {
-      name: "Salchicha Parrillera",
-      desc: "Fresca y lista para asar",
-      img: "/work20.jpg",
-    },
-    {
-      name: "Morcilla",
-      desc: "Clásica y sabrosa",
-      img: "/work2.jpg",
-    },
-    {
-      name: "Longaniza",
-      desc: "Condimentada con especias naturales",
-      img: "/work1.jpg",
-    },
-  ],
-  preparados: [
-    {
-      name: "Milanesas",
-      desc: "Listas para cocinar, rebozadas al momento",
-      img: "/work13.jpg",
-    },
-    {
-      name: "Carne Picada Especial",
-      desc: "Ideal para empanadas y rellenos",
-      img: "/work10.jpg",
-    },
-    {
-      name: "Tira de Asado Lista",
-      desc: "Preparada y lista para tu parrilla",
-      img: "/work11.jpg",
-    },
-  ],
-  troceoEnCasa: [
-    {
-      name: "Milanesas",
-      desc: "Listas para cocinar, rebozadas al momento",
-      img: "/work13.jpg",
-    },
-    {
-      name: "Carne Picada Especial",
-      desc: "Ideal para empanadas y rellenos",
-      img: "/work10.jpg",
-    },
-    {
-      name: "Tira de Asado Lista",
-      desc: "Preparada y lista para tu parrilla",
-      img: "/work11.jpg",
-    },
-  ],
 };
 
-const CARD_W    = 160;
-const CARD_GAP  = 16;
+// Genera dinámicamente las secciones cruzadas por tag.
+// Para agregar un item a "embutidos" o "preparados", solo
+// agregale tags: ["embutidos"] o tags: ["preparados"] en BASE_CUTS.
+function getTaggedItems(tag) {
+  return Object.values(BASE_CUTS)
+    .flat()
+    .filter((item) => item.tags?.includes(tag));
+}
+
+const cuts = {
+  ...BASE_CUTS,
+  embutidos: getTaggedItems("embutidos"),
+  preparados: getTaggedItems("preparados"),
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+const CARD_W = 160;
+const CARD_GAP = 16;
 const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 const WHATSAPP_CONTACTS = [
@@ -435,7 +412,9 @@ function useScrollLock(active) {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [active]);
 }
 
@@ -460,8 +439,12 @@ function CutCard({ item, onSelect }) {
       </div>
       {/* Label */}
       <div className="bg-[#1a2340] px-3 py-2 group-hover:bg-[#243060] transition-colors duration-200 flex flex-col w-full">
-        <p className="text-white font-bold text-sm text-center leading-tight">{item.name}</p>
-        <p className="text-neutral-300 text-xs text-center mt-0.5 leading-tight">{item.desc}</p>
+        <p className="text-white font-bold text-sm text-center leading-tight">
+          {item.name}
+        </p>
+        <p className="text-neutral-300 text-xs text-center mt-0.5 leading-tight">
+          {item.desc}
+        </p>
       </div>
     </button>
   );
@@ -495,7 +478,6 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
   const atStart = scrollLeft <= 8;
   const atEnd = scrollLeft >= maxScroll - 8;
 
-  // Al inicio del return de MeatSection, antes del <div className="w-full mb-6">
   if (!items || items.length === 0) return null;
 
   return (
@@ -613,9 +595,14 @@ function CutModal({ cutName, onClose }) {
                 <p className="font-bold text-[#1a2340] text-sm leading-tight">
                   {contact.label}
                 </p>
-                <p className="text-xs text-gray-500 mt-0.5 leading-tight">{contact.sub}</p>
+                <p className="text-xs text-gray-500 mt-0.5 leading-tight">
+                  {contact.sub}
+                </p>
               </div>
-              <FaChevronRight size={12} className="text-gray-300 group-hover:text-[#25D366] transition-colors flex-shrink-0" />
+              <FaChevronRight
+                size={12}
+                className="text-gray-300 group-hover:text-[#25D366] transition-colors flex-shrink-0"
+              />
             </a>
           ))}
         </div>
@@ -690,10 +677,15 @@ function ContactModal({ onClose }) {
                 <FaWhatsapp size={20} className="text-[#25D366]" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-bold text-[#1a2340] text-sm leading-tight">{op.label}</p>
+                <p className="font-bold text-[#1a2340] text-sm leading-tight">
+                  {op.label}
+                </p>
                 <p className="text-xs text-gray-500 mt-0.5">{op.sub}</p>
               </div>
-              <FaChevronRight size={12} className="ml-auto text-gray-300 group-hover:text-[#25D366] transition-colors" />
+              <FaChevronRight
+                size={12}
+                className="ml-auto text-gray-300 group-hover:text-[#25D366] transition-colors"
+              />
             </a>
           ))}
         </div>
@@ -704,11 +696,10 @@ function ContactModal({ onClose }) {
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const [menuOpen,    setMenuOpen]    = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedCut, setSelectedCut] = useState(null);
 
-  // Close menu when clicking outside
   const anyModalOpen = contactOpen || !!selectedCut;
 
   const sections = {
@@ -729,29 +720,21 @@ export default function App() {
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
     },
     embutidos: {
-      icon: <GiChicken size={60} />,
+      icon: <TbMeat size={60} />,
       title: "EMBUTIDOS",
-      subtitle:
-        "Deliciosos embutidos artesanales, hechos con ingredientes de calidad.",
+      subtitle: "Chorizos, morcillas y salchichas artesanales para tu asado.",
     },
     preparados: {
-      icon: <GiChicken size={60} />,
+      icon: <MdOutlineFoodBank size={60} />,
       title: "PREPARADOS",
-      subtitle:
-        "Deliciosos preparados artesanales, hechos con ingredientes de calidad.",
-    },
-    troceoEnCasa: {
-      icon: <GiChicken size={60} />,
-      title: "TROCEO EN CASA",
-      subtitle:
-        "Deliciosos troceos artesanales, hechos con ingredientes de calidad.",
+      subtitle: "Listos para cocinar: milanesas, hamburguesas y más.",
     },
   };
 
   const navLinks = [
-    { label: "Nuestras Carnes",     href: "#nuestras-carnes"     },
-    { label: "Sucursales",          href: "#nuestras-sucursales"  },
-    { label: "Venta Mayorista",     href: "#venta-mayorista"      },
+    { label: "Nuestras Carnes", href: "#nuestras-carnes" },
+    { label: "Sucursales", href: "#nuestras-sucursales" },
+    { label: "Venta Mayorista", href: "#venta-mayorista" },
   ];
 
   return (
@@ -771,7 +754,6 @@ export default function App() {
           rel="canonical"
           href="https://www.abastecedoravalette.vercel.app/"
         />
-        {/* Open Graph para compartir en redes */}
         <meta
           property="og:title"
           content="Abastecedora Valette — Carnes directo del productor"
@@ -859,6 +841,7 @@ export default function App() {
           onClick={() => setMenuOpen(false)}
         />
       )}
+
       <div className="min-h-screen flex flex-col font-sans text-[#1a2340] bg-white">
         {/* ── NAVBAR ── */}
         <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm h-20">
@@ -1040,7 +1023,7 @@ export default function App() {
               <div className="border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
                 <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
                 <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
-                  Tocá cualquier corte para consultar por disponibilidad y 
+                  Tocá cualquier corte para consultar por disponibilidad y
                   precio directamente a nuestro WhatsApp.
                 </p>
               </div>
