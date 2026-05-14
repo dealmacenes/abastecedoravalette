@@ -25,9 +25,29 @@ const cuts = {
       img: "/mediaRes.png",
     },
     {
+      name: "Lomo",
+      desc: "El corte más tierno y premium",
+      img: "/work8.jpg",
+    },
+    {
+      name: "Bife Ancho",
+      desc: "Jugoso y marmolado, estrella del asado",
+      img: "/bifeAncho.jpeg",
+    },
+    {
       name: "Bife Angosto",
-      desc: "Tierno y jugoso, ideal para la parrilla",
-      img: "/work14.jpg",
+      desc: "Tierno y magro, ideal a la parrilla",
+      img: "/bifeAngosto.jpeg",
+    },
+    {
+      name: "Bife de Chorizo",
+      desc: "Clásico jugoso con su tapa de grasa",
+      img: "/bifeDeChorizo.jpg",
+    },
+    {
+      name: "Entraña",
+      desc: "Sabor intenso, imperdible en la parrilla",
+      img: "/entrana.png",
     },
     {
       name: "Asado",
@@ -35,20 +55,19 @@ const cuts = {
       img: "/work11.jpg",
     },
     {
-      name: "Nalga",
-      desc: "Versátil y tierna, ideal al horno",
-      img: "/work10.jpg",
+      name: "Tapa de Asado",
+      desc: "Sabrosa y tradicional a la parrilla",
+      img: "/work9.jpg",
     },
     {
       name: "Vacío",
       desc: "Jugoso y sabroso a la parrilla",
       img: "/work12.jpg",
     },
-    { name: "Lomo", desc: "El corte más tierno y premium", img: "/work8.jpg" },
     {
-      name: "Roast Beef",
-      desc: "Perfecto para horno y guisos",
-      img: "/work7.jpg",
+      name: "Matambre",
+      desc: "Fino y versátil, relleno o a la parrilla",
+      img: "/matambre.webp",
     },
     {
       name: "Picaña",
@@ -56,19 +75,24 @@ const cuts = {
       img: "/work3.jpg",
     },
     {
+      name: "Cuadril",
+      desc: "Tierno y versátil, horno o parrilla",
+      img: "/cuadril.jpg",
+    },
+    {
       name: "Colita de Cuadril",
       desc: "Magra, tierna y fácil de cocinar",
       img: "/work5.jpg",
     },
     {
-      name: "Carne Picada",
-      desc: "Perfecta para empanadas, salsas y más",
-      img: "/work13.jpg",
+      name: "Roast Beef",
+      desc: "Ideal para horno y cocción lenta",
+      img: "/work7.jpg",
     },
     {
-      name: "Bola de Lomo",
-      desc: "La favorita para milanesas",
-      img: "/work14.jpg",
+      name: "Nalga",
+      desc: "Versátil y tierna, ideal al horno",
+      img: "/work10.jpg",
     },
     {
       name: "Tapa de Nalga",
@@ -76,18 +100,138 @@ const cuts = {
       img: "/work15.jpg",
     },
     {
-      name: "Tapa de Asado",
-      desc: "Sabrosa y tradicional a la parrilla",
-      img: "/work9.jpg",
+      name: "Bola de Lomo",
+      desc: "La favorita para milanesas",
+      img: "/bolaDeLomo.jpeg",
+    },
+    {
+      name: "Peceto",
+      desc: "Magro y tierno, perfecto al horno",
+      img: "/peceto.jpeg",
+    },
+    {
+      name: "Paleta",
+      desc: "Sabrosa, ideal para guisos y estofados",
+      img: "/paleta.webp",
+    },
+    {
+      name: "Palomita",
+      desc: "Tierna y económica para guisos",
+      img: "/palomita.jpg",
+    },
+    {
+      name: "Bife Americano",
+      desc: "Corte grueso y sabroso a la plancha",
+      img: "/bifeAmericano.jpg",
+    },
+    {
+      name: "Cuadrada",
+      desc: "Magra y firme, buena para milanesas",
+      img: "/cuadrada.jpeg",
+    },
+    {
+      name: "Tortuguita",
+      desc: "Tierna, ideal para milanesas y horno",
+      img: "/tortuguita.jpg",
+    },
+    {
+      name: "Cima",
+      desc: "Económica y sabrosa para rellenos",
+      img: "/cima.png",
+    },
+    {
+      name: "Osobuco",
+      desc: "Con hueso, ideal para caldos y guisos",
+      img: "/osobuco.jpg",
+    },
+    {
+      name: "Falda",
+      desc: "Económica y sabrosa en cocción lenta",
+      img: "/falda.png",
+    },
+    {
+      name: "Espinazo",
+      desc: "Con hueso, perfecto para pucheros",
+      img: "/espinazo.webp",
+    },
+    {
+      name: "Carne Picada Especial",
+      desc: "Perfecta para empanadas y salsas",
+      img: "/work13.jpg",
     },
   ],
   cerdo: [
     {
-      name: "Cerdo",
+      name: "Lechón",
       desc: "Calidad superior y genética seleccionada",
       img: "/work22.jpg",
     },
+    {
+      name: "1/2 Res de Cerdo",
+      desc: "Calidad superior y genética seleccionada",
+      img: "/mediaResCerdo.jpg",
+    },
+    {
+      name: "Carre de Cerdo",
+      desc: "Calidad superior y genética seleccionada",
+      img: "/carre.webp",
+    },
+    {
+      name: "Churrasquito",
+      desc: "Frescas y listas para la parrilla",
+      img: "/churrasquitos.png",
+    },
     { name: "Bondiola", desc: "Jugosa y llena de sabor", img: "/work2.jpg" },
+    {
+      name: "Bondiola en Caja",
+      desc: "Calidad superior y genética seleccionada",
+      img: "/bondiolaEnCaja.png",
+    },
+    {
+      name: "Recorte",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Grasa de Cerdo",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Huesito de Cerdo",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Patita de Cerdo",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Cuero de Cerdo",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Cabeza de Cerdo",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Anqueta de Cerdo",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Picada de Cerdo",
+      desc: "Frescas y listas para la parrilla",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Paleta",
+      desc: "Calidad superior y genética seleccionada",
+      img: "/work22.jpg",
+    },
     {
       name: "Bife de Cerdo",
       desc: "Tierno y perfecto a la plancha",
@@ -104,31 +248,142 @@ const cuts = {
       img: "/work19.jpg",
     },
     {
+      name: "Chorizo Bombón",
+      desc: "El bocado parrillero perfecto",
+      img: "/chorizoBombon.webp",
+    },
+    {
       name: "Salchichas Parrilleras",
       desc: "Frescas y listas para la parrilla",
       img: "/work20.jpg",
     },
     {
-      name: "Pernil",
+      name: "Morcilla",
+      desc: "Frescas y listas para la parrilla",
+      img: "/morcilla.jpg",
+    },
+    {
+      name: "Morcilla Vasca",
+      desc: "Frescas y listas para la parrilla",
+      img: "/morcillaVasca.jpg",
+    },
+    {
+      name: "Pernil (Jamón)",
       desc: "Ideal para reuniones y eventos",
       img: "/work21.jpg",
     },
   ],
   pollo: [
     {
-      name: "Pollo Fresco",
-      desc: "Fresco, natural y de calidad",
-      img: "/work16.jpg",
+      name: "Cajón de Pollo",
+      desc: "Pollos enteros frescos por mayor",
+      img: "/cajonDePollo.png",
     },
     {
-      name: "Pata y muslo",
-      desc: "Rendidor y versátil en la cocina",
-      img: "/work17.jpg",
+      name: "Pollo Entero",
+      desc: "Fresco, natural y de calidad",
+      img: "/work16.jpg",
     },
     {
       name: "Supremas",
       desc: "Sin piel, tiernas y magras",
       img: "/work18.jpg",
+    },
+    {
+      name: "Caja de Supremas",
+      desc: "Supremas al por mayor, sin piel",
+      img: "/cajaSuprema.png",
+    },
+    {
+      name: "Milanesas de Pollo",
+      desc: "Listas para cocinar, rebozadas al momento",
+      img: "/milanesasPollo.jpg",
+    },
+    {
+      name: "Hamburguesas de Pollo",
+      desc: "Caseras, jugosas y listas para cocinar",
+      img: "/hamburguesasPollo.jpg",
+    },
+    {
+      name: "Pata y Muslo",
+      desc: "Rendidoras y jugosas, ideales al horno",
+      img: "/work17.jpg",
+    },
+    {
+      name: "Caja de Pata y Muslo",
+      desc: "Pata y muslo al por mayor",
+      img: "/cajaPataYMuslo.png",
+    },
+    {
+      name: "Alitas",
+      desc: "Crocantes y sabrosas a la parrilla",
+      img: "/alitasPollo.jpg",
+    },
+    {
+      name: "Menudo de Pollo",
+      desc: "Hígado, corazón y molleja frescos",
+      img: "/menudoPollo.jpg",
+    },
+    {
+      name: "Carcasa de Pollo",
+      desc: "Ideal para caldos y sopas caseras",
+      img: "/carcasaPollo.jpeg",
+    },
+  ],
+  embutidos: [
+    {
+      name: "Chorizo",
+      desc: "Artesanal, ideal para la parrilla",
+      img: "/work19.jpg",
+    },
+    {
+      name: "Salchicha Parrillera",
+      desc: "Fresca y lista para asar",
+      img: "/work20.jpg",
+    },
+    {
+      name: "Morcilla",
+      desc: "Clásica y sabrosa",
+      img: "/work2.jpg",
+    },
+    {
+      name: "Longaniza",
+      desc: "Condimentada con especias naturales",
+      img: "/work1.jpg",
+    },
+  ],
+  preparados: [
+    {
+      name: "Milanesas",
+      desc: "Listas para cocinar, rebozadas al momento",
+      img: "/work13.jpg",
+    },
+    {
+      name: "Carne Picada Especial",
+      desc: "Ideal para empanadas y rellenos",
+      img: "/work10.jpg",
+    },
+    {
+      name: "Tira de Asado Lista",
+      desc: "Preparada y lista para tu parrilla",
+      img: "/work11.jpg",
+    },
+  ],
+  troceoEnCasa: [
+    {
+      name: "Milanesas",
+      desc: "Listas para cocinar, rebozadas al momento",
+      img: "/work13.jpg",
+    },
+    {
+      name: "Carne Picada Especial",
+      desc: "Ideal para empanadas y rellenos",
+      img: "/work10.jpg",
+    },
+    {
+      name: "Tira de Asado Lista",
+      desc: "Preparada y lista para tu parrilla",
+      img: "/work11.jpg",
     },
   ],
 };
@@ -209,8 +464,7 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    const recalc = () =>
-      setMaxScroll(el.scrollWidth - el.clientWidth);
+    const recalc = () => setMaxScroll(el.scrollWidth - el.clientWidth);
     recalc();
     const ro = new ResizeObserver(recalc);
     ro.observe(el);
@@ -218,19 +472,23 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
   }, []);
 
   const scrollTo = (dir) => {
-    scrollRef.current?.scrollBy({ left: dir * SCROLL_STEP, behavior: "smooth" });
+    scrollRef.current?.scrollBy({
+      left: dir * SCROLL_STEP,
+      behavior: "smooth",
+    });
   };
 
   const atStart = scrollLeft <= 8;
-  const atEnd   = scrollLeft >= maxScroll - 8;
+  const atEnd = scrollLeft >= maxScroll - 8;
+
+  // Al inicio del return de MeatSection, antes del <div className="w-full mb-6">
+  if (!items || items.length === 0) return null;
 
   return (
     <div className="w-full mb-6">
       {/* Section header card */}
       <div className="px-5 py-4 flex flex-row items-center gap-3 mb-4">
-        <div className="text-[#C0392B] flex-shrink-0 flex">
-          {icon}
-        </div>
+        <div className="text-[#C0392B] flex-shrink-0 flex">{icon}</div>
         <div className="sborder-l border-gray-200 pl-5">
           <h3 className="font-black text-[#1a2340] text-lg leading-tight">
             {title}
@@ -257,9 +515,13 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
           ref={scrollRef}
           onScroll={onScroll}
           className="flex gap-4 overflow-x-auto px-4 sm:px-6 py-2"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+          }}
         >
-          {items.map((item, i) => (
+          {(items ?? []).map((item, i) => (
             <CutCard key={i} item={item} onSelect={onSelectCut} />
           ))}
         </div>
@@ -444,12 +706,31 @@ export default function App() {
     cerdo: {
       icon: <GiPig size={60} />,
       title: "CARNE DE CERDO",
-      subtitle: "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
+      subtitle:
+        "Cortes frescos y de excelente calidad, con criadero propio y cerdos de genética.",
     },
     pollo: {
       icon: <GiChicken size={60} />,
       title: "POLLO FRESCO",
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
+    },
+    embutidos: {
+      icon: <GiChicken size={60} />,
+      title: "EMBUTIDOS",
+      subtitle:
+        "Deliciosos embutidos artesanales, hechos con ingredientes de calidad.",
+    },
+    preparados: {
+      icon: <GiChicken size={60} />,
+      title: "PREPARADOS",
+      subtitle:
+        "Deliciosos preparados artesanales, hechos con ingredientes de calidad.",
+    },
+    troceoEnCasa: {
+      icon: <GiChicken size={60} />,
+      title: "TROCEO EN CASA",
+      subtitle:
+        "Deliciosos troceos artesanales, hechos con ingredientes de calidad.",
     },
   };
 
@@ -566,12 +847,12 @@ export default function App() {
       )}
       <div className="min-h-screen flex flex-col font-sans text-[#1a2340] bg-white">
         {/* ── NAVBAR ── */}
-        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+        <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm h-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
             {/* Logo */}
             <img
-              src="/iconAndText.webp"
-              className="h-20 w-fit cursor-pointer flex-shrink-0"
+              src="/logoRound.svg"
+              className="h-15 w-fit cursor-pointer flex-shrink-0"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               alt="Abastecedora Valette"
             />
@@ -590,7 +871,7 @@ export default function App() {
             </div>
 
             {/* Right actions */}
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center gap-4 flex-shrink-0">
               <button
                 onClick={() => setContactOpen(true)}
                 className="flex items-center gap-2 bg-[#C0392B] text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all shadow-sm"
@@ -602,10 +883,10 @@ export default function App() {
               {/* Hamburger — mobile only */}
               <button
                 onClick={() => setMenuOpen((v) => !v)}
-                className="md:hidden w-9 h-9 flex items-center justify-center text-[#1a2340] hover:bg-gray-100 rounded-xl transition-colors"
+                className="md:hidden size-[25px] flex items-center justify-center text-[#1a2340] hover:bg-gray-100 rounded-xl transition-colors"
                 aria-label="Menú"
               >
-                {menuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
+                {menuOpen ? <FaTimes size={25} /> : <FaBars size={25} />}
               </button>
             </div>
           </div>
