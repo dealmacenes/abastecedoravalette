@@ -817,7 +817,6 @@ export default function App() {
 
   return (
     <>
-      <Analytics />
       {/* SEO */}
       <Helmet>
         <title>Abastecedora Valette | Producción y venta de carnes.</title>
