@@ -886,15 +886,15 @@ export default function App() {
               "name": "Abastecedora Valette - Moreno",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Av. Del Libertador 4200",
+                "streetAddress": "Av. Del Libertador 3910",
                 "addressLocality": "Moreno",
                 "addressRegion": "Provincia de Buenos Aires",
                 "addressCountry": "AR"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": -34.792588,
-                "longitude": -58.456931
+                "latitude": -34.612165,
+                "longitude": -58.770520
               }
             },
           ],
@@ -904,7 +904,9 @@ export default function App() {
             "itemListElement": [
               { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Vaca" } },
               { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Cerdo" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Pollo" } }
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Carne de Pollo" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Embutidos" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Media Res" } }
             ]
           }
         }
