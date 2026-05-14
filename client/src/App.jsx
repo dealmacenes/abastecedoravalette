@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa6";
 import { IoOpenOutline } from "react-icons/io5";
-import { GiCow, GiPig, GiChicken, GiSheep } from "react-icons/gi";
+import { GiCow, GiPig, GiChicken, GiSheep, GiSlicedSausage } from "react-icons/gi";
 import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
@@ -793,7 +793,7 @@ export default function App() {
       subtitle: "Tiernos, saludables y perfectos para todas tus comidas.",
     },
     embutidos: {
-      icon: <TbMeat size={60} />,
+      icon: <GiSlicedSausage size={60} />,
       title: "EMBUTIDOS",
       subtitle: "Chorizos, morcillas y salchichas artesanales para tu asado.",
     },
