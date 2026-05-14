@@ -863,7 +863,8 @@ export default function App() {
           "openingHours": "Mo-Sa 07:00-15:00",
           "servesCuisine": "Carnicería",
           "priceRange": "$$",
-          "location": [
+          "location": 
+          [
             {
               "@type": "LocalBusiness",
               "name": "Abastecedora Valette - Luis Guillón",
@@ -876,8 +877,8 @@ export default function App() {
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": -34.7925,
-                "longitude": -58.4592
+                "latitude": -34.792588,
+                "longitude": -58.456931
               }
             },
             {
@@ -889,8 +890,13 @@ export default function App() {
                 "addressLocality": "Moreno",
                 "addressRegion": "Provincia de Buenos Aires",
                 "addressCountry": "AR"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -34.792588,
+                "longitude": -58.456931
               }
-            }
+            },
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
