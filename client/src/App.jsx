@@ -115,6 +115,11 @@ const cuts = {
       img: "/paleta.webp",
     },
     {
+      name: "Hamburguesas de Carne",
+      desc: "Caseras, jugosas y listas para cocinar",
+      img: "/hamburguesasDeVaca.jpg",
+    },
+    {
       name: "Palomita",
       desc: "Tierna y económica para guisos",
       img: "/palomita.jpg",
@@ -205,6 +210,11 @@ const cuts = {
       name: "Churrasquito",
       desc: "Pequeño, tierno y rápido a la parrilla",
       img: "/churrasquitos.png",
+    },
+    {
+      name: "Hamburguesas de Cerdo",
+      desc: "Caseras, jugosas y listas para cocinar",
+      img: "/hamburguesasDeCerdo.jpg",
     },
     {
       name: "Pechito de Cerdo",
@@ -856,7 +866,7 @@ export default function App() {
             {/* Logo */}
             <img
               src="/logoRound.svg"
-              className="h-15 w-fit cursor-pointer flex-shrink-0"
+              className="h-18 w-fit cursor-pointer flex-shrink-0"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               alt="Abastecedora Valette"
             />
