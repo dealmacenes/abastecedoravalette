@@ -822,7 +822,7 @@ export default function App() {
         <title>Abastecedora Valette | Producción y venta de carnes.</title>
         <meta
           name="description"
-          content="Productores de carne vacuna, cerdo y pollo por mayor y menor. Sucursales en Luis Guillón y Moreno. Restaurantes, comercios y familias."
+          content="Productores y comerciantes de carne vacuna, cerdo y pollo por mayor y menor. Sucursales en Luis Guillón y Moreno."
         />
         <meta
           name="keywords"
@@ -830,7 +830,7 @@ export default function App() {
         />
         <link
           rel="canonical"
-          href="https://www.abastecedoravalette.vercel.app/"
+          href="https://abastecedoravalette.com.ar/"
         />
         <meta
           property="og:title"
@@ -843,11 +843,11 @@ export default function App() {
         <meta property="og:type" content="business.business" />
         <meta
           property="og:url"
-          content="https://www.abastecedoravalette.vercel.app/"
+          content="https://abastecedoravalette.com.ar/"
         />
         <meta
           property="og:image"
-          content="https://www.abastecedoravalette.vercel.app/miniatura.jpg"
+          content="https://abastecedoravalette.com.ar/miniatura.jpg"
         />{" "}
         <script type="application/ld+json">{`
     {
@@ -856,8 +856,8 @@ export default function App() {
         {
           "@type": "FoodEstablishment",
           "name": "Abastecedora Valette",
-          "description": "Productores y vendedores mayorista y minorista de carne vacuna, de cerdo y pollo.",
-          "url": "https://www.abastecedoravalette.vercel.app/",
+          "description": "Somos productores y comerciantes con atención mayorista y minorista de carne vacuna, de cerdo y pollo.",
+          "url": "https://abastecedoravalette.com.ar/",
           "telephone": ["11-2835-3615", "11-2336-8224"],
           "email": "info@abastecedoravalette.com.ar",
           "openingHours": "Mo-Sa 07:00-15:00",
