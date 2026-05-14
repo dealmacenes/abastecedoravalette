@@ -1006,7 +1006,7 @@ export default function App() {
           </section>
 
           {/* ── CORTES ── */}
-          <div id="nuestras-carnes" className="h-1 mb-16 -mt-16" />
+          <div id="nuestras-carnes" className="h-1 mb-20 -mt-20" />
 
           <section className="w-full py-10">
             {/* Section header */}
@@ -1049,7 +1049,7 @@ export default function App() {
           </section>
 
           {/* ── SUCURSALES ── */}
-          <div id="nuestras-sucursales" className="h-1 mb-16 -mt-16" />
+          <div id="nuestras-sucursales" className="h-1 mb-20 -mt-20" />
 
           <div className="w-full">
             <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
@@ -1146,8 +1146,8 @@ export default function App() {
           </section>
 
           {/* ── WHOLESALE ── */}
-          <div id="venta-mayorista" className="h-1 mb-16 -mt-16 bg-main" />
-          <section className="bg-[#8B0000] py-10 sm:py-14 px-4 border-b-4 border-b-white">
+          <div id="venta-mayorista" className="h-1 mb-20 -mt-20" />
+          <section className="bg-[#8B0000] py-10 sm:py-14 px-4 -mt-1">
             <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-full border-2 border-white/30 flex items-center justify-center flex-shrink-0">
@@ -1180,14 +1180,14 @@ export default function App() {
           </section>
 
           {/* ── FOOTER ── */}
-          <footer className="bg-[#1a2340] text-white pt-12 pb-6 px-4">
+          <footer className="bg-white text-white pt-12 pb-6 px-4 sm:px-20">
             <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
               <img
-                src="/iconWithText.svg"
-                className="h-14 w-fit mx-auto sm:mx-0"
+                src="/logoRound.svg"
+                className="h-50 sm:h-40 w-fit mx-auto sm:mx-0"
                 alt="Abastecedora Valette"
               />
-              <div className="flex flex-col items-center sm:items-end gap-3">
+              <div className="flex flex-col items-center gap-3">
                 <p className="font-bold text-xs text-gray-400 uppercase tracking-wider">
                   Seguinos en nuestras redes
                 </p>
@@ -1196,7 +1196,7 @@ export default function App() {
                     href="https://www.instagram.com/abastecedora.valette?igsh=a2MwbTM2dTl5dGhj"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 h-9 rounded-xl border border-white/20 hover:bg-white/10 active:scale-[.98] transition-all text-sm px-4"
+                    className="flex bg-main items-center justify-center gap-2 h-9 rounded-xl border border-main/20 hover:bg-main/10 active:scale-[.98] transition-all text-sm px-4"
                   >
                     <FaInstagram size={15} /> @abastecedora.valette
                   </a>
@@ -1204,7 +1204,7 @@ export default function App() {
                     href="https://www.facebook.com/share/1D5Qyoawao/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 h-9 rounded-xl border border-white/20 hover:bg-white/10 active:scale-[.98] transition-all text-sm px-4"
+                    className="flex bg-main items-center justify-center gap-2 h-9 rounded-xl border border-main/20 hover:bg-main/10 active:scale-[.98] transition-all text-sm px-4"
                   >
                     <FaFacebookF size={15} /> Abastecedora Valette
                   </a>
@@ -1214,6 +1214,9 @@ export default function App() {
             <p className="text-center text-xs text-gray-600 mt-10">
               © {new Date().getFullYear()} Abastecedora Valette. Todos los
               derechos reservados.
+            </p>
+            <p className="text-center text-[10px] text-neutral-300 mt-2">
+              - ESTUDIO NUNI -
             </p>
           </footer>
         </main>
