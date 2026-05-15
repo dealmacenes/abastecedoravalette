@@ -824,6 +824,7 @@ export default function App() {
     { label: "Nuestras Carnes", href: "#nuestras-carnes" },
     { label: "Sucursales", href: "#nuestras-sucursales" },
     { label: "Venta Mayorista", href: "#venta-mayorista" },
+    { label: "Troceos", href: "#troceos" },
   ];
 
   return (
@@ -1164,6 +1165,8 @@ export default function App() {
             </div>
 
             {/* ── TROCEO ── */}
+            <div id="troceos" className="h-1 mb-20 -mt-20" />
+
             <div className="w-full -mt-[0.5px]">
               <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
                 <path
@@ -1172,6 +1175,7 @@ export default function App() {
                 />
               </svg>
             </div>
+            
             <TroceoSection onSelectCut={setSelectedCut} />
           </section>
 
