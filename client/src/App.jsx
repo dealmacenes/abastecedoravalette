@@ -634,7 +634,7 @@ function ContactModal({ onClose }) {
       href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Moreno.",
     },
     {
-      label: "Atención personalizada",
+      label: "Atención personalizada mayoristas",
       sub: "Asesoría y ventas para comerciantes y mayoristas",
       href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web,%20me%20interesa%20la%20venta%20mayorista.",
     },
@@ -1035,13 +1035,13 @@ export default function App() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href="#nuestras-carnes"
-                    className="inline-flex items-center justify-center gap-2 bg-[#C0392B] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all text-sm shadow-md"
+                    className="inline-flex items-center uppercase justify-center gap-2 bg-[#C0392B] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all text-sm shadow-md"
                   >
                     Ver nuestros cortes <ChevronRight size={16} />
                   </a>
                   <button
                     onClick={() => setContactOpen(true)}
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/20 active:scale-[.97] transition-all text-sm backdrop-blur-sm"
+                    className="inline-flex items-center uppercase justify-center gap-2 bg-white/10 border border-white/30 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/20 active:scale-[.97] transition-all text-sm backdrop-blur-sm"
                   >
                     <FaWhatsapp size={16} /> Contactanos
                   </button>
@@ -1051,7 +1051,7 @@ export default function App() {
                   href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex my-10 sm:my-2 w-fit px-4 mx-auto sm:ms-0 items-center uppercase gap-2 bg-white drop-shadow-sm border-[1px] border-main-red/50 drop-shadow-main-red/20 text-main font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
+                  className="flex my-10 sm:my-2 w-fit px-4 mx-auto sm:ms-0 items-center uppercase gap-2 bg-white border-[1px] border-main-red/50 text-main-red font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
                 >
                   <FaWhatsapp size={16} /> Atención personalizada para mayoristas
                 </a>
