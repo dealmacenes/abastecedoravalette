@@ -493,8 +493,8 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
       <div className="px-5 py-4 flex flex-row items-center gap-3 mb-4">
         <div className="text-[#C0392B] flex-shrink-0 flex">{icon}</div>
         <div className="sborder-l border-gray-200 pl-5">
-          <h3 className="font-black text-[#1a2340] text-lg leading-tight">
-            {title}
+          <h3 className="flex flex-row items-center gap-2 font-black text-[#1a2340] text-lg leading-tight">
+            {title} <FaWhatsapp className="size-5" />
           </h3>
           <p className="text-gray-500 text-sm text-left mt-0.5 leading-snug">
             {subtitle}
@@ -822,9 +822,9 @@ export default function App() {
 
   const navLinks = [
     { label: "Nuestras Carnes", href: "#nuestras-carnes" },
+    { label: "Troceos", href: "#troceos" },
     { label: "Sucursales", href: "#nuestras-sucursales" },
     { label: "Venta Mayorista", href: "#venta-mayorista" },
-    { label: "Troceos", href: "#troceos" },
   ];
 
   return (
@@ -988,7 +988,7 @@ export default function App() {
           {/* Mobile dropdown menu */}
           {menuOpen && (
             <div
-              className="md:hidden absolute inset-x-4 top-[68px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl p-2 z-50"
+              className="md:hidden absolute inset-x-4 top-24 divide-y divide-gray-300 bg-white rounded-2xl border border-gray-100 shadow-xl p-2 z-50"
               style={{ animation: "slideUp .18s cubic-bezier(.22,1,.36,1)" }}
             >
               {navLinks.map((link) => (
@@ -996,7 +996,7 @@ export default function App() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-2 inset-x-4 px-4 py-3 rounded-xl text-sm font-semibold text-[#1a2340] hover:bg-gray-50 hover:text-[#C0392B] transition-colors"
+                  className="flex items-center justify-between inset-x-4 px-4 py-3 rounded text-sm font-semibold text-[#1a2340] hover:bg-gray-50 hover:text-[#C0392B] transition-colors"
                 >
                   {link.label}
                   <FaChevronRight size={10} className="text-gray-300" />
