@@ -574,7 +574,7 @@ function CutModal({ cutName, onClose, label = "CONSULTA DE CORTE" }) {
               {cutName}
             </h3>
             <p className="text-sm text-gray-500 mt-0.5">
-              ¿Con qué sucursal querés hacer la consulta?
+              ¿A qué sucursal le queres hacer la consulta?
             </p>
           </div>
           <button
