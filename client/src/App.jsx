@@ -779,7 +779,7 @@ function TroceoSection({ onSelectCut }) {
           {TROCEOS.map((t, i) => (
             <button
               key={i}
-              onClick={() => onSelectCut(`Troceo ${t.name}`)}
+              onClick={() => onSelectCut(`${t.name}`)}
               className="flex items-start gap-4 px-5 py-4 bg-white text-left w-full group hover:cursor-pointer"
             >
               <img src={t.img} className="aspect-square size-25 my-auto flex-shrink-0 group-hover:scale-110 transition-transform" />
