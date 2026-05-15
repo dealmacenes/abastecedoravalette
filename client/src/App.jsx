@@ -840,20 +840,13 @@ export default function App() {
           name="keywords"
           content="carnicería Luis Guillón, carniceria luis guillon, carne al por mayor GBA Sur, abastecedora Valette, cortes de carne Moreno, carnicerias, venta mayorista carne Buenos Aires, envios, carne de cerdo, carne de pollo, carne de vaca, carne para asado, carne para restaurantes"
         />
-        <link
-          rel="canonical"
-          href="https://abastecedoravalette.com.ar/"
-        />
+        <link rel="canonical" href="https://abastecedoravalette.com.ar/" />
         <meta
           property="og:title"
           content="Abastecedora Valette — Venta de carnes directo del productor"
         />
-        
         <meta property="og:type" content="business.business" />
-        <meta
-          property="og:url"
-          content="https://abastecedoravalette.com.ar/"
-        />
+        <meta property="og:url" content="https://abastecedoravalette.com.ar/" />
         <meta
           property="og:image"
           content="https://abastecedoravalette.com.ar/miniatura.jpg"
@@ -927,7 +920,15 @@ export default function App() {
       {/* ── MODALS ── */}
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
       {selectedCut && (
-        <CutModal cutName={selectedCut} onClose={() => setSelectedCut(null)} />
+        <CutModal
+          cutName={selectedCut}
+          onClose={() => setSelectedCut(null)}
+          label={
+            selectedCut?.startsWith("Troceo")
+              ? "CONSULTA DE TROCEO"
+              : "CONSULTA DE CORTE"
+          }
+        />
       )}
       {/* Overlay to close mobile menu */}
       {menuOpen && !anyModalOpen && (
@@ -1036,12 +1037,9 @@ export default function App() {
                   <b>No pagues de más.</b> Somos productores con criadero
                   propio, con la mejor hacienda y te vendemos directo, sin
                   intermediarios.
-                  <br/>
-                  Todo lo que necesita tu comercio o tu hogar.{" "}
-                  <br />{" "}
-                  <b>
-                    Ahorrá sin sacrificar calidad
-                  </b>
+                  <br />
+                  Todo lo que necesita tu comercio o tu hogar. <br />{" "}
+                  <b>Ahorrá sin sacrificar calidad</b>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -1065,7 +1063,8 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="flex my-10 sm:my-2 w-fit px-4 mx-auto sm:ms-0 items-center uppercase gap-2 bg-white border-[1px] border-main-red/50 text-main-red font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
                 >
-                  <FaWhatsapp size={16} /> Atención personalizada para mayoristas
+                  <FaWhatsapp size={16} /> Atención personalizada para
+                  mayoristas
                 </a>
               </div>
 
@@ -1136,8 +1135,8 @@ export default function App() {
               </h2>
               <div className="border-1 border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
                 <div className="flex relative size-11">
-                    <div className="flex size-8 z-10 absolute inset-0 m-auto rounded-full border border-green-700 animate-[ping_3s_ease-in-out_infinite_5s]"/>
-                    <FaWhatsapp className="size-11 inset-0 z-20 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
+                  <div className="flex size-8 z-10 absolute inset-0 m-auto rounded-full border border-green-700 animate-[ping_3s_ease-in-out_infinite_5s]" />
+                  <FaWhatsapp className="size-11 inset-0 z-20 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
                 </div>
                 <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
                   Tocá cualquier corte para consultar por disponibilidad y
@@ -1165,7 +1164,6 @@ export default function App() {
             </div>
 
             {/* ── TROCEO ── */}
-            
 
             <div className="w-full -mt-[0.5px]">
               <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
@@ -1177,7 +1175,7 @@ export default function App() {
             </div>
 
             <div id="troceos" className="h-1 mb-20 -mt-20" />
-            
+
             <TroceoSection onSelectCut={setSelectedCut} />
           </section>
 
