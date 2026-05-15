@@ -755,7 +755,7 @@ function TroceoSection({ onSelectCut }) {
         </div>
         <p className="text-neutral-800 font-semibold bg-green-500/20 select-none px-4 py-2 border border-green-700 rounded my-4 text-center text-sm">
           Tocá el tipo de troceo que quieras para consultar por WhatsApp.
-          <FaWhatsapp className="inline size-4 ml-1 align-text-bottom" />
+          <FaWhatsapp className="inline size-4 ml-1 align-text-bottom" /> 
         </p>
 
         <div className="flex flex-col divide-y divide-gray-400 border border-gray-400 rounded-2xl overflow-hidden">
