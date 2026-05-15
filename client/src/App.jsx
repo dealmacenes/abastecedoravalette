@@ -996,7 +996,7 @@ export default function App() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-[#1a2340] hover:bg-gray-50 hover:text-[#C0392B] transition-colors"
+                  className="flex items-center gap-2 inset-x-4 px-4 py-3 rounded-xl text-sm font-semibold text-[#1a2340] hover:bg-gray-50 hover:text-[#C0392B] transition-colors"
                 >
                   {link.label}
                   <FaChevronRight size={10} className="text-gray-300" />
