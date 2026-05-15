@@ -1316,7 +1316,7 @@ export default function App() {
           <footer className="bg-white text-white pt-12 pb-6 px-4 sm:px-20">
             <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
               <img
-                src="abastecedora-valette-logo.jpg"
+                src="/abastecedora-valette-logo.jpg"
                 className="h-50 sm:h-40 w-fit mx-auto sm:mx-0"
                 alt="Abastecedora Valette"
               />
