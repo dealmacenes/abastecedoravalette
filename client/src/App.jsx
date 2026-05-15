@@ -765,7 +765,7 @@ function TroceoSection({ onSelectCut }) {
               onClick={() => onSelectCut(`Troceo ${t.name}`)}
               className="flex items-start gap-4 px-5 py-4 bg-white hover:bg-gray-50 active:bg-gray-100 transition-colors text-left w-full group"
             >
-              <img src={t.img} className="aspect-square size-15 my-auto flex-shrink-0 group-hover:scale-110 transition-transform" />
+              <img src={t.img} className="aspect-square size-25 my-auto flex-shrink-0 group-hover:scale-110 transition-transform" />
               <div className="flex-1">
                 <p className="font-bold text-[#1a2340]">{t.name}</p>
                 <p className="text-gray-500 text-sm mt-0.5 leading-snug">
