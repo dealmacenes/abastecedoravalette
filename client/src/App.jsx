@@ -822,7 +822,7 @@ export default function App() {
         <title>Abastecedora Valette | Producción y venta de carnes.</title>
         <meta
           name="description"
-          content="Productores y comerciantes de carne vacuna, cerdo y pollo por mayor y menor. Sucursales en Luis Guillón y Moreno."
+          content="No pagues de más. Somos productores con criadero propio, la mejor hacienda y te vendemos directo, sin intermediarios. Todo lo que necesita tu comercio o tu hogar. Ahorrá sin sacrificar calidad"
         />
         <meta
           name="keywords"
