@@ -705,32 +705,32 @@ function ContactModal({ onClose }) {
 const TROCEOS = [
   {
     name: "Completo",
-    img: "/troceos/troceoCompleto.png"
+    img: "/troceos/troceoCompleto.png",
     desc: "La media res entera sin dividir, ideal para grandes volúmenes.",
   },
   {
     name: "Pistola",
-    img: "/troceos/troceoPistola.png"
+    img: "/troceos/troceoPistola.png",
     desc: "Cuarto trasero completo: pierna y lomo. El más solicitado por carnicerías.",
   },
   {
     name: "Barra de Bife",
-    img: "/troceos/troceoBarraDeBife.png"
+    img: "/troceos/troceoBarraDeBife.png",
     desc: "Lomo y bifes juntos, sin costillas. Ideal para cortes premium.",
   },
   {
     name: "Mocho",
-    img: "/troceos/troceoMocho.png"
+    img: "/troceos/troceoMocho.png",
     desc: "Parte trasera sin el cuarto delantero. Buena proporción de cortes nobles.",
   },
   {
     name: "Parrillero",
-    img: "/troceos/troceoParrillero.png"
+    img: "/troceos/troceoParrillero.png",
     desc: "Selección orientada al asado: asado, vacío y cortes de parrilla.",
   },
   {
-    name: "Pecho",
-    img: "/troceos/troceoPecho.png"
+    name: "Pecho", 
+    img: "/troceos/troceoPecho.png",
     desc: "Parte delantera con hueso. Económica, ideal para pucheros y caldos.",
   },
 ];
@@ -765,7 +765,7 @@ function TroceoSection({ onSelectCut }) {
               onClick={() => onSelectCut(`Troceo ${t.name}`)}
               className="flex items-start gap-4 px-5 py-4 bg-white hover:bg-gray-50 active:bg-gray-100 transition-colors text-left w-full group"
             >
-              <img className="aspect-square size-15 my-auto flex-shrink-0 group-hover:scale-110 transition-transform" />
+              <img src={t.img} className="aspect-square size-15 my-auto flex-shrink-0 group-hover:scale-110 transition-transform" />
               <div className="flex-1">
                 <p className="font-bold text-[#1a2340]">{t.name}</p>
                 <p className="text-gray-500 text-sm mt-0.5 leading-snug">
