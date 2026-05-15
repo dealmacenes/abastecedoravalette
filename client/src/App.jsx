@@ -544,7 +544,7 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
 }
 
 // ─── CUT QUERY MODAL ──────────────────────────────────────────────────────────
-function CutModal({ cutName, onClose }) {
+function CutModal({ cutName, onClose, label = "CONSULTA DE CORTE" }) {
   useScrollLock(!!cutName);
 
   if (!cutName) return null;
@@ -568,7 +568,7 @@ function CutModal({ cutName, onClose }) {
         <div className="flex items-start justify-between mb-1">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#C0392B] mb-0.5">
-              CONSULTA DE CORTE
+              {label}
             </p>
             <h3 className="font-black text-[#1a2340] text-lg leading-tight">
               {cutName}
