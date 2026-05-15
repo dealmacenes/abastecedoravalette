@@ -1051,9 +1051,9 @@ export default function App() {
                   href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex my-10 w-fit px-4 mx-auto sm:ms-0 items-center gap-2 bg-main border border-neutral-500 text-white font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
+                  className="flex my-10 sm:my-2 w-fit px-4 mx-auto sm:ms-0 items-center uppercase gap-2 bg-main border border-white/40 text-white font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
                 >
-                  <FaWhatsapp size={16} /> ATENCIÓN PERSONALIZADA MAYORISTA
+                  <FaWhatsapp size={16} /> Atención personalizada para mayoristas
                 </a>
               </div>
 
