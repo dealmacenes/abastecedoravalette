@@ -988,7 +988,7 @@ export default function App() {
           {/* Mobile dropdown menu */}
           {menuOpen && (
             <div
-              className="md:hidden absolute right-4 top-[68px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl p-2 z-50"
+              className="md:hidden absolute inset-x-4 top-[68px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl p-2 z-50"
               style={{ animation: "slideUp .18s cubic-bezier(.22,1,.36,1)" }}
             >
               {navLinks.map((link) => (
@@ -996,7 +996,7 @@ export default function App() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-[#1a2340] hover:bg-gray-50 hover:text-[#C0392B] transition-colors"
+                  className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-[#1a2340] hover:bg-gray-50 hover:text-[#C0392B] transition-colors"
                 >
                   {link.label}
                   <FaChevronRight size={10} className="text-gray-300" />
