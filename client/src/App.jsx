@@ -10,7 +10,7 @@ import {
 import { FaHandshake } from "react-icons/fa6";
 import { IoOpenOutline } from "react-icons/io5";
 import { GiCow, GiPig, GiChicken, GiSheep, GiSlicedSausage } from "react-icons/gi";
-import { ChevronRight, ChevronLeft, MapPin } from "lucide-react";
+import { ChevronRight, ChevronLeft, MapPin, Send, ArrowUpRight } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
 import { PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
@@ -399,7 +399,7 @@ const WHATSAPP_CONTACTS = [
   },
   {
     label: "Sucursal Moreno",
-    sub: "Av. Del Libertador 4200 — Mercado Modelo",
+    sub: "Av. Del Libertador 3910 — Mercado Modelo",
     buildHref: (cut) =>
       `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Moreno.`,
   },
@@ -743,12 +743,16 @@ function TroceoSection({ onSelectCut }) {
             </h3>
             <p className="text-gray-500 text-sm mt-0.5">
               Trozamos la media res según tu necesidad. <br /> Elegí el tipo de
-              corte.
+              troceo que buscás.
             </p>
           </div>
         </div>
+        <p className="text-neutral-800 font-semibold bg-green-500/20 select-none px-4 py-2 border border-green-700 rounded my-4 text-center text-sm">
+          Tocá el tipo de troceo que quieras para consultar por WhatsApp.
+          <FaWhatsapp className="inline size-4 ml-1 align-text-bottom" />
+        </p>
 
-        <div className="flex flex-col divide-y divide-gray-100 border border-gray-200 rounded-2xl overflow-hidden">
+        <div className="flex flex-col divide-y divide-gray-400 border border-gray-400 rounded-2xl overflow-hidden">
           {TROCEOS.map((t, i) => (
             <button
               key={i}
@@ -762,17 +766,12 @@ function TroceoSection({ onSelectCut }) {
                   {t.desc}
                 </p>
               </div>
-              <FaChevronRight
-                size={12}
-                className="text-gray-300 group-hover:text-[#C0392B] mt-1.5 flex-shrink-0 transition-colors"
+              <ArrowUpRight
+                className="size-6 self-center text-gray-400 group-hover:text-[#C0392B] mt-1.5 flex-shrink-0 transition-colors"
               />
             </button>
           ))}
         </div>
-
-        <p className="text-gray-400 mt-4 text-center text-xs">
-          Tocá un tipo de troceo para consultar por WhatsApp.
-        </p>
       </div>
     </section>
   );
