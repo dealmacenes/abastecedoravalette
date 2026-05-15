@@ -425,6 +425,23 @@ function useScrollLock(active) {
   }, [active]);
 }
 
+// ─── HOOK: intercepta el botón "atrás" para cerrar overlays ──────────────────
+function useBackButtonClose(isOpen, onClose) {
+  useEffect(() => {
+    if (isOpen) {
+      // Pushea una entrada falsa al historial cuando se abre
+      window.history.pushState({ overlay: true }, "");
+
+      const handlePop = () => onClose();
+      window.addEventListener("popstate", handlePop);
+
+      return () => {
+        window.removeEventListener("popstate", handlePop);
+      };
+    }
+  }, [isOpen, onClose]);
+}
+
 // ─── CUT CARD ─────────────────────────────────────────────────────────────────
 function CutCard({ item, onSelect }) {
   return (
@@ -790,6 +807,12 @@ export default function App() {
   const [selectedCut, setSelectedCut] = useState(null);
 
   const anyModalOpen = contactOpen || !!selectedCut;
+
+    // Interceptar "atrás" para cada overlay
+  useBackButtonClose(menuOpen, () => setMenuOpen(false));
+  useBackButtonClose(contactOpen, () => setContactOpen(false));
+  useBackButtonClose(!!selectedCut, () => setSelectedCut(null));
+  
 
   const sections = {
     vacuna: {
