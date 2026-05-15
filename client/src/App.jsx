@@ -836,10 +836,7 @@ export default function App() {
           property="og:title"
           content="Abastecedora Valette — Venta de carnes directo del productor"
         />
-        <meta
-          property="og:description"
-          content="Productores de carne vacuna, cerdo y pollo con criadero propio. Venta mayorista y minorista para comercios y familias."
-        />
+        
         <meta property="og:type" content="business.business" />
         <meta
           property="og:url"
@@ -896,7 +893,7 @@ export default function App() {
                 "latitude": -34.612165,
                 "longitude": -58.770520
               }
-            },
+            }
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
