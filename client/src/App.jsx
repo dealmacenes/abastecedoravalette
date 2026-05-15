@@ -1165,7 +1165,7 @@ export default function App() {
             </div>
 
             {/* ── TROCEO ── */}
-            <div id="troceos" className="h-1 mb-20 -mt-20" />
+            
 
             <div className="w-full -mt-[0.5px]">
               <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
@@ -1175,6 +1175,8 @@ export default function App() {
                 />
               </svg>
             </div>
+
+            <div id="troceos" className="h-1 mb-20 -mt-20" />
             
             <TroceoSection onSelectCut={setSelectedCut} />
           </section>
