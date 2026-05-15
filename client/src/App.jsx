@@ -729,7 +729,7 @@ const TROCEOS = [
   },
 ];
 
-function TroceoSection() {
+function TroceoSection({ onSelectCut }) {
   return (
     <section className="w-full py-10 px-4 bg-white">
       <div className="max-w-2xl mx-auto">
@@ -742,25 +742,36 @@ function TroceoSection() {
               TROCEO DE 1/2 RES
             </h3>
             <p className="text-gray-500 text-sm mt-0.5">
-              Trozamos la media res según tu necesidad. <br /> Elegí el tipo de corte.
+              Trozamos la media res según tu necesidad. <br /> Elegí el tipo de
+              corte.
             </p>
           </div>
         </div>
 
         <div className="flex flex-col divide-y divide-gray-100 border border-gray-200 rounded-2xl overflow-hidden">
           {TROCEOS.map((t, i) => (
-            <div key={i} className="flex items-start gap-4 px-5 py-4 bg-white hover:bg-gray-50 transition-colors">
-              <div className="w-2 h-2 rounded-full bg-[#C0392B] mt-2 flex-shrink-0" />
-              <div>
+            <button
+              key={i}
+              onClick={() => onSelectCut(`Troceo ${t.name}`)}
+              className="flex items-start gap-4 px-5 py-4 bg-white hover:bg-gray-50 active:bg-gray-100 transition-colors text-left w-full group"
+            >
+              <div className="w-2 h-2 rounded-full bg-[#C0392B] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform" />
+              <div className="flex-1">
                 <p className="font-bold text-[#1a2340]">{t.name}</p>
-                <p className="text-gray-500 text-sm mt-0.5 leading-snug">{t.desc}</p>
+                <p className="text-gray-500 text-sm mt-0.5 leading-snug">
+                  {t.desc}
+                </p>
               </div>
-            </div>
+              <FaChevronRight
+                size={12}
+                className="text-gray-300 group-hover:text-[#C0392B] mt-1.5 flex-shrink-0 transition-colors"
+              />
+            </button>
           ))}
         </div>
 
-        <p className="text-gray-400 mt-4 text-center">
-          Consultá disponibilidad y precios por WhatsApp.
+        <p className="text-gray-400 mt-4 text-center text-xs">
+          Tocá un tipo de troceo para consultar por WhatsApp.
         </p>
       </div>
     </section>
@@ -1161,7 +1172,7 @@ export default function App() {
                 />
               </svg>
             </div>
-            <TroceoSection />
+            <TroceoSection onSelectCut={setSelectedCut} />
           </section>
 
           {/* ── SUCURSALES ── */}
