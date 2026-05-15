@@ -184,7 +184,7 @@ const BASE_CUTS = {
       img: "/lechon.jpg",
     },
     {
-      name: "Carre de Cerdo",
+      name: "Carré de Cerdo",
       desc: "Corte premium, jugoso y tierno",
       img: "/carre.webp",
     },
