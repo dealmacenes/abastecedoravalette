@@ -25,7 +25,7 @@ import { TbMeat } from "react-icons/tb";
 const BASE_CUTS = {
   vacuna: [
     {
-      name: "1/2 Res de Vaca",
+      name: "1/2 Res",
       desc: "Fresca y lista para despostar",
       img: "/mediaRes.png",
     },
@@ -1004,19 +1004,26 @@ export default function App() {
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
               {/* Left: headline + CTA */}
               <div className="flex-1 mb-10 md:mb-0">
-                <p className="text-white/90 text-xs font-bold uppercase tracking-widest mb-3">
-                  Una experiencia de compra directa, sin intermediarios.
-                </p>
-                <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4">
+                <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4 text-center">
                   ABASTECEDORA
                   <br />
                   VALETTE
                 </h1>
-                <p className="text-gray-300 leading-relaxed max-w-sm mb-8 text-sm sm:text-base">
-                  Ofrecemos una amplia selección de cortes de carne frescos y de
-                  calidad para tu mesa, con el respaldo de nuestra experiencia
-                  produciendo en vacas, cerdos y pollos.
+
+                <p className="text-white/90 text-sm font-bold uppercase tracking-widest mb-3 text-center">
+                  experiencia de compra directa, sin intermediarios.
                 </p>
+
+                <p className="text-gray-300 leading-relaxed max-w-sm my-8 sm:text-lg">
+                  <b>No pagues de más.</b> Somos productores con criadero
+                  propio, la mejor hacienda y te vendemos directo, sin
+                  intermediarios. Todo lo que necesita tu comercio o tu hogar.{" "}
+                  <br />{" "}
+                  <b>
+                    <u>Ahorrá sin sacrificar calidad</u>
+                  </b>
+                </p>
+
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href="#nuestras-carnes"
@@ -1031,6 +1038,15 @@ export default function App() {
                     <FaWhatsapp size={16} /> Contactanos
                   </button>
                 </div>
+
+                <a
+                  href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex my-10 w-fit px-4 mx-auto sm:ms-0 items-center gap-2 bg-main border border-neutral-500 text-white font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
+                >
+                  <FaWhatsapp size={16} /> ATENCIÓN PERSONALIZADA MAYORISTA
+                </a>
               </div>
 
               {/* Right: value props */}
@@ -1265,7 +1281,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white text-[#8B0000] font-black text-sm px-6 py-3.5 rounded-xl hover:bg-red-50 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
               >
-                ATENCIÓN PERSONALIZADA <FaWhatsapp size={16} />
+                ATENCIÓN PERSONALIZADA MAYORISTA <FaWhatsapp size={16} />
               </a>
             </div>
           </section>
