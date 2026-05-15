@@ -1062,7 +1062,7 @@ export default function App() {
                 </p>
 
                 <p className="text-gray-300 drop-shadow drop-shadow-main leading-relaxed max-w-sm my-8 sm:text-lg">
-                  <b>No pagues de más.</b> Somos productores con criadero
+                  Somos productores con criadero
                   propio, con la mejor hacienda y te vendemos directo, sin
                   intermediarios.
                   <br />
