@@ -834,7 +834,7 @@ export default function App() {
         />
         <meta
           property="og:title"
-          content="Abastecedora Valette — Carnes directo del productor"
+          content="Abastecedora Valette — Venta de carnes directo del productor"
         />
         <meta
           property="og:description"
