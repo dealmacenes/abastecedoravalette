@@ -932,7 +932,8 @@ export default function App() {
             {/* Logo */}
             <img
               src="/logoRound.svg"
-              className="h-18 w-fit cursor-pointer flex-shrink-0"
+              onContextMenu={(e) => e.preventDefault()}
+              className="h-18 w-fit cursor-pointer flex-shrink-0 select-none"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               alt="Abastecedora Valette"
             />
@@ -1009,23 +1010,25 @@ export default function App() {
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
               {/* Left: headline + CTA */}
               <div className="flex-1 mb-10 md:mb-0">
-                <h1 className="text-white font-black text-4xl sm:text-5xl leading-none uppercase mb-4 text-center">
+                <h1 className="text-white drop-shadow-md drop-shadow-main font-black text-4xl sm:text-5xl leading-none uppercase mb-4 text-center">
                   ABASTECEDORA
                   <br />
                   VALETTE
                 </h1>
 
-                <p className="text-white/90 text-sm font-bold uppercase tracking-widest mb-3 text-center">
+                <p className="text-white/90 drop-shadow drop-shadow-main/50 text-sm font-bold uppercase tracking-widest mb-3 text-center">
                   experiencia de compra directa, sin intermediarios.
                 </p>
 
-                <p className="text-gray-300 leading-relaxed max-w-sm my-8 sm:text-lg">
+                <p className="text-gray-300 drop-shadow drop-shadow-main leading-relaxed max-w-sm my-8 sm:text-lg">
                   <b>No pagues de más.</b> Somos productores con criadero
-                  propio, la mejor hacienda y te vendemos directo, sin
-                  intermediarios. Todo lo que necesita tu comercio o tu hogar.{" "}
+                  propio, con la mejor hacienda y te vendemos directo, sin
+                  intermediarios.
+                  <br/>
+                  Todo lo que necesita tu comercio o tu hogar.{" "}
                   <br />{" "}
                   <b>
-                    <u>Ahorrá sin sacrificar calidad</u>
+                    Ahorrá sin sacrificar calidad
                   </b>
                 </p>
 
@@ -1048,7 +1051,7 @@ export default function App() {
                   href="https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web,%20me%20interesa%20la%20venta%20mayorista."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex my-10 sm:my-2 w-fit px-4 mx-auto sm:ms-0 items-center uppercase gap-2 bg-main border border-white/40 text-white font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
+                  className="flex my-10 sm:my-2 w-fit px-4 mx-auto sm:ms-0 items-center uppercase gap-2 bg-white drop-shadow-sm border-[1px] border-main-red/50 drop-shadow-main-red/20 text-main font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
                 >
                   <FaWhatsapp size={16} /> Atención personalizada para mayoristas
                 </a>
@@ -1084,7 +1087,7 @@ export default function App() {
                       <p className="text-white font-bold text-sm leading-tight">
                         {p.title}
                       </p>
-                      <p className="text-gray-400 text-xs leading-snug mt-0.5">
+                      <p className="text-neutral-300 text-xs leading-snug mt-0.5">
                         {p.desc}
                       </p>
                     </div>
@@ -1119,8 +1122,11 @@ export default function App() {
               <h2 className="text-[#1a2340] font-black text-3xl sm:text-4xl mb-3">
                 Elegí lo que necesitás
               </h2>
-              <div className="border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
-                <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
+              <div className="border-1 border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
+                <div className="flex relative size-11">
+                    <div className="flex size-8 z-10 absolute inset-0 m-auto rounded-full border border-green-700 animate-[ping_3s_ease-in-out_infinite_5s]"/>
+                    <FaWhatsapp className="size-11 inset-0 z-20 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
+                </div>
                 <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
                   Tocá cualquier corte para consultar por disponibilidad y
                   precio directamente a nuestro WhatsApp.
