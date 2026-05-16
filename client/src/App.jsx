@@ -506,6 +506,10 @@ function MeatSection({ icon, title, subtitle, items, onSelectCut }) {
 
   return (
     <div className="w-full mb-6">
+      {/* SEO: listado de cortes para Google */}
+      <h2 className="sr-only">
+        {title}: {(items ?? []).map(i => i.name).join(", ")}
+      </h2>
       {/* Section header card */}
       <div className="px-5 py-4 flex flex-row items-center gap-3 mb-4">
         <div className="text-[#C0392B] flex-shrink-0 flex">{icon}</div>
@@ -870,11 +874,12 @@ export default function App() {
           property="og:title"
           content="Abastecedora Valette — Venta de carnes directo del productor"
         />
+        <meta property="og:description" content="Productores directos de carne vacuna, cerdo y pollo con criadero propio. Cortes frescos, embutidos artesanales, troceo de media res y preparados listos para cocinar. Atendemos familias, comercios y mayoristas. Visitanos en Luis Guillón o Moreno." />
         <meta property="og:type" content="business.business" />
         <meta property="og:url" content="https://abastecedoravalette.com.ar/" />
         <meta
           property="og:image"
-          content="https://abastecedoravalette.com.ar/miniatura.jpg"
+          content="https://abastecedoravalette.vercel.app/abastecedora-valette-logo.jpg"
         />{" "}
         <script type="application/ld+json">{`
     {
