@@ -1053,7 +1053,7 @@ export default function App() {
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
               {/* Left: headline + CTA */}
               <div className="flex-1 mb-10 md:mb-0">
-                <h1 className="text-white drop-shadow-md drop-shadow-main font-black text-4xl sm:text-5xl leading-none uppercase mb-4 text-center">
+                <h1 className="text-white drop-shadow-md drop-shadow-main font-black text-4xl sm:text-5xl leading-none tracking-tight uppercase mb-4 text-center">
                   ABASTECEDORA
                   <br />
                   VALETTE
