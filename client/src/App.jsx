@@ -901,10 +901,7 @@ useEffect(() => {
       <Helmet>
         <title>Abastecedora Valette | Producción y venta de carnes.</title>
         <meta name="description" content="Productores directos de carne vacuna, cerdo y pollo con criadero propio. Cortes frescos, embutidos artesanales, troceo de media res y preparados listos para cocinar. Atendemos familias, comercios y mayoristas. Visitanos en Luis Guillón o Moreno." />
-        <meta
-          name="keywords"
-          content="carnicería Luis Guillón, carniceria luis guillon, carne al por mayor GBA Sur, abastecedora Valette, cortes de carne Moreno, carnicerias, venta mayorista carne Buenos Aires, envios, carne de cerdo, carne de pollo, carne de vaca, carne para asado, carne para restaurantes"
-        />
+        <meta name="keywords" content="carnicería Luis Guillón, carniceria Moreno, carne al por mayor GBA Sur, carne al por mayor GBA Oeste, abastecedora Valette, cortes de carne Esteban Echeverría, carnicería Ezeiza, carnicería Monte Grande, carnicería Cañuelas, venta mayorista carne Buenos Aires, carne de cerdo, carne de pollo, carne de vaca, carne para asado, carne para restaurantes, troceo media res, carnicería mayorista" />
         <link rel="canonical" href="https://abastecedoravalette.com.ar/" />
         <meta
           property="og:title"
