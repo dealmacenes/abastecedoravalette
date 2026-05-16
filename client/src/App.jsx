@@ -1226,7 +1226,7 @@ onClick={() => {
             </div>
 
             {/* ── TROCEO ── */}
-            <div id="troceos" className="h-1 mb-20 -mt-20" />
+            <div id="troceos" className="hidden h-1 mb-20 -mt-20" />
 
             <div className="w-full -mt-[1px]">
               <svg viewBox="0 0 1440 60" fill="none" className="w-full block">
