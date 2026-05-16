@@ -652,12 +652,12 @@ function ContactModal({ onClose }) {
     {
       label: "Sucursal Luis Guillón",
       sub: "Atención comercial",
-      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.",
+      href: "https://wa.me/541135534033?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n.",
     },
     {
       label: "Sucursal Moreno",
       sub: "Atención comercial",
-      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Moreno.",
+      href: "https://wa.me/541130531313?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Moreno.",
     },
   ];
 
@@ -1089,7 +1089,7 @@ onClick={() => {
               <div className="absolute inset-0 bg-gradient-to-r from-[#1a2340]/90 via-[#1a2340]/60 to-transparent" />
             </div>
 
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
+            <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col md:flex-row md:items-center md:gap-16">
               {/* Left: headline + CTA */}
               <div className="flex-1 mb-10 md:mb-0">
                 <h1 className="text-white drop-shadow-md drop-shadow-main font-black text-4xl sm:text-5xl leading-none tracking-tight uppercase mb-4 text-center">
@@ -1119,17 +1119,17 @@ onClick={() => {
                     Ver nuestros cortes <ChevronRight size={16} />
                   </a>
                   <div className="flex flex-col w-full">
-  <button
-    onClick={() => setContactOpen(true)}
-    className="inline-flex items-center justify-center gap-2 bg-white text-main font-semibold px-6 py-3 rounded-t-xl text-sm"
-  >
-    Contactanos por WhatsApp <FaWhatsapp size={16} />
-  </button>
+                  <button
+                    onClick={() => setContactOpen(true)}
+                    className="inline-flex items-center justify-center gap-2 bg-white text-main font-semibold px-6 py-3 rounded-t-xl text-sm"
+                  >
+                    Contactanos por WhatsApp <FaWhatsapp size={16} />
+                  </button>
 
-  <p className="flex text-center gap-2 bg-main/70 text-white/85 text-[11px] px-4 py-2 rounded-b-xl border border-white/20">
-   <ArrowUpRight className="size-5 shrink-0 my-auto"/> Abrí el menu para ver nuestros contactos mayoristas, minoristas y sucursales.
-</p>
-</div>
+                  <p className="flex text-center gap-2 bg-main/70 text-white/85 text-[11px] px-4 py-2 rounded-b-xl border border-white/20">
+                    <ArrowUpRight className="size-5 shrink-0 my-auto"/> Abrí el menu para ver nuestros contactos mayoristas, minoristas y sucursales.
+                  </p>
+                 </div>
                 </div>
               </div>
 
