@@ -1079,16 +1079,19 @@ export default function App() {
                   >
                     Ver nuestros cortes <ChevronRight size={16} />
                   </a>
-                  <button
-                    onClick={() => setContactOpen(true)}
-                    className="inline-flex items-center justify-center gap-2 bg-white border border-white/30 text-main font-semibold px-6 py-3 rounded-xl hover:bg-white/20 active:scale-[.97] transition-all text-sm"
-                  >
-                    Contactanos por WhatsApp <FaWhatsapp size={16} />
-                  </button>
+                  <div className="flex flex-col w-full">
+  <button
+    onClick={() => setContactOpen(true)}
+    className="inline-flex items-center justify-center gap-2 bg-white text-main font-semibold px-6 py-3 rounded-t-xl text-sm"
+  >
+    Contactanos por WhatsApp <FaWhatsapp size={16} />
+  </button>
+
+  <p className="text-center bg-white/10 text-white/60 text-[11px] px-4 py-2 rounded-b-xl border-t border-white/10">
+    Mayoristas · Minoristas · Sucursales
+  </p>
+</div>
                 </div>
-                <p class="text-xs text-white/60 mt-1">
-                 Menú de contactos para 🏪 Mayoristas (Atención personalizada) · 🏠 Minoristas y Sucursales disponibles
-                </p>
               </div>
 
               {/* Right: value props */}
