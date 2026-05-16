@@ -1087,8 +1087,8 @@ export default function App() {
     Contactanos por WhatsApp <FaWhatsapp size={16} />
   </button>
 
-  <p className="text-center bg-white/25 text-white/85 text-[11px] px-4 py-2 rounded-b-xl border-t border-white/20">
-  Mayoristas · Minoristas · Sucursales
+  <p className="flex text-center gap-2 bg-white/25 text-white/85 text-[11px] px-4 py-2 rounded-b-xl border-t border-white/20">
+   <ChevronRight className="size-5 -rotate-90"/> Menú para mayoristas (atención personalizada) minoristas y sucursales.
 </p>
 </div>
                 </div>
