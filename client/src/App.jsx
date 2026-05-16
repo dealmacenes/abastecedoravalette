@@ -968,7 +968,7 @@ export default function App() {
         />
       )}
 
-      <div className="min-h-screen flex flex-col font-barlow leading-relaxed text-[#1a2340] bg-white">
+      <div className="min-h-screen flex flex-col font-barlow text-[#1a2340] bg-white">
         {/* ── NAVBAR ── */}
         <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm h-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
