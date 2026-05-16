@@ -774,10 +774,14 @@ function TroceoSection({ onSelectCut }) {
             </p>
           </div>
         </div>
-        <p className="text-neutral-800 font-semibold bg-green-500/20 select-none px-4 py-2 border border-green-700 rounded my-4 text-center text-sm">
-          Tocá el tipo de troceo que quieras para consultar por WhatsApp.
-          <FaWhatsapp className="inline size-4 ml-1 align-text-bottom" /> 
-        </p>
+        
+        <div className="border-1 border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
+                <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
+                <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto"
+                  Tocá el tipo de troceo que quieras consultar por disponibilidad y
+                  precio directamente a nuestro WhatsApp.
+                </p>
+              </div>
 
         <div className="flex flex-col divide-y divide-gray-400 border border-gray-400 rounded-2xl overflow-hidden">
           {TROCEOS.map((t, i) => (
@@ -1182,10 +1186,7 @@ const handleShare = async () => {
                 Elegí lo que necesitás
               </h2>
               <div className="border-1 border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
-                <div className="flex relative size-11">
-                  <div className="flex size-8 z-10 absolute inset-0 m-auto rounded-full border border-green-700 animate-[ping_3s_ease-in-out_infinite_5s]" />
-                  <FaWhatsapp className="size-11 inset-0 z-20 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
-                </div>
+                <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
                 <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
                   Tocá cualquier corte para consultar por disponibilidad y
                   precio directamente a nuestro WhatsApp.
