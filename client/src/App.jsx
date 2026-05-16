@@ -395,13 +395,13 @@ const WHATSAPP_CONTACTS = [
     label: "Sucursal Luis Guillón",
     sub: "Av. Luciano Valette 1696",
     buildHref: (cut) =>
-      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Luis%20Guill%C3%B3n.`,
+      `https://wa.me/541135534033?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Luis%20Guill%C3%B3n.`,
   },
   {
     label: "Sucursal Moreno",
     sub: "Av. Del Libertador 3910 — Mercado Modelo",
     buildHref: (cut) =>
-      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Moreno.`,
+      `https://wa.me/541130531313?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Moreno.`,
   },
   {
     label: "Atención personalizada",
@@ -1274,7 +1274,7 @@ onClick={() => {
                     mapSrc:
                       "https://www.google.com/maps?q=Abastecedora+Valette+Av.+Luciano+Valette+1696,+Luis+Guillón,+Buenos+Aires&output=embed",
                     waHref:
-                      "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n",
+                      "https://wa.me/541135534033?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Luis%20Guill%C3%B3n",
                     horarios: "Lunes a Sabado de 7 a 15hs",
                   },
                   {
@@ -1284,7 +1284,7 @@ onClick={() => {
                     mapSrc:
                       "https://www.google.com/maps?q=abastecedora+valette+Av.+Del+Libertador+3910,+Moreno,+Buenos+Aires&output=embed",
                     waHref:
-                      "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno",
+                      "https://wa.me/541130531313?text=Hola!%20Me%20comunico%20desde%20la%20web%20por%20la%20sucursal%20Moreno",
                     horarios: "Lunes a Sabado de 06 a 15hs",
                   },
                 ].map((branch) => (
