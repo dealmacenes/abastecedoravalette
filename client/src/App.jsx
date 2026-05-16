@@ -824,8 +824,8 @@ const handleShare = async () => {
   if (navigator.share) {
     await navigator.share({
       title: "Abastecedora Valette",
-      text: "Mirá los cortes y precios directos del productor 🥩",
-      url: "https://abastecedoravalette.com.ar/",
+      text: "Mirá el catalogo de cortes directos del productor 🥩\n",
+      url: "https://abastecedoravalette.vercel.app/",
     });
   } else {
     await navigator.clipboard.writeText("https://abastecedoravalette.com.ar/");
