@@ -1087,7 +1087,7 @@ export default function App() {
     Contactanos por WhatsApp <FaWhatsapp size={16} />
   </button>
 
-  <p className="flex text-center gap-2 bg-main/30 text-white/85 text-[11px] px-4 py-2 rounded-b-xl border-t border-white/20">
+  <p className="flex text-center gap-2 bg-main/70 text-white/85 text-[11px] px-4 py-2 rounded-b-xl border border-white/20">
    <ArrowUpRight className="size-5 shrink-0 my-auto"/> Abrí el menu para ver nuestros contactos mayoristas, minoristas y sucursales.
 </p>
 </div>
@@ -1117,7 +1117,7 @@ export default function App() {
                     key={i}
                     className="flex items-start gap-4 bg-[#1a2340]/70 border border-white/15 rounded-2xl px-4 py-3"
                   >
-                    <div className="text-white mt-0.5 p-2 rounded-xl bg-[#1a2340]/60 border border-white/10 flex-shrink-0">
+                    <div className="text-main mt-0.5 p-2 rounded-xl bg-white/60 border border-white/10 flex-shrink-0">
                       {p.icon}
                     </div>
                     <div>
