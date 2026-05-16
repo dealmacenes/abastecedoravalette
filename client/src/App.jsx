@@ -1400,13 +1400,14 @@ const handleShare = async () => {
               - ESTUDIO NUNI -
             </p>
           </footer>
+          
           <button
-  onClick={handleShare}
-  className="fixed bottom-6 right-6 z-40 bg-white text-[#1a2340] shadow-lg rounded-full p-3.5 border border-gray-200 hover:scale-105 active:scale-95 transition-all"
-  aria-label="Compartir"
->
-  <Share2 size={20} />
-</button>
+            onClick={handleShare}
+            className="fixed bottom-6 right-6 z-40 bg-white text-main-red shadow-lg rounded-full p-3.5 border border-gray-200 hover:scale-105 active:scale-95 transition-all"
+            aria-label="Compartir"
+          >
+              <Share2 className="size-15 shrink-0" />
+          </button>
         </main>
       </div>
     </>
