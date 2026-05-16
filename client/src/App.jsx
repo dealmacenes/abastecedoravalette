@@ -1072,7 +1072,7 @@ export default function App() {
                   <b>Ahorrá sin sacrificar calidad</b>
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col gap-3">
                   <a
                     href="#nuestras-carnes"
                     className="inline-flex items-center justify-center gap-2 bg-[#C0392B] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#a93226] active:scale-[.97] transition-all text-sm shadow-md whitespace-nowrap"
