@@ -1086,7 +1086,7 @@ const handleShare = async () => {
                 </h1>
 
                 <p className="text-white/90 drop-shadow drop-shadow-main/50 text-sm font-bold uppercase tracking-widest mb-3 text-center">
-                  experiencia de compra directa, sin intermediarios.
+                  una experiencia de compra directa, sin intermediarios.
                 </p>
 
                 <p className="text-gray-300 drop-shadow drop-shadow-main leading-relaxed max-w-sm my-8 sm:text-lg">
