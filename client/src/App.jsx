@@ -777,7 +777,7 @@ function TroceoSection({ onSelectCut }) {
         
         <div className="border-1 border-l-4 border-green-700 flex items-center gap-4 w-full rounded-r-md bg-green-100 mt-15 p-4">
                 <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
-                <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto"
+                <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
                   Tocá el tipo de troceo que quieras consultar por disponibilidad y
                   precio directamente a nuestro WhatsApp.
                 </p>
