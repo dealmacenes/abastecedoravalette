@@ -779,7 +779,7 @@ function TroceoSection({ onSelectCut }) {
                 <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
                 <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
                   Tocá el tipo de troceo que quieras consultar por disponibilidad y
-                  precio directamente a nuestro WhatsApp.
+                  precio directamente a nuestro WhatsApp. Seleccioná sucursal.
                 </p>
               </div>
 
@@ -1189,7 +1189,7 @@ const handleShare = async () => {
                 <FaWhatsapp className="size-11 shrink-0 p-1.5 rounded-full text-green-500 bg-white" />
                 <p className="text-gray-700 font-semibold text-sm text-start sm:mx-auto">
                   Tocá cualquier corte para consultar por disponibilidad y
-                  precio directamente a nuestro WhatsApp.
+                  precio directamente a nuestro WhatsApp. Seleccioná sucursal.
                 </p>
               </div>
             </div>
