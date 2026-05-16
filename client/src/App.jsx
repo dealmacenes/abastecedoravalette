@@ -1086,8 +1086,8 @@ export default function App() {
                     Contactanos por WhatsApp <FaWhatsapp size={16} />
                   </button>
                 </div>
-                <p class="text-xs text-white/60 text-center">
-                  🏪 Mayoristas · 🏠 Minoristas · Sucursales disponibles
+                <p class="text-xs text-white/60 mt-1">
+                 Menú de contactos para 🏪 Mayoristas (Atención personalizada) · 🏠 Minoristas y Sucursales disponibles
                 </p>
               </div>
 
