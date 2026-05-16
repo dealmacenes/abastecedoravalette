@@ -1093,8 +1093,7 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="flex my-10 sm:my-2 w-fit px-4 mx-auto sm:ms-0 items-center uppercase gap-2 bg-white border-[1px] border-main-red/50 text-main-red font-black text-sm py-3.5 rounded-xl hover:bg-main/90 active:scale-[.97] transition-all whitespace-nowrap shadow-md"
                 >
-                  <FaWhatsapp size={16} /> Atención personalizada para
-                  mayoristas
+                  Atención personalizada mayoristas <FaWhatsapp size={16} />
                 </a>
               </div>
 
