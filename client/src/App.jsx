@@ -1403,10 +1403,10 @@ const handleShare = async () => {
           
           <button
             onClick={handleShare}
-            className="fixed size-10 items-center bottom-6 right-6 z-40 bg-white text-main-red shadow-lg rounded-full border border-gray-200 hover:scale-105 active:scale-95 transition-all"
+            className="fixed size-12 bottom-6 right-6 z-40 bg-white text-main-red shadow-lg rounded-full border border-gray-200 hover:scale-105 active:scale-95 transition-all"
             aria-label="Compartir"
           >
-              <Share2 className="size-8 shrink-0 self-center" />
+              <Share2 className="size-8 shrink-0 justify-self-center" />
           </button>
         </main>
       </div>
