@@ -1117,7 +1117,7 @@ export default function App() {
                     key={i}
                     className="flex items-start gap-4 bg-[#1a2340]/70 border border-white/15 rounded-2xl px-4 py-3"
                   >
-                    <div className="text-main mt-0.5 p-2 rounded-xl bg-white/60 border border-white/10 flex-shrink-0">
+                    <div className="text-main mt-0.5 p-2 rounded-xl bg-white border border-white/10 flex-shrink-0">
                       {p.icon}
                     </div>
                     <div>
