@@ -1392,12 +1392,9 @@ const handleShare = async () => {
                 </div>
               </div>
             </div>
-            <p className="text-center text-xs text-gray-600 mt-10">
+            <p className="text-center text-xs text-gray-600 my-10">
               © {new Date().getFullYear()} Abastecedora Valette. Todos los
               derechos reservados.
-            </p>
-            <p className="text-center text-[10px] text-neutral-300 mt-2">
-              - ESTUDIO NUNI -
             </p>
           </footer>
           
