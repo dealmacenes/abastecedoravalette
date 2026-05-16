@@ -10,7 +10,7 @@ import {
 import { FaHandshake } from "react-icons/fa6";
 import { IoOpenOutline } from "react-icons/io5";
 import { GiCow, GiPig, GiChicken, GiSheep, GiSlicedSausage } from "react-icons/gi";
-import { ChevronRight, ChevronLeft, MapPin, Send, ArrowUpRight } from "lucide-react";
+import { ChevronRight, ChevronLeft, MapPin, Send, ArrowUpRight, Share2 } from "lucide-react";
 import { LuBeef } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
 import { PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
@@ -816,6 +816,23 @@ export default function App() {
   useBackButtonClose(menuOpen, () => setMenuOpen(false));
   useBackButtonClose(contactOpen, () => setContactOpen(false));
   useBackButtonClose(!!selectedCut, () => setSelectedCut(null));
+
+  
+  const [copied, setCopied] = useState(false);
+
+const handleShare = async () => {
+  if (navigator.share) {
+    await navigator.share({
+      title: "Abastecedora Valette",
+      text: "Mirá los cortes y precios directos del productor 🥩",
+      url: "https://abastecedoravalette.com.ar/",
+    });
+  } else {
+    await navigator.clipboard.writeText("https://abastecedoravalette.com.ar/");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  }
+};
   
 
   const sections = {
@@ -861,6 +878,11 @@ export default function App() {
 
   return (
     <>
+      {copied && (
+  <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-main text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg">
+    Enlace copiado al portapapeles
+  </div>
+)}
       {/* SEO */}
       <Helmet>
         <title>Abastecedora Valette | Producción y venta de carnes.</title>
@@ -1378,6 +1400,13 @@ export default function App() {
               - ESTUDIO NUNI -
             </p>
           </footer>
+          <button
+  onClick={handleShare}
+  className="fixed bottom-6 right-6 z-40 bg-white text-[#1a2340] shadow-lg rounded-full p-3.5 border border-gray-200 hover:scale-105 active:scale-95 transition-all"
+  aria-label="Compartir"
+>
+  <Share2 size={20} />
+</button>
         </main>
       </div>
     </>
