@@ -1414,10 +1414,10 @@ onClick={() => {
           
           <button
             onClick={handleShare}
-            className="fixed size-13 bottom-6 right-6 z-40 bg-white text-main-red shadow-lg rounded-full border border-gray-200 hover:scale-105 active:scale-95 transition-all"
+            className="fixed size-13 bottom-6 right-6 z-40 bg-white text-main-red shadow-lg rounded-full border border-gray-200 hover:scale-105 active:scale-95 transition-all flex items-center justify-center"
             aria-label="Compartir"
           >
-              <Share2 className="size-7 shrink-0 justify-self-center" />
+              <Share2 className="size-7" />
           </button>
         </main>
       </div>
@@ -1431,7 +1431,7 @@ onClick={() => {
     className="fixed bottom-20 right-6 z-50 size-13 bg-[#1a2340] text-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#243060] active:scale-95 transition-all select-none cursor-pointer"
     aria-label="Volver arriba"
   >
-    <ChevronLeft className=" size-13 rotate-90" />
+    <ChevronLeft className=" size-7 rotate-90" />
   </button>
 )}
     </>
