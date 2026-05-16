@@ -1087,9 +1087,9 @@ export default function App() {
     Contactanos por WhatsApp <FaWhatsapp size={16} />
   </button>
 
-  <p className="text-center bg-white/15 text-white/60 text-[11px] px-4 py-2 rounded-b-xl border-t border-white/10">
-    Mayoristas · Minoristas · Sucursales
-  </p>
+  <p className="text-center bg-white/25 text-white/85 text-[11px] px-4 py-2 rounded-b-xl border-t border-white/20">
+  Mayoristas · Minoristas · Sucursales
+</p>
 </div>
                 </div>
               </div>
@@ -1115,7 +1115,7 @@ export default function App() {
                 ].map((p, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-4 bg-white/15 border border-white/25 rounded-2xl px-4 py-3"
+                    className="flex items-start gap-4 bg-[#1a2340]/70 border border-white/15 rounded-2xl px-4 py-3"
                   >
                     <div className="text-white mt-0.5 p-2 rounded-xl bg-[#1a2340]/60 border border-white/10 flex-shrink-0">
                       {p.icon}
