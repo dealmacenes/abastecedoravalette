@@ -1085,10 +1085,10 @@ export default function App() {
                   >
                     Contactanos por WhatsApp <FaWhatsapp size={16} />
                   </button>
-                  <p class="text-xs text-white/60 text-center mt-2">
-  🏪 Mayoristas · 🏠 Minoristas · Sucursales disponibles
-</p>
                 </div>
+                <p class="text-xs text-white/60 text-center">
+                  🏪 Mayoristas · 🏠 Minoristas · Sucursales disponibles
+                </p>
               </div>
 
               {/* Right: value props */}
