@@ -391,13 +391,6 @@ const CARD_GAP = 16;
 const SCROLL_STEP = (CARD_W + CARD_GAP) * 2;
 
 const WHATSAPP_CONTACTS = [
-  
-  {
-    label: "Atención personalizada",
-    sub: "Mayoristas, comerciantes y pedidos especiales",
-    buildHref: (cut) =>
-      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20y%20me%20interesa%20la%20atenci%C3%B3n%20personalizada.`,
-  },
   {
     label: "Sucursal Luis Guillón",
     sub: "Av. Luciano Valette 1696",
@@ -409,6 +402,12 @@ const WHATSAPP_CONTACTS = [
     sub: "Av. Del Libertador 3910 — Mercado Modelo",
     buildHref: (cut) =>
       `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20en%20la%20sucursal%20Moreno.`,
+  },
+  {
+    label: "Atención personalizada",
+    sub: "Mayoristas, comerciantes y pedidos especiales",
+    buildHref: (cut) =>
+      `https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20y%20quería%20consultar%20por%20*${encodeURIComponent(cut)}*%20y%20me%20interesa%20la%20atenci%C3%B3n%20personalizada.`,
   },
 ];
 
@@ -644,7 +643,12 @@ function CutModal({ cutName, onClose, label = "CONSULTA DE CORTE" }) {
 function ContactModal({ onClose }) {
   useScrollLock(true);
 
-  const contacts = [
+  const contacts = [ 
+    {
+      label: "Atención personalizada mayoristas",
+      sub: "Asesoría y ventas para comerciantes y mayoristas",
+      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web,%20me%20interesa%20la%20venta%20mayorista.",
+    },
     {
       label: "Sucursal Luis Guillón",
       sub: "Atención comercial",
@@ -654,11 +658,6 @@ function ContactModal({ onClose }) {
       label: "Sucursal Moreno",
       sub: "Atención comercial",
       href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web%20por%20la%20sucursal%20Moreno.",
-    },
-    {
-      label: "Atención personalizada mayoristas",
-      sub: "Asesoría y ventas para comerciantes y mayoristas",
-      href: "https://wa.me/541128353615?text=Hola!%20Me%20comunico%20desde%20la%20página%20web,%20me%20interesa%20la%20venta%20mayorista.",
     },
   ];
 
