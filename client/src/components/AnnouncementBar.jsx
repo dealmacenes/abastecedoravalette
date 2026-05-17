@@ -2,12 +2,14 @@ import { useState } from "react";
 
 const items = [
   "Somos Productores",
+  "Tenemos criadero propio de Cerdo",
   "[Horarios de Atención] Lunes a Sabados de 07 a 15hs",
   "35% de descuento con CuentaDNI los Sabados",
   "Sucursales en Luis Guillón y Moreno",
   "Ofrecemos envíos",
   "Atención y asesoría personalizada a mayoristas y comerciantes",
   "Gracias por elegirnos siempre",
+  "Una experiencia de compra directa, sin intermediarios",
 ];
 
 export default function AnnouncementBar() {
