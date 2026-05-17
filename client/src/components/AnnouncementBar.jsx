@@ -39,8 +39,8 @@ export default function AnnouncementBar() {
         className="
           absolute right-2 flex items-center justify-center
           w-6 h-6 rounded-full
-          bg-white/60 hover:bg-white/35 transition-colors
-          text-main-red shrink-0 z-10
+          bg-main-red hover:bg-main-red/35 transition-colors
+          text-white shrink-0 z-10
         "
       >
         {paused ? (
