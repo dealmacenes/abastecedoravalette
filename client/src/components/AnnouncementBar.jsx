@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 const items = [
-  "Pedidos por WhatsApp",
-  "Sucursales en Luis Guillón",
-  "Envíos a todo el país",
-  "Descuentos en bultos",
+  "Somos Productores",
+  "Sucursales en Luis Guillón y Moreno",
+  "Ofrecemos envíos",
+  "Atención y asesoría personalizada a mayoristas",
+  "Gracias por elegirnos siempre",
 ];
 
 export default function AnnouncementBar() {
@@ -14,7 +15,7 @@ export default function AnnouncementBar() {
   const repeated = [...items, ...items];
 
   return (
-    <div className="relative flex items-center bg-red-600 text-white text-sm font-medium overflow-hidden h-9 select-none">
+    <div className="relative flex items-center bg-main text-white text-sm font-medium overflow-hidden h-9 select-none">
       {/* Track animado */}
       <div
         className="flex whitespace-nowrap"
