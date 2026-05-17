@@ -24,7 +24,7 @@ export default function AnnouncementBar() {
       <div
         className="flex whitespace-nowrap"
         style={{
-          animation: "marquee 40s linear infinite",
+          animation: "marquee 50s linear infinite",
           animationPlayState: paused ? "paused" : "running",
         }}
       >
