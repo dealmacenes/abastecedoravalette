@@ -2,9 +2,11 @@ import { useState } from "react";
 
 const items = [
   "Somos Productores",
+  "[Horarios] Lunes a Sabados de 07 a 15hs",
+  "35% de descuento con CuentaDNI los Sabados",
   "Sucursales en Luis Guillón y Moreno",
   "Ofrecemos envíos",
-  "Atención y asesoría personalizada a mayoristas",
+  "Atención y asesoría personalizada a mayoristas y comerciantes",
   "Gracias por elegirnos siempre",
 ];
 
@@ -20,7 +22,7 @@ export default function AnnouncementBar() {
       <div
         className="flex whitespace-nowrap"
         style={{
-          animation: "marquee 18s linear infinite",
+          animation: "marquee 10s linear infinite",
           animationPlayState: paused ? "paused" : "running",
         }}
       >
