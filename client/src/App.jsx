@@ -16,6 +16,8 @@ import { Helmet } from "react-helmet-async";
 import { PiCowFill, PiHandshakeFill, PiTruckFill } from "react-icons/pi";
 import { MdOutlineFoodBank } from "react-icons/md";
 import { TbMeat } from "react-icons/tb";
+import AnnouncementBar from "./components/AnnouncementBar";
+
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -1003,17 +1005,19 @@ useEffect(() => {
 
       <div className="min-h-screen flex flex-col font-open-sans text-[#1a2340] bg-white">
         {/* ── NAVBAR ── */}
-        <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm h-20">
+        <nav className="sticky top-0 z-50 border-b border-gray-100 shadow-sm h-20">
+          <AnnouncementBar />
+          <div className="w-full bg-white/90 backdrop-blur-md">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
             {/* Logo */}
             <img
               src="/logoRound.svg"
               onContextMenu={(e) => e.preventDefault()}
               className="h-18 w-fit cursor-pointer flex-shrink-0 select-none"
-onClick={() => {
+              onClick={() => {
   window.scrollTo({ top: 0, behavior: "smooth" });
   window.history.replaceState(null, "", "/");
-}}              
+              }}              
               alt="Abastecedora Valette"
             />
 
@@ -1070,6 +1074,7 @@ onClick={() => {
               ))}
             </div>
           )}
+          </div>
         </nav>
 
         {/* ── PAGE BODY ── */}
